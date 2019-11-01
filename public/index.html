@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <!--
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Web site created using create-react-app" />
+		<link rel="apple-touch-icon" href="logo192.png" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
+			rel="stylesheet"
+		/>
+		<!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		<!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +24,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+		<title>React App</title>
+	</head>
+	<body id="body">
+		<div id="root"></div>
+		<!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +38,186 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+		<!-- <script>
+			(function() {
+				const animateit = function(e) {
+					const span = this.querySelector("span");
+					const { offsetX: x, offsetY: y } = e,
+						{ offsetWidth: width, offsetHeight: height } = this,
+						move = 25,
+						xMove = (x / width) * (move * 2) - move,
+						yMove = (y / height) * (move * 2) - move;
+					span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+					if (e.type === "mouseleave") span.style.transform = "";
+				};
+				const editCursor = (e) => {
+					const cursor = document.getElementById("cursor");
+					const { clientX: x, clientY: y } = e;
+					cursor.style.left = x + "px";
+					cursor.style.top = y + "px";
+				};
+				const link = document.querySelectorAll("nav > .hover-this");
+				link.forEach((b) => b.addEventListener("mousemove", animateit));
+				link.forEach((b) => b.addEventListener("mouseleave", animateit));
+				window.addEventListener("mousemove", editCursor);
+			})();
+		</script> -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
+		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+		<script>
+			function debounce(func, wait, immediate) {
+				var timeout;
+				return function() {
+					var context = this,
+						args = arguments;
+					var later = function() {
+						timeout = null;
+						if (!immediate) func.apply(context, args);
+					};
+					var callNow = immediate && !timeout;
+					clearTimeout(timeout);
+					timeout = setTimeout(later, wait);
+					if (callNow) func.apply(context, args);
+				};
+			}
+
+			var myElement = document.getElementById("body");
+			var mc = new Hammer(myElement);
+			mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+
+			var navigateMobUp = () => {
+				$(".nav-wrapper")
+					.addClass("invisibleNav")
+					.removeClass("visibleNav");
+			};
+
+			var navigateMobDown = () => {
+				$(".nav-wrapper")
+					.addClass("visibleNav")
+					.removeClass("invisibleNav");
+			};
+
+			mc.on("panup", navigateMobUp);
+
+			mc.on("pandown", navigateMobDown);
+
+			// mc.on("panleft panright panup pandown tap press", function(ev) {
+			//     console.log(ev.type +" gesture detected.");
+			// });
+
+			// mc.on("pandown", function(ev)
+			// {
+			//   myElement.textContent = ev.type +" gesture detected.";
+			// });
+
+			// mc.on("panup", );
+
+			$("#body").bind("mousewheel", "touchmove", function(event) {
+				if (event.originalEvent.wheelDelta >= 0) {
+					$(".nav-wrapper")
+						.addClass("visibleNav")
+						.removeClass("invisibleNav");
+				} else {
+					$(".nav-wrapper")
+						.addClass("invisibleNav")
+						.removeClass("visibleNav");
+				}
+			});
+
+			// -------------  preloader -------------
+
+			(function($) {
+				$.fn.intro = function(options) {
+					var defaults = {
+						line: "#212121",
+						speedwidth: 2,
+						speedheight: 1,
+						speedopacity: 1,
+						bg: "#212121",
+						lineheight: 2,
+						wrapperDiv: ".intro-wrapper",
+						lineDiv: ".intro-line"
+					};
+
+					var settings = $.extend(defaults, options || {});
+
+					$("body").css({
+						"overflow-y": "hidden",
+						visibility: "hidden"
+					});
+
+					$(settings.lineDiv).css({
+						background: settings.line,
+						height: settings.lineheight + "px",
+						"margin-top": settings.lineheight / 2 + "px",
+						width: "0%",
+						visibility: "visible"
+					});
+
+					$(settings.lineDiv),
+						(parent = new TimelineMax({
+							repeat: 0,
+							yoyo: false,
+							repeatDelay: 0
+						}));
+
+					parent
+						.to(
+							settings.lineDiv,
+							settings.speedwidth,
+							{ css: { width: "+=100%" }, delay: 0, ease: Power4.easeIn },
+							0
+						)
+						.timeScale(1);
+					parent
+						.to(
+							settings.lineDiv,
+							settings.speedheight,
+							{
+								css: { height: "+=100%", top: "-=50%" },
+								delay: settings.speedwidth,
+								ease: Power4.easeOut,
+								onComplete: step
+							},
+							0
+						)
+						.timeScale(1);
+
+					function step() {
+						$("body").attr("style", "");
+						$("body").css({
+							visibility: "visible"
+						});
+
+						$(settings.lineDiv),
+							(parent = new TimelineMax({ repeat: 0, yoyo: false, repeatDelay: 0 }));
+						parent
+							.to(
+								settings.wrapperDiv,
+								settings.speedopacity,
+								{
+									css: { opacity: "0" },
+									delay: 0,
+									ease: Power4.easeOut,
+									onComplete: step2
+								},
+								0
+							)
+							.timeScale(1);
+					}
+
+					function step2() {
+						$(settings.wrapperDiv).remove();
+						$("body").css({
+							"overflow-y": "hidden"
+						});
+					}
+				};
+			})(jQuery);
+		</script>
+	</body>
 </html>

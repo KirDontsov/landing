@@ -8,7 +8,7 @@ const Article = (props) => {
 		<article>
 			{urlToImage && (
 				<div className="img-wrap">
-					<img align="left" src={urlToImage} />
+					<img align="left" src={urlToImage} alt="" />
 				</div>
 			)}
 			<div>

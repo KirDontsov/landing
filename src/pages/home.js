@@ -1,46 +1,50 @@
-import React from 'react';
+import React from "react";
+import Slider from "../components/Slider";
+import Benefits from "../components/Benefits";
+import Testimonials from "../components/Testimonials";
+
+const slideData = [
+	{
+		index: 0,
+		headline: "Уплотнительные кольца",
+		button: "Подробнее",
+		link: "/o-rings",
+		src:
+			"https://ae01.alicdn.com/kf/HTB1sYL.KwHqK1RjSZFPq6AwapXa0/20-50-M5-M80.jpg"
+	},
+	{
+		index: 1,
+		headline: "Манжеты гидравлические",
+		button: "Подробнее",
+		link: "/cuffs",
+		src:
+			"https://mirrti.ru/assets/components/phpthumbof/cache/rti-izdeliya36.a87f4cf9306bc1933a3398b0de0c6e7368.jpg"
+	},
+	{
+		index: 2,
+		headline: "Рукава высокого давления",
+		button: "Подробнее",
+		link: "/rvd",
+		src: "https://www.png-s.ru/d/rvd_4.jpg"
+	},
+	{
+		index: 3,
+		headline: "Конвеерная лента",
+		button: "Подробнее",
+		link: "/belts",
+		src: "https://sekon.ru/files/images/unnamed-file-11.jpg"
+	}
+];
 
 const Home = () => (
-  <React.Fragment>
-    <h3>Useful react and redux links</h3>
-    <ul>
-      <li>
-        <p>
-          <strong>The official React documentation</strong>
-          <br/>
-          <a href='https://reactjs.org/docs/hello-world.html'>https://reactjs.org/docs/hello-world.html</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Getting Started with Redux - Egghead{'\''}s video lessons from Dan Abramov</strong>
-          <br/>
-          <a href='https://egghead.io/courses/getting-started-with-redux'>https://egghead.io/courses/getting-started-with-redux</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>React Redux [RU tutorial]</strong>
-          <br/>
-          <a href='https://maxfarseer.gitbooks.io/redux-course-ru/content/'>https://maxfarseer.gitbooks.io/redux-course-ru/content/</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Redux Step by Step: A Simple and Robust Workflow for Real Life Apps</strong>
-          <br/>
-          <a href='https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092'>https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Container Components - Learn React with chantastic</strong>
-          <br/>
-          <a href='https://medium.com/@learnreact/container-components-c0e67432e005'>https://medium.com/@learnreact/container-components-c0e67432e005</a>
-        </p>
-      </li>
-    </ul>
-  </React.Fragment>
+	<React.Fragment>
+		<div className="container__margin">
+			<h1>Большой выбор по приемлемым ценам</h1>
+			<Slider heading="Example Slider" slides={slideData} />
+			<Benefits />
+			<Testimonials />
+		</div>
+	</React.Fragment>
 );
 
 export default Home;

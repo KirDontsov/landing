@@ -1,7 +1,7 @@
-import React from "react";
-import Article from "../components/article";
+import React, { Component } from "react";
+import Article from "../components/Article";
 
-class News extends React.Component {
+class News extends Component {
 	constructor(props) {
 		super(props);
 
@@ -20,7 +20,7 @@ class News extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container__margin">
 				<div className="news header">
 					<h1>News</h1>
 				</div>

@@ -1,24 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 const NavigationBar = (props) => (
-	<div className="nav-wrapper">
-		<div className="center">
-			<div className="nav__top">
-				<div className="left__text">
-					<p>Время работы: с 8:00 до 16:00</p>
-				</div>
-				<div className="right__text">
-					<a href="tel:84956401225" className="phone">
-						+7 (495) 640 12 25
-					</a>
-					<p>rti-torg@gmail.com</p>
-				</div>
-			</div>
-		</div>
-		<div className="center">
-			<nav>
+	<Fragment>
+		<div className="footer">
+			<div className="col__center">
 				{props.routes.map((route) => (
 					<NavLink
 						className={route.className}
@@ -30,9 +17,9 @@ const NavigationBar = (props) => (
 						{route.name}
 					</NavLink>
 				))}
-			</nav>
+			</div>
 		</div>
-	</div>
+	</Fragment>
 );
 
 export default NavigationBar;
