@@ -50,38 +50,38 @@ button {
 	cursor: pointer;
 }
 
-// article {
-// 	display: flex;
-// 	border-radius: 2px;
-// 	background-color: #fff;
-// 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
-// 	margin-top: 8px;
-// 	margin-bottom: 8px;
-// 	padding: 15px;
+.img-wrap {
+	margin-right: 15px;
+	width: 200px;
+	height: 200px;
 
-// 	.img-wrap {
-// 		margin-right: 15px;
-// 		width: 200px;
-// 		height: 200px;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
 
-// 		img {
-// 			height: 100%;
-// 			width: 100%;
-// 		}
-// 	}
+article {
+	display: flex;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding: 15px;
 
-// 	.title > a {
-// 		font-weight: 500;
-// 		font-size: 18px;
-// 		color: black;
-// 	}
+	.title > a {
+		font-weight: 500;
+		font-size: 18px;
+		color: black;
+	}
 
-// 	.title > .author {
-// 		font-size: 12px;
-// 		line-height: 20px;
-// 		color: #757575;
-// 	}
-// }
+	.title > .author {
+		font-size: 12px;
+		line-height: 20px;
+		color: #757575;
+	}
+}
 
 a {
 	text-decoration: none;

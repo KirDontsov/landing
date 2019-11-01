@@ -28,8 +28,9 @@ body::-webkit-scrollbar {
 }
 
 .container {
-	width: 100%;
+	max-width: 1700px;
 	margin: 0 auto;
+	padding: 50px 100px;
 }
 
 .center {
@@ -73,6 +74,15 @@ h1 {
 
 h2 {
 	color: var(--gray);
+}
+
+.heading {
+	margin: 100px 0;
+	.title {
+		text-align: left;
+		max-width: 500px;
+		margin: 200px;
+	}
 }
 
 .black {

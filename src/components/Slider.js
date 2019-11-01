@@ -69,13 +69,13 @@ class Slide extends Component {
 					/>
 				</div>
 
-				<article className="slide__content">
+				<sliderHeading className="slide__content">
 					<h2 className="slide__headline">{headline}</h2>
 					{/* Router Link */}
-					<Link to={link} className="slide__action btn">
+					<Link key={index} to={link} className="slide__action btn">
 						{button}
 					</Link>
-				</article>
+				</sliderHeading>
 			</li>
 		);
 	}

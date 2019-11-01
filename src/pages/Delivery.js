@@ -1,10 +1,11 @@
 import React from "react";
-import Bb8 from "../components/Bb8";
 
 const Delivery = () => (
 	<React.Fragment>
 		<div className="container__margin">
-			<h1>Hello From Delivery</h1>
+			<div className="heading">
+				<h1 className="title">Hello From Delivery</h1>
+			</div>
 			<div className="container">
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt
@@ -13,7 +14,6 @@ const Delivery = () => (
 					assumenda a.
 				</p>
 			</div>
-			<Bb8 />
 		</div>
 	</React.Fragment>
 );

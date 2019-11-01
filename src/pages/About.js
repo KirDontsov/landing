@@ -4,7 +4,9 @@ import Bb8 from "../components/Bb8";
 const About = () => (
 	<React.Fragment>
 		<div className="container__margin">
-			<h1>Hello from About!</h1>
+			<div className="heading">
+				<h1 className="title">Hello from About!</h1>
+			</div>
 			<div className="container">
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt

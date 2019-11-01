@@ -39,7 +39,9 @@ const slideData = [
 const Home = () => (
 	<React.Fragment>
 		<div className="container__margin">
-			<h1>Большой выбор по приемлемым ценам</h1>
+			<div className="heading">
+				<h1 className="title main">Большой выбор по приемлемым ценам</h1>
+			</div>
 			<Slider heading="Example Slider" slides={slideData} />
 			<Benefits />
 			<Testimonials />

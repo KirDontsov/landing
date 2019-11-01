@@ -21,19 +21,21 @@ class News extends Component {
 	render() {
 		return (
 			<div className="container__margin">
-				<div className="news header">
-					<h1>News</h1>
+				<div className="heading">
+					<h1 className="title">News</h1>
 				</div>
-				{this.state.articles.map((article, index) => (
-					<Article
-						key={index}
-						title={article.title}
-						description={article.description}
-						url={article.url}
-						author={article.author}
-						urlToImage={article.urlToImage}
-					/>
-				))}
+				<div className="container">
+					{this.state.articles.map((article, index) => (
+						<Article
+							key={index}
+							title={article.title}
+							description={article.description}
+							url={article.url}
+							author={article.author}
+							urlToImage={article.urlToImage}
+						/>
+					))}
+				</div>
 			</div>
 		);
 	}

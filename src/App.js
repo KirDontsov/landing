@@ -21,7 +21,7 @@ class App extends Component {
 					const component = route.component;
 					return (
 						<Route
-							key={route.path}
+							key={route.id}
 							exact={route.isExact}
 							path={route.path}
 							component={component}
