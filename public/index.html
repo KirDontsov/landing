@@ -70,58 +70,37 @@
 		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 		<script>
 			(function() {
-				let windowWidth = screen.width;
-				if (windowWidth <= 900) {
-					return null;
-				} else {
-					// function debounce(func, wait, immediate) {
-					// 	var timeout;
-					// 	return function() {
-					// 		var context = this,
-					// 			args = arguments;
-					// 		var later = function() {
-					// 			timeout = null;
-					// 			if (!immediate) func.apply(context, args);
-					// 		};
-					// 		var callNow = immediate && !timeout;
-					// 		clearTimeout(timeout);
-					// 		timeout = setTimeout(later, wait);
-					// 		if (callNow) func.apply(context, args);
-					// 	};
-					// }
-
-					var myElement = document.getElementById("body");
-					var mc = new Hammer(myElement);
-					mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-
-					var navigateMobUp = () => {
-						$(".nav-wrapper")
-							.addClass("invisibleNav")
-							.removeClass("visibleNav");
-					};
-
-					var navigateMobDown = () => {
-						$(".nav-wrapper")
-							.addClass("visibleNav")
-							.removeClass("invisibleNav");
-					};
-
-					mc.on("panup", navigateMobUp);
-
-					mc.on("pandown", navigateMobDown);
-
-					$("#body").bind("mousewheel", "touchmove", function(event) {
-						if (event.originalEvent.wheelDelta >= 0) {
-							$(".nav-wrapper")
-								.addClass("visibleNav")
-								.removeClass("invisibleNav");
-						} else {
-							$(".nav-wrapper")
-								.addClass("invisibleNav")
-								.removeClass("visibleNav");
-						}
-					});
-				}
+				// var myElement = document.getElementById("body");
+				// var mc = new Hammer(myElement);
+				// mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+				// var navigateMobUp = () => {
+				// 	$(".nav-wrapper")
+				// 		.addClass("invisibleNav")
+				// 		.removeClass("visibleNav");
+				// };
+				// var navigateMobDown = () => {
+				// 	$(".nav-wrapper")
+				// 		.addClass("visibleNav")
+				// 		.removeClass("invisibleNav");
+				// };
+				// mc.on("panup", navigateMobUp);
+				// mc.on("pandown", navigateMobDown);
+				// $("#body").bind("mousewheel", "touchmove", function(event) {
+				// 	if (event.originalEvent.wheelDelta >= 0) {
+				// 		$(".nav-wrapper")
+				// 			.addClass("visibleNav")
+				// 			.removeClass("invisibleNav");
+				// 	} else {
+				// 		$(".nav-wrapper")
+				// 			.addClass("invisibleNav")
+				// 			.removeClass("visibleNav");
+				// 	}
+				// });
+				// let windowWidth = screen.width;
+				// if (windowWidth <= 900) {
+				// 	return null;
+				// } else {
+				// }
 			})();
 		</script>
 	</body>

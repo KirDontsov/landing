@@ -164,8 +164,6 @@
 	--d: 50;
 
 	opacity: 1;
-	pointer-events: auto;
-	user-select: auto;
 
 	@media (hover: hover) {
 		&:hover .slide__image-wrapper {
@@ -193,12 +191,10 @@
 	left: -5%;
 	object-fit: cover;
 	opacity: 0;
-	pointer-events: none;
 	position: absolute;
 	top: -5%;
 	transition: opacity var(--base-duration) var(--base-ease),
 		transform var(--base-duration) var(--base-ease);
-	user-select: none;
 	width: 110%;
 
 	@media (hover: hover) {

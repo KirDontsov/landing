@@ -14,28 +14,10 @@ class Bb8 extends Component {
 	}
 
 	// Keep track of the mouse position.
-	handleMouseMove(event) {
+	handleMouseMove(e) {
 		this.setState({
-			mouseX: event.pageX
+			mouseX: e.pageX
 		});
-	}
-
-	// Speed Mod Bar
-	handleSpeedChange(e) {
-		if (parseFloat(e.target.value)) {
-			this.setState({
-				speed: e.target.value
-			});
-		}
-	}
-
-	// Acceleration Mod Bar
-	handleAccelChange(e) {
-		if (parseFloat(e.target.value)) {
-			this.setState({
-				accelMod: e.target.value
-			});
-		}
 	}
 
 	// Get moving!
@@ -66,15 +48,11 @@ class Bb8 extends Component {
 		}
 	}
 
-	// Get some initial movement on first mount.
-	componentWillMount() {
+	// Set up the mouse event listener and fire up the movement function.
+	componentDidMount() {
 		this.setState({
 			mouseX: 300
 		});
-	}
-
-	// Set up the mouse event listener and fire up the movement function.
-	componentDidMount() {
 		document.addEventListener("mousemove", (e) => this.handleMouseMove(e));
 		setInterval(this.movement.bind(this), 1);
 	}
@@ -138,7 +116,6 @@ class Bb8 extends Component {
 					</div>
 					<div className="shadow"></div>
 				</div>
-
 			</div>
 		);
 	}
