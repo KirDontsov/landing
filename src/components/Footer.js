@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import ScrollButton from "../components/ScrollButton";
+import "../scss/Footer.scss";
 
 const Footer = (props) => (
 	<Fragment>

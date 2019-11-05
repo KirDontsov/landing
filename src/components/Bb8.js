@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../scss/Bb8.scss";
 
 class Bb8 extends Component {
 	constructor(props) {

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
+import Categories from "./Categories";
 
 const RVD = () => (
 	<Fragment>
@@ -8,8 +9,22 @@ const RVD = () => (
 			<meta name="description" content="Рукава Высокого Давления" />
 		</Helmet>
 		<div className="container__margin">
-			<h1>Hello from RVD!</h1>
+			<div className="heading">
+				<h1 className="title">Рукава Высокого Давления</h1>
+			</div>
 			<div className="container">
+				{Categories.map((category) => {
+					return (
+						category.index === 2 && (
+							<img
+								key={category.index}
+								className="category__img"
+								src={category.src}
+								alt={category.headline}
+							/>
+						)
+					);
+				})}
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt
 					mollitia animi consequuntur perferendis, ipsa impedit? Tempore nostrum,

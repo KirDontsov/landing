@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-
 import SearchInput, { createFilter } from "react-search-input";
-
 import slideData from "../categories/Categories";
+import "../scss/Search.scss";
 
 const KEYS_TO_FILTERS = ["headline", "src", "link", "id"];
 

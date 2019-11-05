@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
+import Categories from "./Categories";
 
 const Belts = () => (
 	<Fragment>
@@ -8,8 +9,25 @@ const Belts = () => (
 			<meta name="description" content="Конвейерная лента" />
 		</Helmet>
 		<div className="container__margin">
-			<h1>Hello from Belts!</h1>
+			<div className="heading">
+				<h1 className="title">Конвейерная лента</h1>
+			</div>
+
 			<div className="container">
+				<div className="center">
+					{Categories.map((category) => {
+						return (
+							category.index === 3 && (
+								<img
+									key={category.index}
+									className="category__img"
+									src={category.src}
+									alt={category.headline}
+								/>
+							)
+						);
+					})}
+				</div>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt
 					mollitia animi consequuntur perferendis, ipsa impedit? Tempore nostrum,

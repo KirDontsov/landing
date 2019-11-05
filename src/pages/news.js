@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Article from "../components/Article";
+import "../scss/News.scss";
 
 class News extends Component {
 	constructor(props) {
