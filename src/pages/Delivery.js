@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const Delivery = () => (
-	<React.Fragment>
+	<Fragment>
+		<Helmet>
+			<title>Доставка</title>
+			<meta name="description" content="Доставка" />
+		</Helmet>
 		<div className="container__margin">
 			<div className="heading">
 				<h1 className="title">Hello From Delivery</h1>
@@ -15,7 +20,7 @@ const Delivery = () => (
 				</p>
 			</div>
 		</div>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default Delivery;

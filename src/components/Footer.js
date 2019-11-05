@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import ScrollButton from "../components/ScrollButton";
 
 const Footer = (props) => (
 	<Fragment>
@@ -37,6 +38,7 @@ const Footer = (props) => (
 					)}
 				</div>
 			</div>
+			<ScrollButton scrollStepInPx="50" delayInMs="16.66" />
 		</div>
 	</Fragment>
 );

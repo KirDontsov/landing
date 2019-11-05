@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const Cuffs = () => (
-	<React.Fragment>
+	<Fragment>
+		<Helmet>
+			<title>Гидравлические Манжеты</title>
+			<meta name="description" content="Гидравлические Манжеты" />
+		</Helmet>
 		<div className="container__margin">
 			<h1>Hello from Cuffs!</h1>
 			<div className="container">
@@ -13,7 +18,7 @@ const Cuffs = () => (
 				</p>
 			</div>
 		</div>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default Cuffs;

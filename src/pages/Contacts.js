@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const Contacts = () => (
-	<React.Fragment>
+	<Fragment>
+		<Helmet>
+			<title>Контакты</title>
+			<meta name="description" content="Контакты" />
+		</Helmet>
 		<div className="container__margin">
 			<div className="heading">
 				<h1 className="title">Hello from Contacts!</h1>
@@ -16,7 +21,7 @@ const Contacts = () => (
 				</p>
 			</div>
 		</div>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default Contacts;

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const Belts = () => (
-	<React.Fragment>
+	<Fragment>
+		<Helmet>
+			<title>Конвейерная лента</title>
+			<meta name="description" content="Конвейерная лента" />
+		</Helmet>
 		<div className="container__margin">
 			<h1>Hello from Belts!</h1>
 			<div className="container">
@@ -13,7 +18,7 @@ const Belts = () => (
 				</p>
 			</div>
 		</div>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default Belts;

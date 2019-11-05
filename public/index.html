@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Web site created using create-react-app" />
 		<link rel="apple-touch-icon" href="logo192.png" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
@@ -24,7 +23,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-		<title>React App</title>
 	</head>
 	<body id="body">
 		<div id="root"></div>
@@ -70,37 +68,38 @@
 		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 		<script>
 			(function() {
-				// var myElement = document.getElementById("body");
-				// var mc = new Hammer(myElement);
-				// mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-				// var navigateMobUp = () => {
-				// 	$(".nav-wrapper")
-				// 		.addClass("invisibleNav")
-				// 		.removeClass("visibleNav");
-				// };
-				// var navigateMobDown = () => {
-				// 	$(".nav-wrapper")
-				// 		.addClass("visibleNav")
-				// 		.removeClass("invisibleNav");
-				// };
-				// mc.on("panup", navigateMobUp);
-				// mc.on("pandown", navigateMobDown);
-				// $("#body").bind("mousewheel", "touchmove", function(event) {
-				// 	if (event.originalEvent.wheelDelta >= 0) {
-				// 		$(".nav-wrapper")
-				// 			.addClass("visibleNav")
-				// 			.removeClass("invisibleNav");
-				// 	} else {
-				// 		$(".nav-wrapper")
-				// 			.addClass("invisibleNav")
-				// 			.removeClass("visibleNav");
-				// 	}
-				// });
-				// let windowWidth = screen.width;
-				// if (windowWidth <= 900) {
-				// 	return null;
-				// } else {
-				// }
+				delete Hammer.defaults.cssProps.userSelect;
+				var myElement = document.getElementById("body");
+				var mc = new Hammer(myElement);
+				mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+				var navigateMobUp = () => {
+					$(".nav-wrapper")
+						.addClass("invisibleNav")
+						.removeClass("visibleNav");
+				};
+				var navigateMobDown = () => {
+					$(".nav-wrapper")
+						.addClass("visibleNav")
+						.removeClass("invisibleNav");
+				};
+				mc.on("panup", navigateMobUp);
+				mc.on("pandown", navigateMobDown);
+				$("#body").bind("mousewheel", "touchmove", function(event) {
+					if (event.originalEvent.wheelDelta >= 0) {
+						$(".nav-wrapper")
+							.addClass("visibleNav")
+							.removeClass("invisibleNav");
+					} else {
+						$(".nav-wrapper")
+							.addClass("invisibleNav")
+							.removeClass("visibleNav");
+					}
+				});
+				let windowWidth = screen.width;
+				if (windowWidth <= 900) {
+					return null;
+				} else {
+				}
 			})();
 		</script>
 	</body>

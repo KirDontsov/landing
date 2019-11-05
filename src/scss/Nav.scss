@@ -15,6 +15,7 @@ nav {
 	padding: 30px 0 30px 50px;
 	max-width: 500px;
 	text-align: left;
+	position: relative;
 }
 
 nav a {
@@ -39,8 +40,19 @@ nav .logo {
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px 50px;
-	border-bottom: 1px solid hsla(0, 0%, 44%, 0.1);
 	transition: 0.3s;
+	position: relative;
+	&:before {
+		display: block;
+		width: 93%;
+		height: 1px;
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(112, 112, 112, 0.1);
+	}
 }
 
 .nav-wrapper.visibleNav {

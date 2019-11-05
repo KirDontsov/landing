@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
 const NavigationBar = (props) => (
 	<div className="nav-wrapper">
@@ -31,6 +32,7 @@ const NavigationBar = (props) => (
 					</NavLink>
 				))}
 			</nav>
+			<Search />
 		</div>
 	</div>
 );

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet";
 
 const RVD = () => (
-	<React.Fragment>
+	<Fragment>
+		<Helmet>
+			<title>Рукава Высокого Давления</title>
+			<meta name="description" content="Рукава Высокого Давления" />
+		</Helmet>
 		<div className="container__margin">
 			<h1>Hello from RVD!</h1>
 			<div className="container">
@@ -13,7 +18,7 @@ const RVD = () => (
 				</p>
 			</div>
 		</div>
-	</React.Fragment>
+	</Fragment>
 );
 
 export default RVD;

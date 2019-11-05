@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Helmet } from "react-helmet";
 import Article from "../components/Article";
 
 class News extends Component {
@@ -20,23 +21,29 @@ class News extends Component {
 
 	render() {
 		return (
-			<div className="container__margin">
-				<div className="heading">
-					<h1 className="title">News</h1>
+			<Fragment>
+				<Helmet>
+					<title>Новости</title>
+					<meta name="description" content="Новости" />
+				</Helmet>
+				<div className="container__margin">
+					<div className="heading">
+						<h1 className="title">News</h1>
+					</div>
+					<div className="container">
+						{this.state.articles.map((article, index) => (
+							<Article
+								key={index}
+								title={article.title}
+								description={article.description}
+								url={article.url}
+								author={article.author}
+								urlToImage={article.urlToImage}
+							/>
+						))}
+					</div>
 				</div>
-				<div className="container">
-					{this.state.articles.map((article, index) => (
-						<Article
-							key={index}
-							title={article.title}
-							description={article.description}
-							url={article.url}
-							author={article.author}
-							urlToImage={article.urlToImage}
-						/>
-					))}
-				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

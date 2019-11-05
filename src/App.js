@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { routes } from "./routes";
 import NavigationBar from "./components/NavBar";
 // import Burger from "./components/Burger";
@@ -12,6 +13,7 @@ import "./scss/Slider.scss";
 import "./scss/Benefits.scss";
 import "./scss/Bb8.scss";
 import "./scss/Testimonials.scss";
+import "./scss/Search.scss";
 
 class App extends Component {
 	render() {
@@ -34,6 +36,11 @@ class App extends Component {
 		return (
 			<Router>
 				<Fragment>
+					<Helmet>
+						<title>РТИ-Торг</title>
+						<meta name="description" content="РТИ-Торг" />
+					</Helmet>
+
 					{/* <Burger /> */}
 					<NavigationBar routes={routes.filter((route) => route.isNavBar)} />
 					{renderSwitch()}

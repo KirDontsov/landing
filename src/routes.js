@@ -55,6 +55,9 @@ export const routes = [
 		className: "nav-link",
 		component: Contacts
 	},
+
+	// ---------------------------
+
 	{
 		id: 6,
 		isFooter: true,
