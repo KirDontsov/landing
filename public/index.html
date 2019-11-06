@@ -69,6 +69,7 @@
 		<script>
 			(function() {
 				delete Hammer.defaults.cssProps.userSelect;
+
 				var myElement = document.getElementById("body");
 				var mc = new Hammer(myElement);
 				mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
@@ -102,5 +103,9 @@
 				}
 			})();
 		</script>
+		<script
+			src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"
+			type="text/javascript"
+		></script>
 	</body>
 </html>

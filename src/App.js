@@ -36,9 +36,11 @@ class App extends Component {
 						<meta name="description" content="РТИ-Торг" />
 					</Helmet>
 
-					<NavigationBar routes={routes.filter((route) => route.isNavBar)} />
-					{renderSwitch()}
-					<Footer routes={routes.filter((route) => route.isFooter)} />
+					<div className="wrapper">
+						<NavigationBar routes={routes.filter((route) => route.isNavBar)} />
+						{renderSwitch()}
+						<Footer routes={routes.filter((route) => route.isFooter)} />
+					</div>
 				</Fragment>
 			</Router>
 		);

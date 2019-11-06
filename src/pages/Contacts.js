@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
+import MyMap from "../components/Map";
+import { YMaps } from "react-yandex-maps";
 
 const Contacts = () => (
 	<Fragment>
@@ -19,6 +21,9 @@ const Contacts = () => (
 					voluptate labore laboriosam quam cumque autem, magnam sit, veritatis at
 					assumenda a.
 				</p>
+				<YMaps>
+					<MyMap />
+				</YMaps>
 			</div>
 		</div>
 	</Fragment>

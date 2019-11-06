@@ -1,3 +1,80 @@
-.testimonials {
-	padding: 100px 0;
+.testimonials-container {
+	background-color: var(--gray);
+	margin: 100px auto 20px;
+	max-width: 768px;
+	padding: 60px 100px 50px;
+	position: relative;
+}
+
+.svg-inline--fa.fa-quote-right,
+.svg-inline--fa.fa-quote-left {
+	color: rgba(255, 255, 255, 0.3);
+	font-size: 28px;
+	position: absolute;
+	top: 40%;
+	transform: translateY(-50%);
+}
+.fa-quote-right {
+	left: 40px;
+}
+
+.fa-quote-left {
+	right: 40px;
+}
+
+.testimonial {
+	margin-top: 50px;
+	line-height: 28px;
+	text-align: justify;
+}
+
+.centered-items {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.ava {
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+	object-fit: cover;
+}
+
+.user-details {
+	margin-left: 10px;
+}
+
+.username {
+	margin: 0;
+}
+
+.role {
+	font-weight: normal;
+	margin: 2px 0;
+}
+
+.progress-bar {
+	background-color: #fff;
+	height: 4px;
+	width: 100%;
+	animation: grow 10s linear infinite;
+	transform-origin: left;
+}
+
+@keyframes grow {
+	0% {
+		transform: scaleX(0);
+	}
+}
+
+@media (max-width: 768px) {
+	.testimonials-container {
+		padding: 20px 30px;
+	}
+
+	.fa-quote {
+		display: none;
+	}
 }
