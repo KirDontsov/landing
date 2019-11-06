@@ -57,16 +57,18 @@ const testimonials = [
 	}
 ];
 
-const testimonialsContainer = document.querySelector(".testimonials-container");
-const testimonial = testimonialsContainer.querySelector(".testimonial");
-const logo = testimonialsContainer.querySelector(".ava");
-const username = testimonialsContainer.querySelector(".username");
-const role = testimonialsContainer.querySelector(".role");
-
-let idx = 1;
-
 class Testimonials extends Component {
 	componentDidMount() {
+		const testimonialsContainer = document.querySelector(
+			".testimonials-container"
+		);
+		const testimonial = testimonialsContainer.querySelector(".testimonial");
+		const logo = testimonialsContainer.querySelector(".ava");
+		const username = testimonialsContainer.querySelector(".username");
+		const role = testimonialsContainer.querySelector(".role");
+
+		let idx = 1;
+
 		function updateTestimonial() {
 			let { name, position, photo, text } = testimonials[idx];
 
