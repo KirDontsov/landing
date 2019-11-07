@@ -4,14 +4,35 @@ import { Helmet } from "react-helmet";
 import { routes } from "./routes";
 
 import NavigationBar from "./components/NavBar";
-// import Burger from "./components/Burger";
+import Burger from "./mob_components/Burger";
 import Footer from "./components/Footer";
 import "./scss/App.scss";
 
 const supportsHistory = "pushState" in window.history;
 
 class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			width: window.innerWidth
+		};
+	}
+
+	componentDidMount() {
+		window.addEventListener("resize", this.handleWindowSizeChange);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.handleWindowSizeChange);
+	}
+
+	handleWindowSizeChange = () => {
+		this.setState({ width: window.innerWidth });
+	};
+
 	render() {
+		const { width } = this.state;
+		const isMobile = width <= 500;
 		const renderSwitch = () => (
 			<Switch>
 				{routes.map((route) => {
@@ -28,22 +49,34 @@ class App extends Component {
 				})}
 			</Switch>
 		);
-		return (
-			<Router forceRefresh={!supportsHistory}>
-				<Fragment>
-					<Helmet>
-						<title>РТИ-Торг</title>
-						<meta name="description" content="РТИ-Торг" />
-					</Helmet>
 
-					<div className="wrapper">
-						<NavigationBar routes={routes.filter((route) => route.isNavBar)} />
-						{renderSwitch()}
-						<Footer routes={routes.filter((route) => route.isFooter)} />
-					</div>
-				</Fragment>
-			</Router>
-		);
+		if (isMobile) {
+			return (
+				<Router forceRefresh={!supportsHistory}>
+					<Fragment>
+						<Burger />
+						<h1>Mobile</h1>
+					</Fragment>
+				</Router>
+			);
+		} else {
+			return (
+				<Router forceRefresh={!supportsHistory}>
+					<Fragment>
+						<Helmet>
+							<title>РТИ-Торг</title>
+							<meta name="description" content="РТИ-Торг" />
+						</Helmet>
+
+						<div className="wrapper">
+							<NavigationBar routes={routes.filter((route) => route.isNavBar)} />
+							{renderSwitch()}
+							<Footer routes={routes.filter((route) => route.isFooter)} />
+						</div>
+					</Fragment>
+				</Router>
+			);
+		}
 	}
 }
 
