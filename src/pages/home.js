@@ -11,7 +11,7 @@ const Home = () => (
 			<div className="heading">
 				<h1 className="title main">Большой выбор по приемлемым ценам</h1>
 			</div>
-			<Slider heading="Example Slider" slides={slideData} />
+			<Slider heading="Slider" slides={slideData} />
 			<Benefits />
 			<Testimonials />
 		</div>

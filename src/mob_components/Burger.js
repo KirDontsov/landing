@@ -1,27 +1,11 @@
-import React, { Component } from "react";
-import { Motion, StaggeredMotion, spring } from "react-motion";
+import React, { Component, Fragment } from "react";
+import { Motion, spring } from "react-motion";
 import { noop } from "lodash";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
 import "../scss/Burger.scss";
 
-/**
- * <Tooltip />
- */
-const Tooltip = (props) => <span className="tooltip">{props.text}</span>;
-
-/**
- * <ButtonGroup />
- */
-const ButtonGroup = (props) => (
-	<div className="button-group" style={props.style}>
-		{props.children}
-	</div>
-);
-
-/**
- * <Button />
- */
 const Button = (props) => (
 	<button
 		className={classNames("button", props.className)}
@@ -33,11 +17,12 @@ const Button = (props) => (
 );
 
 class Burger extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
-			active: false
+			active: false,
+			addClass: false
 		};
 
 		this._onClick = this._onClick.bind(this);
@@ -45,81 +30,58 @@ class Burger extends Component {
 
 	_onClick() {
 		this.setState({
-			active: !this.state.active
+			active: !this.state.active,
+			addClass: !this.state.addClass
 		});
 	}
 
 	render() {
-		const iconArrayOne = [1, 2, 3];
-		const iconArrayTwo = [1, 2, 3].reverse();
+		let buttonClass = ["button--large"];
+		let navClass = ["nav__toggle"];
 
+		if (this.state.addClass) {
+			buttonClass.push("active");
+			navClass.push("active");
+		}
 		return (
-			<div className="container">
-				<ButtonGroup>
-					<Motion
-						defaultStyle={{ s: 0.675 }}
-						style={{
-							s: spring(this.state.active ? 1 : 0.675, { stiffness: 330, damping: 14 })
-						}}
-					>
-						{(interpolatingStyles) => (
+			<Fragment>
+				<Motion
+					defaultStyle={{ s: 0.675 }}
+					style={{
+						s: spring(this.state.active ? 1 : 0.675, { stiffness: 330, damping: 14 })
+					}}
+				>
+					{(interpolatingStyles) => (
+						<Fragment>
+							<div className={navClass.join(" ")}>
+								<div className="container__mob">
+									{this.props.routes.map((route) => (
+										<NavLink
+											className={route.className}
+											exact={route.isExact}
+											activeClassName="active"
+											key={route.path}
+											to={route.path}
+											onClick={this._onClick.bind(this)}
+										>
+											{route.name}
+										</NavLink>
+									))}
+								</div>
+							</div>
 							<Button
-								className="button--large"
-								onClick={this._onClick}
+								className={buttonClass.join(" ")}
+								onClick={this._onClick.bind(this)}
 								style={{
 									transform: "scale(" + interpolatingStyles.s + ")"
 								}}
 							>
 								<span className={this.state.active ? "icon active" : "icon"} />
 							</Button>
-						)}
-					</Motion>
-
-					<StaggeredMotion
-						defaultStyles={[{ x: -45, o: 0 }, { x: -45, o: 0 }, { x: -45, o: 0 }]}
-						styles={(prevInterpolatedStyles) =>
-							prevInterpolatedStyles.map((_, i) => {
-								return i === 0
-									? {
-											x: spring(this.state.active ? 0 : -45, {
-												stiffness: 330,
-												damping: 20
-											}),
-											o: spring(this.state.active ? 1 : 0, { stiffness: 330, damping: 20 })
-									  }
-									: {
-											x: spring(prevInterpolatedStyles[i - 1].x, {
-												stiffness: 330,
-												damping: 20
-											}),
-											o: spring(prevInterpolatedStyles[i - 1].o, {
-												stiffness: 330,
-												damping: 20
-											})
-									  };
-							})
-						}
-					>
-						{(interpolatingStyles) => (
-							<ButtonGroup>
-								{interpolatingStyles.map((style, i) => (
-									<Button
-										key={i}
-										style={{
-											position: "relative",
-											left: style.x,
-											opacity: style.o,
-											pointerEvents: this.state.active ? "auto" : "none"
-										}}
-									>
-										{iconArrayTwo[i]}
-									</Button>
-								))}
-							</ButtonGroup>
-						)}
-					</StaggeredMotion>
-				</ButtonGroup>
-			</div>
+						</Fragment>
+					)}
+				</Motion>
+			</Fragment>
 		);
 	}
 }

@@ -9,7 +9,12 @@ import Cuffs from "./categories/Cuffs";
 import RVD from "./categories/RVD";
 import Belts from "./categories/Belts";
 
+import HomeMob from "./pages_mob/HomeMob";
+import AboutMob from "./pages_mob/AboutMob";
+import ContactsMob from "./pages_mob/ContactsMob";
+
 export const routes = [
+	// --------------------------- isNavBar
 	{
 		id: 1,
 		isNavBar: true,
@@ -56,7 +61,7 @@ export const routes = [
 		component: Contacts
 	},
 
-	// ---------------------------
+	// --------------------------- isFooter
 
 	{
 		id: 6,
@@ -139,6 +144,55 @@ export const routes = [
 		className: "category-link",
 		component: Belts
 	},
+
+	// --------------------------- isMobile
+	{
+		id: 16,
+		isMobile: true,
+		isExact: true,
+		path: "/mob",
+		name: "Рти-Торг",
+		className: "logo",
+		component: HomeMob
+	},
+	{
+		id: 17,
+		isMobile: true,
+		isExact: true,
+		path: "/about-mob",
+		name: "О Нас",
+		className: "nav-link",
+		component: AboutMob
+	},
+	{
+		id: 18,
+		isMobile: true,
+		isExact: true,
+		path: "/delivery-mob",
+		name: "Доставка",
+		className: "nav-link",
+		component: Delivery
+	},
+	{
+		id: 19,
+		isMobile: true,
+		isExact: true,
+		path: "/news-mob",
+		name: "Новости",
+		className: "nav-link",
+		component: News
+	},
+	{
+		id: 20,
+		isMobile: true,
+		isExact: true,
+		path: "/contacts-mob",
+		name: "Контакты",
+		className: "nav-link",
+		component: ContactsMob
+	},
+
+	// --------------------------- 404
 	{
 		id: 15,
 		isExact: true,

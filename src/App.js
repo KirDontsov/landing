@@ -54,8 +54,9 @@ class App extends Component {
 			return (
 				<Router forceRefresh={!supportsHistory}>
 					<Fragment>
-						<Burger />
-						<h1>Mobile</h1>
+						<Burger routes={routes.filter((route) => route.isMobile)} />
+						{/* <h1>Mobile</h1> */}
+						{renderSwitch()}
 					</Fragment>
 				</Router>
 			);
