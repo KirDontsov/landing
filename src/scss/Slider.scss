@@ -104,6 +104,13 @@
 	margin: 0 auto;
 	position: relative;
 	width: var(--slide-size);
+
+	@media (max-width: 768px) {
+		padding: 0;
+		margin: 0 0 100px 0;
+		height: 86vmin;
+		width: 86vmin;
+	}
 }
 
 .slider__wrapper {
@@ -133,6 +140,11 @@
 		transform calc(var(--base-duration) / 2) var(--base-ease);
 	width: var(--slide-size);
 	z-index: 1;
+
+	@media (max-width: 768px) {
+		height: 86vmin;
+		width: 86vmin;
+	}
 
 	&--previous,
 	&--next {
@@ -196,6 +208,7 @@
 	transition: opacity var(--base-duration) var(--base-ease),
 		transform var(--base-duration) var(--base-ease);
 	width: 110%;
+	filter: brightness(70%);
 
 	@media (hover: hover) {
 		.slide--current & {

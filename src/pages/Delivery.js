@@ -12,7 +12,7 @@ const Delivery = () => (
 				<h1 className="title">Hello From Delivery</h1>
 			</div>
 			<div className="container">
-				<p>
+				<p className="text dark">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt
 					mollitia animi consequuntur perferendis, ipsa impedit? Tempore nostrum,
 					voluptate labore laboriosam quam cumque autem, magnam sit, veritatis at

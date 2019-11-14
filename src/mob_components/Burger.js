@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Motion, spring } from "react-motion";
 import { noop } from "lodash";
 import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import "../scss/Burger.scss";
 
@@ -76,8 +76,13 @@ class Burger extends Component {
 									transform: "scale(" + interpolatingStyles.s + ")"
 								}}
 							>
-								<span className={this.state.active ? "icon active" : "icon"} />
+								<span
+									className={this.state.active ? "icon__burger active" : "icon__burger"}
+								/>
 							</Button>
+							<Link className="logo__mob" to="/">
+								РТИ-Торг
+							</Link>
 						</Fragment>
 					)}
 				</Motion>

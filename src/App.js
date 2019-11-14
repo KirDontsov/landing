@@ -32,7 +32,7 @@ class App extends Component {
 
 	render() {
 		const { width } = this.state;
-		const isMobile = width <= 500;
+		const isMobile = width <= 768;
 		const renderSwitch = () => (
 			<Switch>
 				{routes.map((route) => {
@@ -54,9 +54,16 @@ class App extends Component {
 			return (
 				<Router forceRefresh={!supportsHistory}>
 					<Fragment>
-						<Burger routes={routes.filter((route) => route.isMobile)} />
-						{/* <h1>Mobile</h1> */}
-						{renderSwitch()}
+						<Helmet>
+							<title>РТИ-Торг</title>
+							<meta name="description" content="РТИ-Торг" />
+						</Helmet>
+						<div className="wrapper">
+							<Burger routes={routes.filter((route) => route.isMobile)} />
+							{/* <h1>Mobile</h1> */}
+							{renderSwitch()}
+							<Footer routes={routes.filter((route) => route.isFooter)} />
+						</div>
 					</Fragment>
 				</Router>
 			);

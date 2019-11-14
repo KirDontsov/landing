@@ -9,9 +9,8 @@ import Cuffs from "./categories/Cuffs";
 import RVD from "./categories/RVD";
 import Belts from "./categories/Belts";
 
-import HomeMob from "./pages_mob/HomeMob";
 import AboutMob from "./pages_mob/AboutMob";
-import ContactsMob from "./pages_mob/ContactsMob";
+// import ContactsMob from "./pages_mob/ContactsMob";
 
 export const routes = [
 	// --------------------------- isNavBar
@@ -150,10 +149,10 @@ export const routes = [
 		id: 16,
 		isMobile: true,
 		isExact: true,
-		path: "/mob",
-		name: "Рти-Торг",
+		path: "/",
+		name: "РТИ-Торг",
 		className: "logo",
-		component: HomeMob
+		component: Home
 	},
 	{
 		id: 17,
@@ -168,7 +167,7 @@ export const routes = [
 		id: 18,
 		isMobile: true,
 		isExact: true,
-		path: "/delivery-mob",
+		path: "/delivery",
 		name: "Доставка",
 		className: "nav-link",
 		component: Delivery
@@ -177,7 +176,7 @@ export const routes = [
 		id: 19,
 		isMobile: true,
 		isExact: true,
-		path: "/news-mob",
+		path: "/news",
 		name: "Новости",
 		className: "nav-link",
 		component: News
@@ -186,10 +185,10 @@ export const routes = [
 		id: 20,
 		isMobile: true,
 		isExact: true,
-		path: "/contacts-mob",
+		path: "/contacts",
 		name: "Контакты",
 		className: "nav-link",
-		component: ContactsMob
+		component: Contacts
 	},
 
 	// --------------------------- 404

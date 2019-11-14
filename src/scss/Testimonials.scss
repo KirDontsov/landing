@@ -8,11 +8,14 @@
 
 .svg-inline--fa.fa-quote-right,
 .svg-inline--fa.fa-quote-left {
-	color: rgba(255, 255, 255, 0.3);
+	color: rgba(255, 255, 255, 0.8);
 	font-size: 28px;
 	position: absolute;
 	top: 40%;
 	transform: translateY(-50%);
+	@media (max-width: 768px) {
+		display: none;
+	}
 }
 .fa-quote-right {
 	left: 40px;
