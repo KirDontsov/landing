@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Slider from "../components/Slider";
+import Quiz from "../components/Quiz";
 import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
 
@@ -12,6 +13,7 @@ const Home = () => (
 				<h1 className="title main">Большой выбор по приемлемым ценам</h1>
 			</div>
 			<Slider heading="Slider" slides={slideData} />
+			<Quiz />
 			<Benefits />
 			<Testimonials />
 		</div>

@@ -70,36 +70,36 @@
 			(function() {
 				delete Hammer.defaults.cssProps.userSelect;
 
-				var myElement = document.getElementById("body");
-				var mc = new Hammer(myElement);
-				mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-				var navigateMobUp = () => {
-					$(".nav-wrapper")
-						.addClass("invisibleNav")
-						.removeClass("visibleNav");
-				};
-				var navigateMobDown = () => {
-					$(".nav-wrapper")
-						.addClass("visibleNav")
-						.removeClass("invisibleNav");
-				};
-				mc.on("panup", navigateMobUp);
-				mc.on("pandown", navigateMobDown);
-				$("#body").bind("mousewheel", "touchmove", function(event) {
-					if (event.originalEvent.wheelDelta >= 0) {
-						$(".nav-wrapper")
-							.addClass("visibleNav")
-							.removeClass("invisibleNav");
-					} else {
-						$(".nav-wrapper")
-							.addClass("invisibleNav")
-							.removeClass("visibleNav");
-					}
-				});
 				let windowWidth = screen.width;
 				if (windowWidth <= 900) {
 					return null;
 				} else {
+					var myElement = document.getElementById("body");
+					var mc = new Hammer(myElement);
+					mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+					var navigateMobUp = () => {
+						$(".nav-wrapper")
+							.addClass("invisibleNav")
+							.removeClass("visibleNav");
+					};
+					var navigateMobDown = () => {
+						$(".nav-wrapper")
+							.addClass("visibleNav")
+							.removeClass("invisibleNav");
+					};
+					mc.on("panup", navigateMobUp);
+					mc.on("pandown", navigateMobDown);
+					$("#body").bind("mousewheel", "touchmove", function(event) {
+						if (event.originalEvent.wheelDelta >= 0) {
+							$(".nav-wrapper")
+								.addClass("visibleNav")
+								.removeClass("invisibleNav");
+						} else {
+							$(".nav-wrapper")
+								.addClass("invisibleNav")
+								.removeClass("visibleNav");
+						}
+					});
 				}
 			})();
 		</script>
