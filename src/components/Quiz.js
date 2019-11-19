@@ -1,95 +1,80 @@
-import React, { Component, Fragment } from "react";
-// import { connect } from "react-redux";
-// import { bindActionCreators } from "redux";
-// import * as quizActions from "../actions/quiz";
-import { quizData } from "../quizData";
-// import axios from "axios";
-// import _ from "lodash";
+import React, { Component } from "react";
+import FormUserDetails from "./FormUserDetails";
+import FormPersonalDetails from "./FormPersonalDetails";
+import Confirm from "./Confirm";
+import Success from "./Success";
+// import { quizData } from "../quizData";
 import "../scss/Quiz.scss";
 
-class Quiz extends Component {
+export class Quiz extends Component {
   constructor() {
     super();
 
     this.state = {
-      userUnswer: null,
-      currentQuestion: 0,
-      options: []
+      step: 1,
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      city: "",
+      item: "",
     };
   }
 
-  loadQuiz() {
-    const { currentQuestion } = this.state;
-    this.setState(() => {
-      return {
-        questions: quizData[currentQuestion].question,
-        options: quizData[currentQuestion].options,
-        answers: quizData[currentQuestion].answer
-      };
-    });
-  }
-
-  nextQuestionHandler = () => {
+  nextStep = () => {
+    const { step } = this.state;
     this.setState({
-      currentQuestion: this.state.currentQuestion + 1
+      step: step + 1
     });
-    console.log(this.state.currentQuestion);
   };
 
-  componentDidMount() {
-    this.loadQuiz();
-  }
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1
+    });
+  };
 
-  componentDidUpdate(prevProps, prevState) {
-    const { currentQuestion } = this.state;
-    if (this.state.currentQuestion !== prevState.currentQuestion) {
-      this.setState(() => {
-        return {
-          questions: quizData[currentQuestion].question,
-          options: quizData[currentQuestion].options,
-          answers: quizData[currentQuestion].answer
-        };
-      });
-    }
-  }
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
+  };
 
   render() {
-    const { questions, options, currentQuestion, userAnswer } = this.state;
-    return (
-      <Fragment>
-        <div className="quiz__card">
-          <h2 className="title dark">{questions}</h2>
-          <span>{`Вопрос ${currentQuestion} из ${quizData.length - 1}`}</span>
-          <div className="options__group">
-            {options.map((option, i) => (
-              <div
-                key={i}
-                className={`option btn ${
-                  userAnswer === option ? "selected" : null
-                }`}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
+    const { step } = this.state;
+    const { firstName, lastName, email, phone, city, item } = this.state;
+    const values = { firstName, lastName, email, phone, city, item };
 
-          <div className="main btn" onClick={this.nextQuestionHandler}>
-            Следующий вопрос
-          </div>
-        </div>
-      </Fragment>
-    );
+    // eslint-disable-next-line default-case
+    switch (step) {
+      case 1:
+        return (
+          <FormUserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 2:
+        return (
+          <FormPersonalDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+      case 4:
+        return <Success />;
+    }
   }
 }
 
-// const mapStateToProps = ({ quiz }) => ({
-//   quiz: quiz.questions,
-//   isReady: quiz.isReady
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   ...bindActionCreators(quizActions, dispatch)
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Quiz);
 export default Quiz;
