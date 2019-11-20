@@ -11,6 +11,7 @@
     $message .= "Телефон: " . $_POST['phone'] . "<br/>";
     $message .= "Город: " . $_POST['city'] . "<br/>";
     $message .= "Наименование товара: " . $_POST['item'] . "<br/>";
+    $message .= "Выбрано: " . $_POST['selectedOption'] . "<br/>";
     
     send_mail($message); 
      

@@ -7,9 +7,6 @@
   align-content: stretch;
   margin: 100px auto;
   max-width: 700px;
-  & img {
-    width: 40px;
-  }
 }
 
 .next.btn {
@@ -26,6 +23,9 @@
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
       box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
       border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
@@ -50,4 +50,30 @@ input {
   justify-content: space-between;
   align-items: flex-end;
   align-content: stretch;
+  & label {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+.errorMessage {
+  color: red;
+}
+
+.radio {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 0 0 20px 0;
+}
+
+input[type="radio"]:checked ~ .radio {
+  border: 2px solid #fcb97d;
+}
+
+input[type="radio"] {
+  display: none;
+  position: relative;
 }

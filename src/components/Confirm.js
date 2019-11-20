@@ -6,7 +6,7 @@ export class Confirm extends Component {
   continue = e => {
     e.preventDefault();
 
-    // PROCESS FORM //
+    // Send FORM //
     let formData = this.props.values;
     console.log(formData);
     fetch("mail.php", {
@@ -18,7 +18,8 @@ export class Confirm extends Component {
         email: formData.email,
         phone: formData.phone,
         city: formData.city,
-        item: formData.item
+        item: formData.item,
+        selectedOption: formData.selectedOption
       }),
       headers: new Headers({
         "Content-Type": "application/json"
@@ -39,12 +40,13 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, email, phone, city, item }
+      values: { firstName, lastName, email, phone, city, item, selectedOption }
     } = this.props;
 
     return (
       <Fragment>
         <div className="quiz">
+          <h2 className="dark">Проверьте правильность заполнения данных</h2>
           <List>
             <ListItem>
               <ListItemText primary="Имя" secondary={firstName} />
@@ -63,6 +65,9 @@ export class Confirm extends Component {
             </ListItem>
             <ListItem>
               <ListItemText primary="Наименование товара" secondary={item} />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Выбрано" secondary={selectedOption} />
             </ListItem>
           </List>
           <br />

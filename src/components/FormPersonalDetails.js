@@ -14,7 +14,7 @@ class FormPersonalDetails extends Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange, disabled } = this.props;
     return (
       <Fragment>
         <div className="quiz">
@@ -25,14 +25,26 @@ class FormPersonalDetails extends Component {
             defaultValue={values.phone}
             margin="normal"
             fullWidth={true}
+            required
           />
+          {values.phone.length < 11 && values.phone.length !== 0 && (
+            <span className="errorMessage">
+              Введен некорректный номер телефона
+            </span>
+          )}
           <TextField
             label="Email"
             onChange={handleChange("email")}
             defaultValue={values.email}
             margin="normal"
             fullWidth={true}
+            required
           />
+          {values.email.length !== 0 && !values.email.includes("@") && (
+            <span className="errorMessage">
+              Введен некорректный адрес почты
+            </span>
+          )}
           <br />
           <TextField
             label="Город"
@@ -40,7 +52,13 @@ class FormPersonalDetails extends Component {
             defaultValue={values.city}
             margin="normal"
             fullWidth={true}
+            required
           />
+          {values.city.length < 3 && values.city.length !== 0 && (
+            <span className="errorMessage">
+              Название города должно быть больше 3 символов
+            </span>
+          )}
           <br />
           <TextField
             label="Наименование товара"
@@ -48,7 +66,13 @@ class FormPersonalDetails extends Component {
             defaultValue={values.item}
             margin="normal"
             fullWidth={true}
+            required
           />
+          {values.item.length < 3 && values.item.length !== 0 && (
+            <span className="errorMessage">
+              Наименование товара должно быть больше 3 символов
+            </span>
+          )}
           <br />
           <div className="btn__container">
             <Button
@@ -62,6 +86,7 @@ class FormPersonalDetails extends Component {
               variant="contained"
               onClick={this.continue}
               className="next btn"
+              disabled={disabled}
             >
               Продолжить
             </Button>
