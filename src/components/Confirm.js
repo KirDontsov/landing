@@ -47,6 +47,7 @@ export class Confirm extends Component {
       <Fragment>
         <div className="quiz">
           <h2 className="dark">Проверьте правильность заполнения данных</h2>
+          <div className="quiz__box">
           <List>
             <ListItem>
               <ListItemText primary="Имя" secondary={firstName} />
@@ -70,7 +71,7 @@ export class Confirm extends Component {
               <ListItemText primary="Выбрано" secondary={selectedOption} />
             </ListItem>
           </List>
-          <br />
+          </div>
           <div className="btn__container">
             <Button
               variant="contained"

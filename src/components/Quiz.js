@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
+import Welcome from "./Welcome";
+import Contacts from "./Contacts";
 import Confirm from "./Confirm";
 import Success from "./Success";
 // import { quizData } from "../quizData";
@@ -11,7 +13,7 @@ export class Quiz extends Component {
     super();
 
     this.state = {
-      step: 1,
+      step: 0,
       firstName: "",
       lastName: "",
       email: "",
@@ -46,10 +48,9 @@ export class Quiz extends Component {
     // eslint-disable-next-line default-case
     switch (this.state.step) {
       case 1:
-        if (this.state.firstName && this.state.lastName !== "") {
+        if (this.state.selectedOption !== 0) {
           this.setState({ disabled: false });
         }
-
         break;
       case 2:
         if (
@@ -61,6 +62,13 @@ export class Quiz extends Component {
         ) {
           this.setState({ disabled: false });
         }
+        break;
+
+      case 3:
+        if (this.state.firstName && this.state.lastName !== "") {
+          this.setState({ disabled: false });
+        }
+
         break;
       default:
         break;
@@ -91,6 +99,15 @@ export class Quiz extends Component {
 
     // eslint-disable-next-line default-case
     switch (step) {
+      case 0:
+        return (
+          <Welcome
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+            disabled={disabled}
+          />
+        );
       case 1:
         return (
           <FormUserDetails
@@ -112,6 +129,16 @@ export class Quiz extends Component {
         );
       case 3:
         return (
+          <Contacts
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+            disabled={disabled}
+          />
+        );
+      case 4:
+        return (
           <Confirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -119,7 +146,7 @@ export class Quiz extends Component {
             disabled={disabled}
           />
         );
-      case 4:
+      case 5:
         return <Success />;
     }
   }
