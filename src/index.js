@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import { Provider } from "react-redux";
+
+import { init } from '@rematch/core'
+import * as models from './models'
 
 import App from "./App";
 
-import createStore from "./store";
-const store = createStore();
+const store = init({
+  models,
+})
 
 ReactDOM.render(
   <Provider store={store}>

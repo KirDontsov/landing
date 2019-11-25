@@ -7,6 +7,7 @@ import { routes } from "./routes";
 import NavigationBar from "./components/NavBar";
 import Burger from "./mob_components/Burger";
 import Footer from "./components/Footer";
+import Shutter from "./mob_components/Shutter";
 import "./scss/App.scss";
 
 const supportsHistory = "pushState" in window.history;
@@ -21,7 +22,6 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleWindowSizeChange);
-
   }
 
   componentWillUnmount() {
@@ -35,6 +35,7 @@ class App extends Component {
   render() {
     const { width } = this.state;
     const isMobile = width <= 768;
+
     const renderSwitch = () => (
       <Switch>
         {routes.map(route => {
@@ -79,6 +80,7 @@ class App extends Component {
             </Helmet>
 
             <div className="wrapper">
+              <Shutter />
               <NavigationBar routes={routes.filter(route => route.isNavBar)} />
               {renderSwitch()}
               <Footer routes={routes.filter(route => route.isFooter)} />

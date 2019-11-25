@@ -1,23 +1,48 @@
-import React, { Fragment } from "react";
+import React, { Component } from "react";
+import Fade from "react-reveal/Fade";
 import Slider from "../components/Slider";
 import Quiz from "../components/Quiz";
 import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
+import { connect } from "react-redux";
 
 import slideData from "../categories/Categories";
 
-const Home = () => (
-	<Fragment>
-		<div className="container__margin">
-			<div className="heading">
-				<h1 className="title main">Большой выбор по приемлемым ценам</h1>
-			</div>
-			<Slider heading="Slider" slides={slideData} />
-			<Quiz />
-			<Benefits />
-			<Testimonials />
-		</div>
-	</Fragment>
-);
+class Home extends Component {
+  componentDidMount() {
+    this.props.slide(true);
+  }
+  render() {
+    return (
+      <div className="container__margin">
+        <Fade bottom delay={700}>
+          <div className="heading">
+            <h1 className="title main">Большой выбор по приемлемым ценам</h1>
+          </div>
+        </Fade>
+        <Fade bottom delay={700}>
+          <Slider heading="Slider" slides={slideData} />
+        </Fade>
+        <Fade bottom delay={700}>
+          <Quiz />
+        </Fade>
 
-export default Home;
+        <Benefits />
+
+        <Fade bottom delay={700}>
+          <Testimonials />
+        </Fade>
+      </div>
+    );
+  }
+}
+
+const mapState = state => ({
+  addClass: state.shutter.addClass
+});
+
+const mapDispatch = ({ shutter: { slide } }) => ({
+  slide
+});
+
+export default connect(mapState, mapDispatch)(Home);

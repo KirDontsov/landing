@@ -1,11 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
+import Fade from "react-reveal/Fade";
 import MyMap from "../components/Map";
 import { YMaps } from "react-yandex-maps";
 import "../scss/Contacts.scss";
 
 const Contacts = () => (
-  <Fragment>
+  <Fade bottom delay={700}>
     <Helmet>
       <title>Контакты</title>
       <meta name="description" content="Контакты" />
@@ -32,7 +33,7 @@ const Contacts = () => (
         </YMaps>
       </div>
     </div>
-  </Fragment>
+  </Fade>
 );
 
 export default Contacts;

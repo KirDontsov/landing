@@ -1,0 +1,30 @@
+.shutter.active {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+
+  display: block;
+  content: "";
+
+  background: #000;
+  animation: appearing 1s ease;
+}
+
+@keyframes appearing {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
