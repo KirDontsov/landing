@@ -15,7 +15,7 @@ class FormUserDetails extends Component {
         <div className="quiz">
           <h2 className="dark">Выберите какой тип рукава Вы используете?</h2>
           <div className="quiz__box">
-            <div className="btn__container">
+            <div className="btn__container question">
               {items.map((item, i) => (
                 <label key={i}>
                   <input

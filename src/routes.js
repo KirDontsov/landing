@@ -4,10 +4,13 @@ import Delivery from "./pages/Delivery";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Err from "./pages/Err";
-import ORings from "./categories/ORings";
-import Cuffs from "./categories/Cuffs";
-import RVD from "./categories/RVD";
-import Belts from "./categories/Belts";
+import Gasoline from "./categories/Gasoline";
+import HotWater from "./categories/HotWater";
+import TehWater from "./categories/TehWater";
+import Gas from "./categories/Gas";
+import Fume from "./categories/Fume";
+import Food from "./categories/Food";
+import Abrasive from "./categories/Abrasive";
 
 // import AboutMob from "./pages_mob/AboutMob";
 // import ContactsMob from "./pages_mob/ContactsMob";
@@ -111,89 +114,72 @@ export const routes = [
     id: 11,
     isFooter: true,
     isExact: true,
-    path: "/o-rings",
-    name: "Уплотнительные кольца",
+    path: "/gasoline",
+    name: "Для бензина и минеральных масел",
     className: "category-link",
-    component: ORings
+    component: Gasoline
   },
   {
     id: 12,
     isFooter: true,
     isExact: true,
-    path: "/cuffs",
-    name: "Гидравлические манжеты",
+    path: "/hot-water",
+    name: "Для горячей воды",
     className: "category-link",
-    component: Cuffs
+    component: HotWater
   },
   {
     id: 13,
     isFooter: true,
     isExact: true,
-    path: "/rvd",
-    name: "Рукава высокого давления",
+    path: "/teh-water",
+    name: "Для технической воды",
     className: "category-link",
-    component: RVD
+    component: TehWater
   },
   {
     id: 14,
     isFooter: true,
     isExact: true,
-    path: "/belts",
-    name: "Конвейерные ленты",
+    path: "/gas",
+    name: "Для газа",
     className: "category-link",
-    component: Belts
+    component: Gas
   },
-
-  // --------------------------- isMobile
+  {
+    id: 15,
+    isFooter: true,
+    isExact: true,
+    path: "/fume",
+    name: "Для пара",
+    className: "category-link",
+    component: Fume
+  },
   {
     id: 16,
-    isMobile: true,
+    isFooter: true,
     isExact: true,
-    path: "/",
-    name: "РТИ-Торг",
-    className: "logo",
-    component: Home
+    path: "/food",
+    name: "Для пищевых продуктов",
+    className: "category-link",
+    component: Food
   },
   {
     id: 17,
-    isMobile: true,
+    isFooter: true,
     isExact: true,
-    path: "/about",
-    name: "О Нас",
-    className: "nav-link",
-    component: About
+    path: "/abrasive",
+    name: "Для абразива",
+    className: "category-link",
+    component: Abrasive
   },
-  {
-    id: 18,
-    isMobile: true,
-    isExact: true,
-    path: "/delivery",
-    name: "Доставка",
-    className: "nav-link",
-    component: Delivery
-  },
-  {
-    id: 19,
-    isMobile: true,
-    isExact: true,
-    path: "/news",
-    name: "Новости",
-    className: "nav-link",
-    component: News
-  },
-  {
-    id: 20,
-    isMobile: true,
-    isExact: true,
-    path: "/contacts",
-    name: "Контакты",
-    className: "nav-link",
-    component: Contacts
-  },
+
+
+  // --------------------------- isMobile
 
   // --------------------------- 404
   {
-    id: 15,
+    id: 18,
     isExact: true,
     component: Err,
     status: 404

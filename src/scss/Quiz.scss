@@ -1,6 +1,7 @@
 .quiz {
   margin: 100px auto;
   max-width: 700px;
+  height: auto;
 }
 
 .next.btn {
@@ -52,15 +53,27 @@ input {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   align-content: stretch;
   & label {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    @media (max-width: 768px) {
+      margin: auto;
+      justify-content: center;
+    }
   }
   &.align-center {
     justify-content: center;
+  }
+  &.question {
+    @media (max-width: 768px) {
+      padding: 0;
+      margin: auto;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
 
@@ -74,6 +87,10 @@ input {
   overflow: hidden;
   object-fit: cover;
   margin: 0 0 20px 0;
+  @media (max-width: 768px) {
+    margin: auto;
+    justify-content: center;
+  }
 }
 
 input[type="radio"]:checked ~ .radio {

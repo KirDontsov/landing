@@ -1,32 +1,58 @@
 export default [
   {
     index: 0,
-    headline: "Уплотнительные кольца",
-    button: "Подробнее",
-    link: "/o-rings",
-    src:
-      "https://ae01.alicdn.com/kf/HTB1sYL.KwHqK1RjSZFPq6AwapXa0/20-50-M5-M80.jpg"
+    headline: "Для бензина и минеральных масел",
+    link: "/gasoline",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_mineralm_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
   {
     index: 1,
-    headline: "Манжеты гидравлические",
-    button: "Подробнее",
-    link: "/cuffs",
-    src:
-      "https://mirrti.ru/assets/components/phpthumbof/cache/rti-izdeliya36.a87f4cf9306bc1933a3398b0de0c6e7368.jpg"
+    headline: "Для технической воды",
+    link: "/teh-water",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pvodi_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
   {
     index: 2,
-    headline: "Рукава высокого давления",
-    button: "Подробнее",
-    link: "/rvd",
-    src: "https://www.png-s.ru/d/rvd_4.jpg"
+    headline: "Для горячей воды",
+    link: "	/hot-water",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gorvodi_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
   {
     index: 3,
-    headline: "Конвеерная лента",
-    button: "Подробнее",
-    link: "/belts",
-    src: "https://sekon.ru/files/images/unnamed-file-11.jpg"
+    headline: "Для газа",
+    link: "/gas",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gaza_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
+  },
+  {
+    index: 4,
+    headline: "Для пара",
+    link: "/fume",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_para_t1.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
+  },
+  {
+    index: 5,
+    headline: "Для пищевых продуктов",
+    link: "/food",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pp_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
+  },
+  {
+    index: 6,
+    headline: "Для абразива",
+    link: "/abrasive",
+    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_abr_t.jpg",
+    desc:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   }
 ];

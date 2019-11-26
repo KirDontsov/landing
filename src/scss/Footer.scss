@@ -24,10 +24,10 @@
     }
 
     .col {
-      width: calc(30% / 2);
-      padding: 50px;
+      width: calc(40% / 2);
+      // padding: 50px 10px 50px 50px;
       &:nth-child(1) {
-        padding: 50px 10px 50px 50px;
+        // padding: 50px 10px 50px 50px;
         @media (max-width: 768px) {
           width: 100%;
           padding: 0;
