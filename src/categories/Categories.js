@@ -18,7 +18,7 @@ export default [
   {
     index: 2,
     headline: "Для горячей воды",
-    link: "	/hot-water",
+    link: "/hot-water",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gorvodi_t.jpg",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
