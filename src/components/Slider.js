@@ -11,6 +11,7 @@ class Slide extends Component {
     this.imageLoaded = this.imageLoaded.bind(this);
     this.slide = React.createRef();
   }
+
   handleMouseMove(e) {
     const el = this.slide.current;
     const r = el.getBoundingClientRect();
@@ -53,7 +54,11 @@ class Slide extends Component {
         <div className="slide__content">
           <h2 className="slide__headline">{headline}</h2>
           {/* Router Link */}
-          <Link key={index} to={link} className="slide__action btn">
+          <Link
+            key={index}
+            to={link}
+            className="slide__action btn"
+          >
             Подробнее
           </Link>
         </div>

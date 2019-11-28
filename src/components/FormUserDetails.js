@@ -6,7 +6,13 @@ class FormUserDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
+    this.scrollToTop();
   };
+
+  scrollToTop() {
+    let div = document.querySelector(".wrapper");
+    div.scrollTop = 600;
+  }
 
   render() {
     const { values, handleChange, disabled } = this.props;
@@ -31,7 +37,7 @@ class FormUserDetails extends Component {
             </div>
           </div>
 
-          <div className="btn__container">
+          <div className="btn__container align-center">
             <Button
               variant="contained"
               onClick={this.continue}

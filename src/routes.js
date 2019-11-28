@@ -63,6 +63,53 @@ export const routes = [
     component: Contacts
   },
 
+  // --------------------------- isMobile
+  {
+    id: 1,
+    isMobile: true,
+    isExact: true,
+    path: "/",
+    name: "Рти-Торг",
+    className: "logo",
+    component: Home
+  },
+  {
+    id: 2,
+    isMobile: true,
+    isExact: true,
+    path: "/about",
+    name: "О Нас",
+    className: "nav-link",
+    component: About
+  },
+  {
+    id: 3,
+    isMobile: true,
+    isExact: true,
+    path: "/delivery",
+    name: "Доставка",
+    className: "nav-link",
+    component: Delivery
+  },
+  {
+    id: 4,
+    isMobile: true,
+    isExact: true,
+    path: "/news",
+    name: "Новости",
+    className: "nav-link",
+    component: News
+  },
+  {
+    id: 5,
+    isMobile: true,
+    isExact: true,
+    path: "/contacts",
+    name: "Контакты",
+    className: "nav-link",
+    component: Contacts
+  },
+
   // --------------------------- isFooter
 
   {
@@ -173,7 +220,6 @@ export const routes = [
     className: "category-link",
     component: Abrasive
   },
-
 
   // --------------------------- isMobile
 
