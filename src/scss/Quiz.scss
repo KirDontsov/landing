@@ -1,6 +1,13 @@
+.quiz__section {
+  background: var(--purple);
+  padding: 100px;
+  height: 100vh;
+  color: var(--white);
+}
+
 .quiz {
   margin: 100px auto;
-  max-width: 700px;
+  max-width: 900px;
   height: auto;
 }
 
@@ -10,6 +17,7 @@
   background: var(--red);
   border-radius: 0 !important;
   border: 1px solid var(--red);
+  font-family: "Montserrat", sans-serif !important;
   &.selected {
     background: linear-gradient(to right, #74ebd5, var(--red));
   }
@@ -27,14 +35,6 @@
   &:focus {
     outline: none;
   }
-}
-
-.MuiButton-label {
-  color: #fff;
-}
-
-.MuiInput-underline:after {
-  border-bottom: 1px solid var(--red) !important;
 }
 
 button:disabled,
@@ -110,50 +110,30 @@ input[type="radio"] {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-
-  max-width: 700px;
   .icon__li {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     align-content: stretch;
 
     .col {
-      width: 100%;
-      margin-left: 50px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: center;
 
-      ul {
-        li {
-          list-style-type: none;
-          position: relative;
-          line-height: 50px;
-          &::before {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            content: "";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: -60px;
-          }
-          &:nth-child(1)::before {
-            background: url("../images/sheeping.png") 50% 50% / contain
-              no-repeat;
-          }
-          &:nth-child(2)::before {
-            background: url("../images/plant.png") 50% 50% / contain no-repeat;
-          }
-          &:nth-child(3)::before {
-            background: url("../images/work.png") 50% 50% / contain no-repeat;
-          }
-          &:nth-child(4)::before {
-            background: url("../images/warehouse.png") 50% 50% / contain
-              no-repeat;
-          }
-        }
+      .icon {
+        margin: 30px;
+        background: var(--red);
+        border-radius: 24px;
+        width: 86px;
+        height: 86px;
+        padding: 12px;
       }
     }
   }
@@ -161,4 +141,33 @@ input[type="radio"] {
 
 .red {
   color: var(--red);
+}
+
+.white {
+  color: var(--white);
+}
+
+// ------- Mui -----------------
+.MuiButton-label {
+  color: #fff;
+}
+
+.MuiInput-underline:after {
+  border-bottom: 1px solid var(--red) !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid var(--white) !important;
+}
+
+.MuiInputBase-root {
+  color: var(--white) !important;
+}
+
+.MuiFormLabel-root {
+  color: var(--white) !important;
+}
+
+.MuiTypography-colorTextSecondary {
+  color: var(--white) !important;
 }

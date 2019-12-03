@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import SearchInput, { createFilter } from "react-search-input";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import slideData from "../categories/Categories";
 import "../scss/Search.scss";
@@ -14,6 +16,11 @@ class Search extends Component {
       searchTerm: "",
       addClass: false
     };
+    this.searchUpdated = this.searchUpdated.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.slide(true);
   }
 
   toggle() {
@@ -33,6 +40,7 @@ class Search extends Component {
 
     return (
       <div className={boxClass.join(" ")} onClick={this.toggle.bind(this)}>
+        <FontAwesomeIcon icon={faSearch} className="icon__serch" />
         {this.state.addClass ? (
           <Fragment>
             <SearchInput
@@ -40,6 +48,7 @@ class Search extends Component {
               onChange={this.searchUpdated}
               placeholder="Поиск"
             />
+
             <div className="filter_slides">
               {filteredSlides.map(slide => {
                 return (

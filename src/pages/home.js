@@ -14,22 +14,26 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="container__margin">
+      <div className="container__margin home">
         <Fade bottom delay={700}>
           <div className="heading">
-            <h1 className="title main">Большой выбор по приемлемым ценам</h1>
+            <div className="hero__banner">
+              <h1 className="title main">
+                Большой выбор рукавов по приемлемым ценам
+              </h1>
+            </div>
           </div>
         </Fade>
-        <Fade bottom delay={700}>
+        <Fade bottom delay={500}>
           <Slider heading="Slider" slides={slideData} />
         </Fade>
-        <Fade bottom delay={700}>
+        <Fade bottom delay={500}>
           <Quiz />
         </Fade>
 
         <Benefits />
 
-        <Fade bottom delay={700}>
+        <Fade bottom delay={500}>
           <Testimonials />
         </Fade>
       </div>

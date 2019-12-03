@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
@@ -16,9 +16,9 @@ class FormPersonalDetails extends Component {
   render() {
     const { values, handleChange, disabled } = this.props;
     return (
-      <Fragment>
+      <div className="quiz__section">
         <div className="quiz">
-          <h2 className="dark">Данные для связи</h2>
+          <h2>Данные для связи</h2>
           <div className="quiz__box">
             <TextField
               label="Телефон"
@@ -94,7 +94,7 @@ class FormPersonalDetails extends Component {
             </Button>
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
 
@@ -44,33 +44,33 @@ export class Confirm extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <div className="quiz__section">
         <div className="quiz">
-          <h2 className="dark">Проверьте правильность заполнения данных</h2>
+          <h2>Проверьте правильность заполнения данных</h2>
           <div className="quiz__box">
-          <List>
-            <ListItem>
-              <ListItemText primary="Имя" secondary={firstName} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Фамилия" secondary={lastName} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Email" secondary={email} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Телефон" secondary={phone} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Город" secondary={city} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Наименование товара" secondary={item} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Выбрано" secondary={selectedOption} />
-            </ListItem>
-          </List>
+            <List>
+              <ListItem>
+                <ListItemText primary="Имя" secondary={firstName} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Фамилия" secondary={lastName} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Email" secondary={email} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Телефон" secondary={phone} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Город" secondary={city} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Наименование товара" secondary={item} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Выбрано" secondary={selectedOption} />
+              </ListItem>
+            </List>
           </div>
           <div className="btn__container">
             <Button
@@ -91,7 +91,7 @@ export class Confirm extends Component {
             </Button>
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

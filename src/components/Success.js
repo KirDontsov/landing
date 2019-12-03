@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const Success = () => {
   return (
-    <Fragment>
+    <div className="quiz__section">
       <div className="quiz">
-        <h1>Спасибо за заявку!</h1>
+        <h2>Спасибо за заявку!</h2>
         <p>Ваша заявка отправлена и скоро наши сотрудники свяжутся с Вами</p>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

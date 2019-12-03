@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import Search from "./Search";
+import CallBack from "./CallBack";
 import "../scss/Nav.scss";
+import { routes } from "../routes";
 
 class NavigationBar extends Component {
-  handleClick(event) {
+  handleClick(e) {
     this.props.slide(true);
   }
 
@@ -15,9 +17,11 @@ class NavigationBar extends Component {
       <div className="nav-wrapper">
         <div className="center">
           <div className="nav__top">
+            <Search />
             <div className="left__text">
               <p>Время работы: с 8:00 до 16:00</p>
             </div>
+
             <div className="right__text">
               <a href="tel:84956401225" className="phone">
                 +7 (495) 640 12 25
@@ -26,9 +30,9 @@ class NavigationBar extends Component {
             </div>
           </div>
         </div>
-        <div className="center">
-          <nav>
-            {this.props.routes.map(route => (
+        <div className="center nav__bot">
+          {this.props.routes.map(route =>
+            route.id === 1 ? (
               <NavLink
                 className={route.className}
                 exact={route.isExact}
@@ -39,9 +43,25 @@ class NavigationBar extends Component {
               >
                 {route.name}
               </NavLink>
-            ))}
+            ) : null
+          )}
+          <nav>
+            {this.props.routes.map(route =>
+              route.id > 1 ? (
+                <NavLink
+                  className={route.className}
+                  exact={route.isExact}
+                  activeClassName="active"
+                  key={route.path}
+                  to={route.path}
+                  onClick={e => this.handleClick(e)}
+                >
+                  {route.name}
+                </NavLink>
+              ) : null
+            )}
           </nav>
-          <Search />
+          <CallBack routes={routes.filter(route => route.isMobile)} />
         </div>
       </div>
     );
