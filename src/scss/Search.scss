@@ -10,8 +10,8 @@
     transform: translate(-50%, -50%);
     width: 120%;
     padding: 200px 200px 50px;
-    background: var(--gray);
-    z-index: 2;
+    background: var(--white);
+    z-index: 5;
   }
 }
 
@@ -63,7 +63,7 @@
 
 .box.active > .icon__serch {
   top: 49%;
-  left: 11%;
+  left: 11.5%;
 }
 
 .filter_slides {

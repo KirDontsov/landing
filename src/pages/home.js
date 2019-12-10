@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-import Slider from "../components/Slider";
+// import Slider from "../components/Slider";
 import Quiz from "../components/Quiz";
 import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
+import Categories from "../components/Categories";
 import { connect } from "react-redux";
 
 import slideData from "../categories/Categories";
@@ -25,7 +26,8 @@ class Home extends Component {
           </div>
         </Fade>
         <Fade bottom delay={500}>
-          <Slider heading="Slider" slides={slideData} />
+          {/* <Slider heading="Slider" slides={slideData} /> */}
+          <Categories heading="Slider" categories={slideData} />
         </Fade>
         <Fade bottom delay={500}>
           <Quiz />
