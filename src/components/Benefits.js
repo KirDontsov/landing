@@ -8,8 +8,8 @@ const NavigationBar = () => (
   <Fragment>
     <div className="container__margin benefits">
       <div className="center col">
-        <Fade bottom cascade>
-          <div className="benefits">
+        <div className="benefits">
+          <Fade left delay={300}>
             <div className="col main">
               <div className="col">
                 <FontAwesomeIcon icon={faBullseye} className="icon" />
@@ -24,6 +24,8 @@ const NavigationBar = () => (
                 </p>
               </div>
             </div>
+          </Fade>
+          <Fade right delay={500}>
             <div className="col main">
               <div className="col">
                 <FontAwesomeIcon icon={faBullseye} className="icon" />
@@ -36,8 +38,10 @@ const NavigationBar = () => (
                 </p>
               </div>
             </div>
-          </div>
-          <div className="benefits">
+          </Fade>
+        </div>
+        <div className="benefits">
+          <Fade left delay={700}>
             <div className="col main">
               <div className="col">
                 <FontAwesomeIcon icon={faBullseye} className="icon" />
@@ -50,6 +54,8 @@ const NavigationBar = () => (
                 </p>
               </div>
             </div>
+          </Fade>
+          <Fade right delay={900}>
             <div className="col main">
               <div className="col">
                 <FontAwesomeIcon icon={faBullseye} className="icon" />
@@ -59,8 +65,8 @@ const NavigationBar = () => (
                 <p className="text dark">По всей России.</p>
               </div>
             </div>
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </div>
     </div>
   </Fragment>

@@ -1,27 +1,27 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 
 const Delivery = () => (
-  <Fade bottom delay={700}>
+  <Fragment>
     <Helmet>
       <title>Доставка</title>
       <meta name="description" content="Доставка" />
     </Helmet>
     <div className="container__margin">
-      <div className="heading">
+      <Fade bottom delay={700} className="heading">
         <h1 className="title">Hello From Delivery</h1>
-      </div>
+      </Fade>
       <div className="container">
-        <p className="text dark">
+        <Fade bottom delay={900} className="text dark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse deserunt
           mollitia animi consequuntur perferendis, ipsa impedit? Tempore
           nostrum, voluptate labore laboriosam quam cumque autem, magnam sit,
           veritatis at assumenda a.
-        </p>
+        </Fade>
       </div>
     </div>
-  </Fade>
+  </Fragment>
 );
 
 export default Delivery;

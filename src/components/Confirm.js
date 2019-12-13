@@ -72,7 +72,7 @@ export class Confirm extends Component {
               </ListItem>
             </List>
           </div>
-          <div className="btn__container">
+          <div className="btn__container inputs">
             <Button
               variant="contained"
               onClick={this.back}

@@ -12,6 +12,18 @@
   color: #fff;
   cursor: pointer;
   z-index: 3;
+  font-family: "Montserrat" !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.253846px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--red);
+  transition: 0.3s;
+  &:hover {
+    background: transparent;
+    color: var(--red);
+    border: 1px solid var(--red);
+  }
 
   &--large {
     z-index: 1;
@@ -121,6 +133,8 @@
   z-index: 2;
   &.active {
     left: 0;
+    height: 120vh;
+    z-index: 4;
   }
   .container__mob {
     display: flex;

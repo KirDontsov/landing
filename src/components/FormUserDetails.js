@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import items from "../categories/Categories";
+import Fade from "react-reveal/Fade";
 
 class FormUserDetails extends Component {
   continue = e => {
@@ -19,36 +20,42 @@ class FormUserDetails extends Component {
     return (
       <div className="quiz__section">
         <div className="quiz">
-          <h2>
-            Выберите какой тип <span className="red">рукава</span> Вы
-            используете?
-          </h2>
-          <div className="quiz__box">
-            <div className="btn__container question">
-              {items.map((item, i) => (
-                <label key={i}>
-                  <input
-                    type="radio"
-                    value={item.headline}
-                    checked={values.selectedOption === item.headline}
-                    onChange={handleChange("selectedOption")}
-                  />
-                  <img src={item.src} alt={item.headline} className="radio" />
-                  <span className="white">{item.headline}</span>
-                </label>
-              ))}
-            </div>
+          <Fade bottom delay={300}>
+            <h2>
+              Выберите какой тип <span className="red">рукава</span> Вы
+              используете?
+            </h2>
+          </Fade>
+          <div className="quiz__box ">
+            <Fade bottom cascade delay={500}>
+              <div className="btn__container question">
+                {items.map((item, i) => (
+                  <label key={i}>
+                    <input
+                      type="radio"
+                      value={item.headline}
+                      checked={values.selectedOption === item.headline}
+                      onChange={handleChange("selectedOption")}
+                    />
+                    <img src={item.src} alt={item.headline} className="radio" />
+                    <span className="white">{item.headline}</span>
+                  </label>
+                ))}
+              </div>
+            </Fade>
           </div>
 
           <div className="btn__container align-center">
-            <Button
-              variant="contained"
-              onClick={this.continue}
-              className="next btn"
-              disabled={disabled}
-            >
-              Продолжить
-            </Button>
+            <Fade bottom delay={900}>
+              <Button
+                variant="contained"
+                onClick={this.continue}
+                className="next btn"
+                disabled={disabled}
+              >
+                Продолжить
+              </Button>
+            </Fade>
           </div>
         </div>
       </div>

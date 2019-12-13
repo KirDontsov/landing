@@ -114,7 +114,7 @@ export const routes = [
 
   {
     id: 6,
-    isFooter: true,
+    isFooter: false,
     isExact: true,
     path: "/",
     name: "Рти-Торг",

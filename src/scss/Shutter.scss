@@ -11,8 +11,22 @@
   display: block;
   content: "";
 
-  background: #000;
+  background: #fff;
   animation: appearing 1s ease;
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 229px;
+    height: 76px;
+    margin: 20px 0 25px 0;
+    background: url("../images/logo.png") 50% 50% / contain no-repeat;
+    color: transparent;
+    &:hover {
+      color: transparent;
+    }
+  }
 }
 
 @keyframes appearing {

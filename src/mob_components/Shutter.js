@@ -13,7 +13,11 @@ class Shutter extends Component {
     if (this.props.addClass) {
       shutterClass.push("active");
     }
-    return <div className={shutterClass.join(" ")}></div>;
+    return (
+      <div className={shutterClass.join(" ")}>
+        <div className="logo" />
+      </div>
+    );
   }
 }
 

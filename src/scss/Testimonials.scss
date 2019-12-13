@@ -1,7 +1,18 @@
 .testimonials__section {
   background: var(--purple);
   padding: 60px 100px 50px;
-  height: 100vh;
+  min-height: 100vh;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 60px 30px 50px;
+  }
+  .heading__small {
+    .title {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 154.9%;
+    }
+  }
 }
 
 .testimonials-container {

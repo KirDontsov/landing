@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-// import Slider from "../components/Slider";
+import CategoriesMob from "../mob_components/Categories__mob";
 import Quiz from "../components/Quiz";
 import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
@@ -10,10 +10,29 @@ import { connect } from "react-redux";
 import slideData from "../categories/Categories";
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      width: window.innerWidth
+    };
+  }
+
   componentDidMount() {
     this.props.slide(true);
+    window.addEventListener("resize", this.handleWindowSizeChange);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+
   render() {
+    const { width } = this.state;
+    const isMobile = width <= 768;
     return (
       <div className="container__margin home">
         <Fade bottom delay={700}>
@@ -25,19 +44,14 @@ class Home extends Component {
             </div>
           </div>
         </Fade>
-        <Fade bottom delay={500}>
-          {/* <Slider heading="Slider" slides={slideData} /> */}
-          <Categories heading="Slider" categories={slideData} />
-        </Fade>
-        <Fade bottom delay={500}>
-          <Quiz />
-        </Fade>
-
+        {!isMobile ? (
+          <Categories categories={slideData} />
+        ) : (
+          <CategoriesMob categories={slideData} />
+        )}
+        <Quiz />
         <Benefits />
-
-        <Fade bottom delay={500}>
-          <Testimonials />
-        </Fade>
+        <Testimonials />
       </div>
     );
   }

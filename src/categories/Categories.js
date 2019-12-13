@@ -1,7 +1,7 @@
 export default [
   {
     index: 0,
-    headline: "Для бензина и минеральных масел",
+    headline: "Рукава для бензина и минеральных масел",
     link: "/gasoline",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_mineralm_t.jpg",
     desc:
@@ -9,7 +9,7 @@ export default [
   },
   {
     index: 1,
-    headline: "Для технической воды",
+    headline: "Рукава для технической воды",
     link: "/teh-water",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pvodi_t.jpg",
     desc:
@@ -17,7 +17,7 @@ export default [
   },
   {
     index: 2,
-    headline: "Для горячей воды",
+    headline: "Рукава для горячей воды",
     link: "/hot-water",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gorvodi_t.jpg",
     desc:
@@ -25,7 +25,7 @@ export default [
   },
   {
     index: 3,
-    headline: "Для газа",
+    headline: "Рукава для газа",
     link: "/gas",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gaza_t.jpg",
     desc:
@@ -33,7 +33,7 @@ export default [
   },
   {
     index: 4,
-    headline: "Для пара",
+    headline: "Рукава для пара",
     link: "/fume",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_para_t1.jpg",
     desc:
@@ -41,7 +41,7 @@ export default [
   },
   {
     index: 5,
-    headline: "Для пищевых продуктов",
+    headline: "Рукава для пищевых продуктов",
     link: "/food",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pp_t.jpg",
     desc:
@@ -49,7 +49,7 @@ export default [
   },
   {
     index: 6,
-    headline: "Для абразива",
+    headline: "Рукава для абразива",
     link: "/abrasive",
     src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_abr_t.jpg",
     desc:

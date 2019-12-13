@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import "../scss/Testimonials.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";

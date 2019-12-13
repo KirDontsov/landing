@@ -4,8 +4,10 @@ const Success = () => {
   return (
     <div className="quiz__section">
       <div className="quiz">
-        <h2>Спасибо за заявку!</h2>
-        <p>Ваша заявка отправлена и скоро наши сотрудники свяжутся с Вами</p>
+        <h2 className="title success">Спасибо за заявку!</h2>
+        <p className="quiz__success">
+          Ваша заявка отправлена и скоро наши сотрудники свяжутся с Вами
+        </p>
       </div>
     </div>
   );
