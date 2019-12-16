@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import ScrollButton from "../components/ScrollButton";
-import FooterForm from "../components/Footer_form";
+import Form from "../components/Form";
 import "../scss/Footer.scss";
 
 class Footer extends Component {
@@ -11,6 +11,7 @@ class Footer extends Component {
     this.props.slide(true);
   }
   render() {
+    let footer = ["footer__form"];
     return (
       <Fragment>
         <div className="footer">
@@ -42,8 +43,8 @@ class Footer extends Component {
               </ul>
             </div>
             <div className="col">
-            <h3 className="footer__title">Оставьте свои контакты</h3>
-              <FooterForm />
+              <h3 className="footer__title">Оставьте свои контакты</h3>
+              <Form className={footer} />
             </div>
           </div>
           <div className="col__center second">

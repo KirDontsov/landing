@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import classNames from "classnames";
+import Form from "./Form";
 
 import "../scss/CallBack.scss";
 
@@ -31,6 +32,7 @@ class CallBack extends Component {
   render() {
     let buttonClass = ["callBack"];
     let navClass = ["nav__toggle"];
+    let header = ["header__form"];
 
     if (this.state.addClass) {
       buttonClass.push("active");
@@ -39,14 +41,19 @@ class CallBack extends Component {
     return (
       <Fragment>
         <div className={navClass.join(" ")}>
-          <ul>
-            <li>adfnhsfdgmnsfg</li>
-          </ul>
+          <div className="container__form">
+            <Form className={header} />
+          </div>
         </div>
         <Button
           className={buttonClass.join(" ")}
           onClick={this._onClick.bind(this)}
         >
+          <span
+            className={
+              this.state.active ? "icon__burger nav active" : "icon__burger nav"
+            }
+          />
           Заказать звонок
         </Button>
       </Fragment>

@@ -121,8 +121,8 @@ h2 {
   }
   .hero__banner {
     width: 100%;
-    min-height: 100vh;
-    background: var(--purple);
+    min-height: 60vh;
+    background: url("../images/hero_banner.jpg") 50% 50% / cover no-repeat;
     position: relative;
     @media (max-width: 768px) {
       min-height: 50vh;
@@ -136,7 +136,7 @@ h2 {
       line-height: 88px;
       color: #fff;
       position: absolute;
-      top: 50%;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
       @media (max-width: 1440px) {

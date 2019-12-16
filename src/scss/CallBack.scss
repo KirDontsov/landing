@@ -11,7 +11,7 @@
   margin: 0;
   color: #fff;
   cursor: pointer;
-  z-index: 3;
+  z-index: 5;
   font-family: "Montserrat" !important;
   font-weight: 500 !important;
   letter-spacing: 0.253846px;
@@ -19,10 +19,24 @@
   cursor: pointer;
   border: 1px solid var(--red);
   transition: 0.3s;
+  transform-origin: left;
   &:hover {
     background: transparent;
     color: var(--red);
     border: 1px solid var(--red);
+  }
+
+  &.active {
+    width: 56px;
+    height: 56px;
+    color: transparent;
+    overflow: hidden;
+    // border-radius: 50%;
+
+    &.active:hover > .nav:before,
+    &.active:hover > .nav:after {
+      background: var(--red);
+    }
   }
 
   &--large {
@@ -47,6 +61,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: background 0.3s ease;
+
+  &.nav,
+  &.nav:before,
+  &.nav:after {
+    background: transparent;
+  }
 
   &,
   &:before,
@@ -78,6 +98,12 @@
   &.active {
     background: transparent;
     transition: background 0.3s ease;
+
+    &.nav,
+    &.nav:before,
+    &.nav:after {
+      background: #fff;
+    }
 
     &,
     &:before,

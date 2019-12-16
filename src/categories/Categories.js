@@ -3,7 +3,7 @@ export default [
     index: 0,
     headline: "Рукава для бензина и минеральных масел",
     link: "/gasoline",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_mineralm_t.jpg",
+    src: require("../images/gasoline.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -11,7 +11,7 @@ export default [
     index: 1,
     headline: "Рукава для технической воды",
     link: "/teh-water",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pvodi_t.jpg",
+    src: require("../images/teh_water.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -19,7 +19,7 @@ export default [
     index: 2,
     headline: "Рукава для горячей воды",
     link: "/hot-water",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gorvodi_t.jpg",
+    src: require("../images/hot_water.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -27,7 +27,7 @@ export default [
     index: 3,
     headline: "Рукава для газа",
     link: "/gas",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_gaza_t.jpg",
+    src: require("../images/gas.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -35,7 +35,7 @@ export default [
     index: 4,
     headline: "Рукава для пара",
     link: "/fume",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_para_t1.jpg",
+    src: require("../images/fume.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -43,7 +43,7 @@ export default [
     index: 5,
     headline: "Рукава для пищевых продуктов",
     link: "/food",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_pp_t.jpg",
+    src: require("../images/food.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   },
@@ -51,7 +51,7 @@ export default [
     index: 6,
     headline: "Рукава для абразива",
     link: "/abrasive",
-    src: "https://rubexgroup.ru/wp-content/uploads/2015/06/dlya_abr_t.jpg",
+    src: require("../images/abraziv.jpg"),
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil incidunt ipsum in, magni dolor architecto nisi unde saepe dignissimos, quo ad cupiditate. Omnis officia qui voluptatem sapiente excepturi nostrum rem?"
   }

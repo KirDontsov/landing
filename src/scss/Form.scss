@@ -1,0 +1,62 @@
+.container__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 768px;
+  max-height: 400px;
+}
+
+.footer__form,
+.header__form {
+  width: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+
+  .btn__container.footer {
+    margin: 30px auto 0;
+    .send {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      height: 62px;
+    }
+  }
+
+  .footer__title {
+    width: 100%;
+    text-align: center;
+  }
+  // ------- Mui -----------------
+  .MuiButton-label {
+    color: #fff !important;
+    font-family: "Montserrat" !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    letter-spacing: 0.253846px !important;
+  }
+
+  .MuiInput-underline:after {
+    border-bottom: 1px solid var(--red) !important;
+  }
+
+  .MuiInput-underline:before {
+    border-bottom: 1px solid var(--red) !important;
+  }
+
+  .MuiInputBase-root {
+    color: var(--black) !important;
+  }
+
+  .MuiFormLabel-root {
+    color: var(--black) !important;
+  }
+
+  .MuiTypography-colorTextSecondary {
+    color: var(--black) !important;
+  }
+}
+
+.callBack {
+}
