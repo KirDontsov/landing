@@ -1,5 +1,5 @@
 .testimonials__section {
-  background: var(--purple);
+  background: var(--gray);
   padding: 60px 100px 50px;
   min-height: 100vh;
   @media (max-width: 768px) {
@@ -11,6 +11,7 @@
       font-weight: bold;
       font-size: 48px;
       line-height: 154.9%;
+      color: var(--black);
     }
   }
 }

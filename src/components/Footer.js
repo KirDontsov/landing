@@ -52,7 +52,7 @@ class Footer extends Component {
               <div className="logo"></div>
             </div>
             <div className="col">
-              <p className="copyright">Все права защищены</p>
+              <p className="copyright">© РТИ-Торг, 2019. Все права защищены</p>
             </div>
             <div className="col"></div>
           </div>

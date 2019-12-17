@@ -1,8 +1,8 @@
 .quiz__section {
-  background: var(--purple);
+  background: var(--gray);
   padding: 100px;
   min-height: 100vh;
-  color: var(--white);
+  color: var(--black);
   @media (max-width: 768px) {
     padding: 100px 30px;
   }
@@ -19,6 +19,14 @@
     font-size: 36px;
     line-height: 60px;
     letter-spacing: -0.0516129px;
+    color: var(--black);
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      justify-content: center;
+      width: 100%;
+      font-size: 20px;
+      line-height: 35px;
+    }
   }
 }
 
@@ -56,7 +64,7 @@
 
 button:disabled,
 button[disabled] {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
   border: 1px solid transparent !important;
 }
@@ -138,6 +146,11 @@ input[type="radio"] {
   justify-content: center;
   align-items: center;
   align-content: stretch;
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
   &.inputs {
     max-width: 768px;
   }
@@ -156,19 +169,19 @@ input[type="radio"] {
   }
 
   .MuiInput-underline:before {
-    border-bottom: 1px solid var(--white) !important;
+    border-bottom: 1px solid var(--black) !important;
   }
 
   .MuiInputBase-root {
-    color: var(--white) !important;
+    color: var(--red) !important;
   }
 
   .MuiFormLabel-root {
-    color: var(--white) !important;
+    color: var(--red) !important;
   }
 
   .MuiTypography-colorTextSecondary {
-    color: var(--white) !important;
+    color: var(--red) !important;
   }
 
   .icon__li {
@@ -186,18 +199,19 @@ input[type="radio"] {
     }
 
     .col {
-      color: #fff;
+      // color: #fff;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       align-content: center;
       width: calc(100% / 4);
       @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
       }
 
       .icon {
@@ -207,12 +221,21 @@ input[type="radio"] {
         width: 86px;
         height: 86px;
         padding: 12px;
+        color: var(--white);
       }
       .welcome__text {
         max-width: 256px;
         font-weight: 500;
         font-size: 18px;
         line-height: 32px;
+        text-align: center;
+        color: var(--black);
+        @media (max-width: 768px) {
+          max-width: 100%;
+          width: 100%;
+          font-size: 16px;
+          line-height: 32px;
+        }
       }
     }
   }
@@ -233,5 +256,5 @@ h2.title.success {
 }
 
 .white {
-  color: var(--white);
+  color: var(--black);
 }

@@ -4,10 +4,6 @@ import { Helmet } from "react-helmet";
 import Svg from "../images/Svg";
 import "../scss/About.scss";
 
-// function Svg() {
-//   return <Svg />;
-// }
-
 const About = () => (
   <Fragment>
     <Helmet>

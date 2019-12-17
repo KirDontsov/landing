@@ -192,11 +192,15 @@
       letter-spacing: 1px;
       color: var(--black);
       @media (max-width: 1440px) {
-        font-size: 15px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 32px;
         @media (max-width: 1024px) {
           font-size: 12px;
-          line-height: 18px;
+          line-height: 20px;
+          @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 32px;
+          }
         }
       }
     }

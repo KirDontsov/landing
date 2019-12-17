@@ -18,7 +18,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    z-index: 3;
+    z-index: 5;
   }
 
   &:hover {
@@ -132,6 +132,22 @@
       color: var(--black);
       line-height: 50px;
       padding: 10px 0;
+      position: relative;
+      &.active:before {
+        display: block;
+        width: 100%;
+        height: 50px;
+        content: "";
+        background: var(--red);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+        animation: appear 0.3s ease-in;
+        z-index: -1;
+      }
     }
     .logo {
       font-size: 20px;
@@ -150,9 +166,14 @@ a.logo__mob {
   font-size: 20px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--black);
+
+  width: 150px;
+  height: 50px;
 
   position: absolute;
   right: 42px;
-  top: 61px;
+  top: 50px;
+  background: url("../images/logo.png") 50% 50% / contain no-repeat;
+  color: transparent;
+  z-index: 999999;
 }
