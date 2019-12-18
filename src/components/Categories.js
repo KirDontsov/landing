@@ -7,6 +7,12 @@ import Fade from "react-reveal/Fade";
 class Categories extends Component {
   handleClick(e) {
     this.props.slide(true);
+    this.scrollToTop();
+  }
+
+  scrollToTop() {
+    let div = document.querySelector(".wrapper");
+    div.scrollTop = 0;
   }
 
   render() {
@@ -24,6 +30,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card short"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[0].src}
                         alt={categories[0].headline}
@@ -43,6 +50,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card long"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[4].src}
                         alt={categories[4].headline}
@@ -64,6 +72,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card short"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[1].src}
                         alt={categories[1].headline}
@@ -83,6 +92,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card short"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[2].src}
                         alt={categories[2].headline}
@@ -102,6 +112,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card short"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[5].src}
                         alt={categories[5].headline}
@@ -125,6 +136,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card long"
                     >
+                      <div className="hover"></div>
                       <img src={categories[3].src} alt="" />
                       <div className="card__body">
                         <div className="card__title">
@@ -141,6 +153,7 @@ class Categories extends Component {
                       onClick={e => this.handleClick(e)}
                       className="card short"
                     >
+                      <div className="hover"></div>
                       <img
                         src={categories[6].src}
                         alt={categories[6].headline}

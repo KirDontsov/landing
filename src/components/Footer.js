@@ -9,6 +9,11 @@ import "../scss/Footer.scss";
 class Footer extends Component {
   handleClick(event) {
     this.props.slide(true);
+    this.scrollToTop();
+  }
+  scrollToTop() {
+    let div = document.querySelector(".wrapper");
+    div.scrollTop = 0;
   }
   render() {
     let footer = ["footer__form"];
@@ -36,8 +41,10 @@ class Footer extends Component {
             <div className="col">
               <h3 className="footer__title">Контактная информация</h3>
               <ul>
-                <li className="footer__contacts">620087, г. Екатеринбург</li>
-                <li className="footer__contacts">Межевая, 11</li>
+                <li className="footer__contacts">Индекс: 620087 </li>
+                <li className="footer__contacts">
+                  г. Екатеринбург, ул. Межевая, 11
+                </li>
                 <li className="footer__contacts">info@rti-torg.ru</li>
                 <li className="footer__contacts">+7 (343) 385-58-57</li>
               </ul>

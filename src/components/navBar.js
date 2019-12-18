@@ -10,6 +10,12 @@ import { routes } from "../routes";
 class NavigationBar extends Component {
   handleClick(e) {
     this.props.slide(true);
+    this.scrollToTop();
+  }
+
+  scrollToTop() {
+    let div = document.querySelector(".wrapper");
+    div.scrollTop = 0;
   }
 
   render() {

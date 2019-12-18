@@ -31,8 +31,8 @@ class Welcome extends Component {
           <div className="quiz">
             <Fade bottom delay={300}>
               <h2 className="welcome__title">
-                Ответьте на 
-                <span className="red">несколько простых вопросов</span> и
+                Ответьте на
+                <span className="red"> несколько простых вопросов</span> и
                 получите каталог рукавов и шлангов
               </h2>
             </Fade>
