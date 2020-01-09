@@ -3,12 +3,20 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { init } from "@rematch/core";
 
-import * as models from "./models";
+import shutter from "./models/shutter";
+import filters from "./models/filters";
+import search from "./models/search";
+import callBack from "./models/callBack";
 
 import App from "./App";
 
 const store = init({
-  models
+  models: {
+    shutter,
+    filters,
+    search,
+    callBack
+  }
 });
 
 ReactDOM.render(

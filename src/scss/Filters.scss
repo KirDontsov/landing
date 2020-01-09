@@ -1,0 +1,43 @@
+.filters {
+  .formControl {
+    width: 100%;
+    margin-bottom: 30px !important;
+  }
+
+  .rangeControl {
+    margin-bottom: 20px !important;
+  }
+
+  .MuiSlider-root {
+    color: var(--red) !important;
+  }
+
+  .MuiButton-label {
+    color: #fff !important;
+    font-family: "Montserrat" !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    letter-spacing: 0.253846px !important;
+  }
+
+  .MuiInput-underline:after {
+    border-bottom: 1px solid var(--red) !important;
+  }
+
+  .MuiInput-underline:before {
+    border-bottom: 1px solid var(--black) !important;
+  }
+
+  .MuiInputBase-root {
+    // color: var(--red) !important;
+  }
+
+  .MuiFormLabel-root {
+    color: var(--black) !important;
+  }
+
+  .MuiTypography-colorTextSecondary {
+    color: var(--red) !important;
+  }
+}

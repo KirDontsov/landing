@@ -1,0 +1,99 @@
+h1.title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 63px;
+  /* or 131% */
+
+  text-align: center;
+  letter-spacing: 1px;
+
+  color: #1d212c;
+  max-width: 750px;
+  margin-top: 50px !important;
+}
+
+.containerCol {
+  max-width: 1200px;
+  margin: 40px auto;
+  // padding: 50px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 50px auto 0;
+  }
+  .col {
+    &:nth-child(1) {
+      width: 211px;
+      height: 753px;
+      padding: 25px 20px;
+      content: "";
+      margin-right: 30px;
+      box-shadow: 0px 0px 15px rgba(2, 38, 91, 0.12);
+      position: sticky;
+      top: 150px;
+    }
+  }
+}
+
+.catalog__card {
+  width: 960px;
+  height: 298px;
+  box-shadow: 0px 0px 15px rgba(2, 38, 91, 0.12);
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  padding: 31px 31px 31px 0;
+  margin: 0 auto 40px;
+  cursor: auto;
+  .catalog__card__img {
+    width: 308px;
+    height: 236px;
+    background: url("../images/rukav.png") 0 50% / contain no-repeat;
+  }
+  .catalog__card__content {
+    max-width: 600px;
+    h2.catalog__card__header {
+      font-size: 18px;
+      line-height: 32px;
+
+      color: #141517;
+      text-align: left;
+      max-width: 479px;
+      margin: 0 0 10px 0;
+    }
+    .catalog__card__desc {
+      font-size: 13px;
+      line-height: 28px;
+
+      letter-spacing: -0.379167px;
+      color: rgba(44, 46, 63, 0.697549);
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    .catalog__btn {
+      width: 146px;
+      height: 40px;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 9px;
+      line-height: 11px;
+      text-align: center;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 1px solid var(--red);
+      &:hover {
+        color: var(--red);
+        background: transparent;
+        border: 1px solid var(--red);
+      }
+    }
+  }
+}

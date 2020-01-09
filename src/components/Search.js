@@ -10,42 +10,38 @@ import "../scss/Search.scss";
 const KEYS_TO_FILTERS = ["headline", "src", "link", "id"];
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: "",
-      addClass: false
-    };
-    this.searchUpdated = this.searchUpdated.bind(this);
-  }
-
   handleClick(e) {
     this.props.slide(true);
   }
 
   toggle() {
-    this.setState({ addClass: !this.state.addClass });
+    this.props.changeClass(!this.props.addClassSearch);
+  }
+
+  searchUpdated(term) {
+    this.props.changeSearchTerm(term);
+    console.log(this.props.searchTerm);
   }
 
   render() {
     const filteredSlides = slideData.filter(
-      createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
+      createFilter(this.props.searchTerm, KEYS_TO_FILTERS)
     );
 
     let boxClass = ["box"];
 
-    if (this.state.addClass) {
+    if (this.props.addClassSearch) {
       boxClass.push("active");
     }
 
     return (
       <div className={boxClass.join(" ")} onClick={this.toggle.bind(this)}>
         <FontAwesomeIcon icon={faSearch} className="icon__serch" />
-        {this.state.addClass ? (
+        {this.props.addClassSearch ? (
           <Fragment>
             <SearchInput
               className="search-input"
-              onChange={this.searchUpdated}
+              onChange={this.searchUpdated().bind(this)}
               placeholder="Поиск"
             />
 
@@ -81,18 +77,21 @@ class Search extends Component {
       </div>
     );
   }
-
-  searchUpdated(term) {
-    this.setState({ searchTerm: term });
-  }
 }
 
 const mapState = state => ({
-  addClass: state.shutter.addClass
+  addClass: state.shutter.addClass,
+  addClassSearch: state.search.addClassSearch,
+  searchTerm: state.search.searchTerm
 });
 
-const mapDispatch = ({ shutter: { slide } }) => ({
-  slide
+const mapDispatch = ({
+  shutter: { slide },
+  search: { changeSearchTerm, changeClass }
+}) => ({
+  slide,
+  changeSearchTerm,
+  changeClass
 });
 
 export default connect(mapState, mapDispatch)(Search);

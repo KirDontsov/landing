@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import classNames from "classnames";
 import Form from "./Form";
+import { connect } from "react-redux";
 
 import "../scss/CallBack.scss";
 
@@ -11,22 +12,9 @@ const Button = props => (
 );
 
 class CallBack extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: false,
-      addClass: false
-    };
-
-    this._onClick = this._onClick.bind(this);
-  }
-
-  _onClick() {
-    this.setState({
-      active: !this.state.active,
-      addClass: !this.state.addClass
-    });
+  openModal() {
+    this.props.changeClass(!this.props.addClass);
+    this.props.changeActive(!this.props.active);
   }
 
   render() {
@@ -34,7 +22,7 @@ class CallBack extends Component {
     let navClass = ["nav__toggle"];
     let header = ["header__form"];
 
-    if (this.state.addClass) {
+    if (this.props.addClass) {
       buttonClass.push("active");
       navClass.push("active");
     }
@@ -47,11 +35,13 @@ class CallBack extends Component {
         </div>
         <Button
           className={buttonClass.join(" ")}
-          onClick={this._onClick.bind(this)}
+          onClick={() => {
+            this.openModal();
+          }}
         >
           <span
             className={
-              this.state.active ? "icon__burger nav active" : "icon__burger nav"
+              this.props.active ? "icon__burger nav active" : "icon__burger nav"
             }
           />
           Заказать звонок
@@ -61,4 +51,14 @@ class CallBack extends Component {
   }
 }
 
-export default CallBack;
+const mapState = state => ({
+  addClass: state.callBack.addClass,
+  active: state.callBack.active
+});
+
+const mapDispatch = ({ callBack: { changeClass, changeActive } }) => ({
+  changeClass,
+  changeActive
+});
+
+export default connect(mapState, mapDispatch)(CallBack);

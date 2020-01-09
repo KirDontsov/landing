@@ -23,7 +23,7 @@ class NavigationBar extends Component {
       <div className="nav-wrapper">
         <div className="center">
           <div className="nav__top">
-            <Search />
+            {/* <Search /> */}
             <div className="left__text">
               <p>Время работы: с 8:00 до 16:00</p>
             </div>

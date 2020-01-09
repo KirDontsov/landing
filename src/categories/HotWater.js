@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import { Table } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import Categories from "./Categories";
-import Sizes from "./sizes";
+import Sizes from "./Sizes";
 
 const headline = Categories[2].headline;
 

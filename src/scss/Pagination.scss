@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 10px 0 2px 0;
+  .page-link {
+    padding: 5px 10px;
+    background: var(--red);
+    margin-left: 2px;
+    color: #fff;
+  }
+}

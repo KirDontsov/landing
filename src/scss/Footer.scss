@@ -191,8 +191,8 @@
 }
 
 .scroll {
-  opacity: 0.3;
-  background-color: var(--black);
+  opacity: 0.2;
+  background-color: var(--red);
   width: 40px;
   height: 40px;
   position: absolute;
@@ -201,6 +201,9 @@
   margin: 0;
   padding: 0;
   transition: 0.3s;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
   @media (max-width: 768px) {
     right: 0;
   }

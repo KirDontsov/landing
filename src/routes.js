@@ -1,8 +1,8 @@
 import Home from "./pages/Home";
-import News from "./pages/News";
 import Delivery from "./pages/Delivery";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import Catalog from "./pages/Catalog";
 import Err from "./pages/Err";
 import Gasoline from "./categories/Gasoline";
 import HotWater from "./categories/HotWater";
@@ -48,10 +48,10 @@ export const routes = [
     id: 4,
     isNavBar: true,
     isExact: true,
-    path: "/news",
-    name: "Новости",
+    path: "/catalog",
+    name: "Каталог",
     className: "nav-link",
-    component: News
+    component: Catalog
   },
   {
     id: 5,
@@ -95,10 +95,10 @@ export const routes = [
     id: 4,
     isMobile: true,
     isExact: true,
-    path: "/news",
-    name: "Новости",
+    path: "/catalog",
+    name: "Каталог",
     className: "nav-link",
-    component: News
+    component: Catalog
   },
   {
     id: 5,
@@ -143,10 +143,10 @@ export const routes = [
     id: 9,
     isFooter: true,
     isExact: true,
-    path: "/news",
-    name: "Новости",
+    path: "/catalog",
+    name: "Каталог",
     className: "footer-link",
-    component: News
+    component: Catalog
   },
   {
     id: 10,
