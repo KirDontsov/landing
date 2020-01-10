@@ -1,7 +1,6 @@
-import React, { Component, Fragment, useEffect } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../scss/Catalog.scss";
-import { useSelector, useDispatch } from "react-redux";
 import { connect } from "react-redux";
 
 class Cards extends Component {

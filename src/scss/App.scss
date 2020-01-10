@@ -46,6 +46,9 @@ body::-webkit-scrollbar {
   @media (max-width: 768px) {
     padding: 30px;
     height: 100vh;
+    @media (max-width: 320px) {
+      padding: 20px;
+    }
   }
 }
 
@@ -72,6 +75,10 @@ body::-webkit-scrollbar {
   @media (max-width: 768px) {
     padding: 0;
     margin: 100px auto 0;
+    @media (max-width: 425px) {
+      margin: 50px auto 0;
+      padding: 0;
+    }
   }
 }
 

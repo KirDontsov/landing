@@ -13,42 +13,107 @@ function valuetext(value) {
 }
 
 class Filters extends Component {
-  handleChange = e => {
+  handleChangeProducer = e => {
     this.props.changeProducer(e.target.value);
+    this.props.changeFilterProducer(true);
+    this.props.changeFilterStandart(false);
+    this.props.changeFilterCategory(false);
+    this.props.changeFilterPressureMpa(false);
+    this.props.changeFilterPressureAtm(false);
+    this.props.changeFilterRange(false);
+    this.props.changeStandart("");
+    this.props.changeCategory("");
+    this.props.changePressureMpa("");
+    this.props.changePressureAtm("");
+  };
+
+  handleChangeStandart = e => {
+    this.props.changeStandart(e.target.value);
+    this.props.changeFilterStandart(true);
+    this.props.changeFilterProducer(false);
+    this.props.changeFilterCategory(false);
+    this.props.changeFilterPressureMpa(false);
+    this.props.changeFilterPressureAtm(false);
+    this.props.changeFilterRange(false);
+    this.props.changeProducer("");
+    this.props.changeCategory("");
+    this.props.changePressureMpa("");
+    this.props.changePressureAtm("");
+  };
+
+  handleChangeCategory = e => {
+    this.props.changeCategory(e.target.value);
+    this.props.changeFilterCategory(true);
+    this.props.changeFilterStandart(false);
+    this.props.changeFilterProducer(false);
+    this.props.changeFilterPressureMpa(false);
+    this.props.changeFilterPressureAtm(false);
+    this.props.changeFilterRange(false);
+    this.props.changeProducer("");
+    this.props.changeStandart("");
+    this.props.changePressureMpa("");
+    this.props.changePressureAtm("");
   };
 
   handleChangeInner = (e, newValue) => {
     this.props.changeInner(newValue);
+    this.props.changeFilterRange(true);
   };
 
   handleChangeOuter = (e, newValue) => {
     this.props.changeOuter(newValue);
+    this.props.changeFilterRange(true);
   };
 
-  handleChangePressureMpa = (e, newValue) => {
-    this.props.changePressureMpa(newValue);
+  handleChangePressureMpa = e => {
+    this.props.changePressureMpa(e.target.value);
+    this.props.changeFilterPressureMpa(true);
+    this.props.changeFilterCategory(false);
+    this.props.changeFilterStandart(false);
+    this.props.changeFilterProducer(false);
+    this.props.changeFilterPressureAtm(false);
+    this.props.changeFilterRange(false);
+    this.props.changeProducer("");
+    this.props.changeStandart("");
+    this.props.changeCategory("");
+    this.props.changePressureAtm("");
   };
 
-  handleChangePressureAtm = (e, newValue) => {
-    this.props.changePressureAtm(newValue);
+  handleChangePressureAtm = e => {
+    this.props.changePressureAtm(e.target.value);
+    this.props.changeFilterPressureAtm(true);
+
+    this.props.changeFilterCategory(false);
+    this.props.changeFilterStandart(false);
+    this.props.changeFilterProducer(false);
+    this.props.changeFilterPressureMpa(false);
+    this.props.changeFilterRange(false);
+    this.props.changeProducer("");
+    this.props.changeStandart("");
+    this.props.changeCategory("");
+    this.props.changePressureMpa("");
   };
 
-  handleChangeWidth = (e, newValue) => {
-    this.props.changeWidth(newValue);
+  handleChangeLengh = (e, newValue) => {
+    this.props.changeLengh(newValue);
+    this.props.changeFilterRange(true);
   };
 
   handleChangeTemperature = (e, newValue) => {
     this.props.changeTemperature(newValue);
+    this.props.changeFilterRange(true);
   };
 
   render() {
     const {
       producer,
+      standart,
+      category,
       inner,
       outer,
       pressureMpa,
       pressureAtm,
-      width,
+      lengh,
       temperature
     } = this.props;
 
@@ -60,7 +125,7 @@ class Filters extends Component {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={producer}
-            onChange={this.handleChange}
+            onChange={this.handleChangeProducer}
           >
             <MenuItem value={"Россия"}>Россия</MenuItem>
             <MenuItem value={"Китай"}>Китай</MenuItem>
@@ -68,71 +133,146 @@ class Filters extends Component {
           </Select>
         </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Внутренний диаметр, мм
-        </Typography>
-        <Slider
-          value={inner}
-          onChange={this.handleChangeInner}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Стандарт</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={standart}
+            onChange={this.handleChangeStandart}
+          >
+            <MenuItem value={"ГОСТ 18698-78"}>ГОСТ 18698-78</MenuItem>
+            <MenuItem value={"ГОСТ 18698-79"}>ГОСТ 18698-79</MenuItem>
+            <MenuItem value={"ГОСТ 18698-80"}>ГОСТ 18698-80</MenuItem>
+            <MenuItem value={"ГОСТ 18698-81"}>ГОСТ 18698-81</MenuItem>
+            <MenuItem value={"ГОСТ 18698-82"}>ГОСТ 18698-82</MenuItem>
+            <MenuItem value={"ГОСТ 18698-83"}>ГОСТ 18698-83</MenuItem>
+            <MenuItem value={"ГОСТ 18698-84"}>ГОСТ 18698-84</MenuItem>
+            <MenuItem value={"ГОСТ 18698-85"}>ГОСТ 18698-85</MenuItem>
+            <MenuItem value={"ТУ 2553-189-05788889-2004"}>
+              ТУ 2553-189-05788889-2004
+            </MenuItem>
+            <MenuItem value={"ТУ 38 105981-"}>ТУ 38 105981-</MenuItem>
+          </Select>
+        </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Внешний диаметр, мм
-        </Typography>
-        <Slider
-          value={outer}
-          onChange={this.handleChangeOuter}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Категория</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={category}
+            onChange={this.handleChangeCategory}
+          >
+            <MenuItem value={"Рукава для бензина и минеральных масел"}>
+              Рукава для бензина и минеральных масел
+            </MenuItem>
+            <MenuItem value={"Рукава для технической воды"}>
+              Рукава для технической воды
+            </MenuItem>
+            <MenuItem value={"Рукава для горячей воды"}>
+              Рукава для горячей воды
+            </MenuItem>
+            <MenuItem value={"Рукава для газа"}>Рукава для газа</MenuItem>
+            <MenuItem value={"Рукава для пара"}>Рукава для пара</MenuItem>
+            <MenuItem value={"Рукава для пищевых продуктов"}>
+              Рукава для пищевых продуктов
+            </MenuItem>
+            <MenuItem value={"Рукава для абразива"}>
+              Рукава для абразива
+            </MenuItem>
+          </Select>
+        </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Давление, МПа
-        </Typography>
-        <Slider
-          value={pressureMpa}
-          onChange={this.handleChangePressureMpa}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Давление, МПа</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={pressureMpa}
+            onChange={this.handleChangePressureMpa}
+          >
+            <MenuItem value={0.3}>0,3</MenuItem>
+            <MenuItem value={0.63}>0,63</MenuItem>
+            <MenuItem value={0.8}>0,8</MenuItem>
+            <MenuItem value={1}>1,00</MenuItem>
+            <MenuItem value={4}>4,00</MenuItem>
+          </Select>
+        </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Давление, Атм
-        </Typography>
-        <Slider
-          value={pressureAtm}
-          onChange={this.handleChangePressureAtm}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Давление, Атм</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={pressureAtm}
+            onChange={this.handleChangePressureAtm}
+          >
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={6.3}>6,3</MenuItem>
+            <MenuItem value={8}>8</MenuItem>
+            <MenuItem value={10}>10</MenuItem>
+            <MenuItem value={40}>40</MenuItem>
+          </Select>
+        </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Длина, м
-        </Typography>
-        <Slider
-          value={width}
-          onChange={this.handleChangeWidth}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <Typography className="rangeControl" id="range-slider" gutterBottom>
+            Внутренний диаметр, мм
+          </Typography>
+          <Slider
+            value={inner}
+            min={10}
+            max={150}
+            onChange={this.handleChangeInner}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        </FormControl>
 
-        <Typography className="rangeControl" id="range-slider" gutterBottom>
-          Температура, °C
-        </Typography>
-        <Slider
-          value={temperature}
-          onChange={this.handleChangeTemperature}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          getAriaValueText={valuetext}
-        />
+        <FormControl className="formControl">
+          <Typography className="rangeControl" id="range-slider" gutterBottom>
+            Внешний диаметр, мм
+          </Typography>
+          <Slider
+            min={22}
+            max={172}
+            value={outer}
+            onChange={this.handleChangeOuter}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        </FormControl>
+
+        <FormControl className="formControl">
+          <Typography className="rangeControl" id="range-slider" gutterBottom>
+            Длина, м
+          </Typography>
+          <Slider
+            value={lengh}
+            min={2.5}
+            max={20}
+            onChange={this.handleChangeLengh}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        </FormControl>
+        <FormControl className="formControl">
+          <Typography className="rangeControl" id="range-slider" gutterBottom>
+            Температура, °C
+          </Typography>
+
+          <Slider
+            value={temperature}
+            getAriaValueText={valuetext}
+            aria-labelledby="discrete-slider-small-steps"
+            onChange={this.handleChangeTemperature}
+            min={50}
+            max={175}
+            valueLabelDisplay="auto"
+            valueLabelDisplay="on"
+          />
+        </FormControl>
       </Fragment>
     );
   }
@@ -141,34 +281,61 @@ class Filters extends Component {
 const mapState = state => ({
   addClass: state.shutter.addClass,
   producer: state.filters.producer,
+  standart: state.filters.standart,
+  category: state.filters.category,
   inner: state.filters.inner,
   outer: state.filters.outer,
   pressureMpa: state.filters.pressureMpa,
   pressureAtm: state.filters.pressureAtm,
-  width: state.filters.width,
-  temperature: state.filters.temperature
+  lengh: state.filters.lengh,
+  temperature: state.filters.temperature,
+  producerFilterApplied: state.filters.producerFilterApplied,
+  standartFilterApplied: state.filters.standartFilterApplied,
+  categorytFilterApplied: state.filters.categorytFilterApplied,
+  pressureMpaFilterApplied: state.filters.pressureMpaFilterApplied,
+  pressureAtmFilterApplied: state.filters.pressureAtmFilterApplied,
+  temperatureFilterApplied: state.filters.temperatureFilterApplied,
+  rangeFilterApplied: state.filters.rangeFilterApplied
 });
 
 const mapDispatch = ({
   shutter: { slide },
   filters: {
     changeProducer,
+    changeStandart,
+    changeCategory,
     changeTemperature,
     changeInner,
     changeOuter,
     changePressureMpa,
     changePressureAtm,
-    changeWidth
+    changeLengh,
+    changeFilterProducer,
+    changeFilterStandart,
+    changeFilterCategory,
+    changeFilterPressureMpa,
+    changeFilterPressureAtm,
+    changeFilterTemperature,
+    changeFilterRange
   }
 }) => ({
   slide,
   changeProducer,
+  changeStandart,
+  changeCategory,
   changeTemperature,
   changeInner,
   changeOuter,
   changePressureMpa,
   changePressureAtm,
-  changeWidth
+  changeLengh,
+  changeFilterProducer,
+  changeFilterStandart,
+  changeFilterCategory,
+  changeFilterPressureMpa,
+  changeFilterPressureAtm,
+  changeFilterTemperature,
+  changeFilterRange
 });
 
 export default connect(mapState, mapDispatch)(Filters);

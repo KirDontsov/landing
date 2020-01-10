@@ -1,17 +1,34 @@
 const filters = {
   state: {
-    producer: "Россия",
-    temperature: [0, 100],
-    inner: [0, 100],
-    outer: [0, 100],
-    pressureMpa: [0, 100],
-    pressureAtm: [0, 100],
-    width: [0, 100]
+    producer: "",
+    standart: "",
+    category: "",
+    temperature: 175,
+    inner: [10, 150],
+    outer: [22, 172],
+    pressureMpa: "",
+    pressureAtm: "",
+    lengh: [2.5, 100],
+    producerFilterApplied: false,
+    standartFilterApplied: false,
+    categoryFilterApplied: false,
+    pressureMpaFilterApplied: false,
+    pressureAtmFilterApplied: false,
+    temperatureFilterApplied: false,
+    rangeFilterApplied: false
   },
   reducers: {
     changeProducer: (state, payload) => ({
       ...state,
       producer: payload
+    }),
+    changeStandart: (state, payload) => ({
+      ...state,
+      standart: payload
+    }),
+    changeCategory: (state, payload) => ({
+      ...state,
+      category: payload
     }),
     changeTemperature: (state, payload) => ({
       ...state,
@@ -33,9 +50,37 @@ const filters = {
       ...state,
       pressureAtm: payload
     }),
-    changeWidth: (state, payload) => ({
+    changeLengh: (state, payload) => ({
       ...state,
-      width: payload
+      lengh: payload
+    }),
+    changeFilterProducer: (state, payload) => ({
+      ...state,
+      producerFilterApplied: payload
+    }),
+    changeFilterStandart: (state, payload) => ({
+      ...state,
+      standartFilterApplied: payload
+    }),
+    changeFilterCategory: (state, payload) => ({
+      ...state,
+      categoryFilterApplied: payload
+    }),
+    changeFilterPressureMpa: (state, payload) => ({
+      ...state,
+      pressureMpaFilterApplied: payload
+    }),
+    changeFilterPressureAtm: (state, payload) => ({
+      ...state,
+      pressureAtmFilterApplied: payload
+    }),
+    changeFilterTemperature: (state, payload) => ({
+      ...state,
+      temperatureFilterApplied: payload
+    }),
+    changeFilterRange: (state, payload) => ({
+      ...state,
+      rangeFilterApplied: payload
     })
   }
 };

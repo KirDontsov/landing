@@ -17,7 +17,36 @@ const Catalog = () => {
 
   const inner = useSelector(state => state.filters.inner);
   const outer = useSelector(state => state.filters.outer);
+  const temperature = useSelector(state => state.filters.temperature);
+  const lengh = useSelector(state => state.filters.lengh);
+
   const producer = useSelector(state => state.filters.producer);
+  const standart = useSelector(state => state.filters.standart);
+  const category = useSelector(state => state.filters.category);
+  const pressureMpa = useSelector(state => state.filters.pressureMpa);
+  const pressureAtm = useSelector(state => state.filters.pressureAtm);
+
+  const producerFilterApplied = useSelector(
+    state => state.filters.producerFilterApplied
+  );
+  const standartFilterApplied = useSelector(
+    state => state.filters.standartFilterApplied
+  );
+  const categoryFilterApplied = useSelector(
+    state => state.filters.categoryFilterApplied
+  );
+  const pressureMpaFilterApplied = useSelector(
+    state => state.filters.pressureMpaFilterApplied
+  );
+  const pressureAtmFilterApplied = useSelector(
+    state => state.filters.pressureAtmFilterApplied
+  );
+  const temperatureFilterApplied = useSelector(
+    state => state.filters.temperatureFilterApplied
+  );
+  const rangeFilterApplied = useSelector(
+    state => state.filters.rangeFilterApplied
+  );
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -33,16 +62,77 @@ const Catalog = () => {
   let filteredCards = [];
 
   if (cards !== undefined && cards.length !== 0) {
-    filteredCards = cards.ГОСТ_18698.filter(cards => {
-      return (
-        cards.country === producer &&
-        cards.inner >= inner[0] &&
-        cards.inner <= inner[1] &&
-        cards.outer >= outer[0] &&
-        cards.outer <= outer[1]
-      );
+    filteredCards = cards.Catalog.filter(cards => {
+      if (producerFilterApplied === true) {
+        return (
+          cards.country == producer &&
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      } else if (standartFilterApplied === true) {
+        return (
+          cards.standart == standart &&
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      } else if (categoryFilterApplied === true) {
+        return (
+          cards.category == category &&
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      } else if (pressureMpaFilterApplied === true) {
+        return (
+          cards.presMpa == pressureMpa &&
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      } else if (pressureAtmFilterApplied === true) {
+        return (
+          cards.presAtm == pressureAtm &&
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      } else if (rangeFilterApplied === true) {
+        return (
+          cards.inner >= inner[0] &&
+          cards.inner <= inner[1] &&
+          cards.outer >= outer[0] &&
+          cards.outer <= outer[1] &&
+          cards.lengh >= lengh[0] &&
+          cards.lengh <= lengh[1] &&
+          cards.tMax <= temperature
+        );
+      }
+      return cards;
     });
   }
+  console.log(filteredCards);
 
   let currentCards = [];
   if (cards !== undefined && cards.length !== 0) {

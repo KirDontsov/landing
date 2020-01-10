@@ -10,6 +10,16 @@ h1.title {
   color: #1d212c;
   max-width: 750px;
   margin-top: 50px !important;
+  @media (max-width: 425px) {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 0 !important;
+    @media (max-width: 320px) {
+      font-size: 25px;
+      line-height: 30px;
+      margin-top: 0 !important;
+    }
+  }
 }
 
 .containerCol {
@@ -19,20 +29,87 @@ h1.title {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  @media (max-width: 768px) {
-    padding: 0;
-    margin: 50px auto 0;
+  @media (max-width: 1024px) {
+    max-width: 960px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      @media (max-width: 425px) {
+        padding: 0;
+      }
+    }
   }
+
   .col {
+    min-width: 960px;
+    @media (max-width: 1024px) {
+      min-width: 768px;
+      @media (max-width: 768px) {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
     &:nth-child(1) {
+      min-width: 211px;
       width: 211px;
-      height: 753px;
+      height: 800px;
       padding: 25px 20px;
       content: "";
       margin-right: 30px;
       box-shadow: 0px 0px 15px rgba(2, 38, 91, 0.12);
       position: sticky;
       top: 150px;
+      background: #fff;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+      @media (max-width: 1024px) {
+        @media (max-width: 768px) {
+          width: 100%;
+          height: 230px;
+          top: 0;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin: 0 auto 40px;
+          @media (max-width: 425px) {
+            flex-direction: column;
+            height: auto;
+          }
+        }
+      }
+      .formControl {
+        @media (max-width: 768px) {
+          width: 200px;
+          height: 30px;
+          margin: 0;
+          @media (max-width: 425px) {
+            width: 100%;
+          }
+        }
+      }
+      .rangeControl {
+        @media (max-width: 768px) {
+          width: 200px;
+          margin: 0 !important;
+          @media (max-width: 425px) {
+            width: 100%;
+          }
+        }
+      }
+      .MuiSlider-root {
+        @media (max-width: 768px) {
+          width: 200px;
+          margin: 0;
+          @media (max-width: 425px) {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
@@ -47,10 +124,27 @@ h1.title {
   padding: 31px 31px 31px 0;
   margin: 0 auto 40px;
   cursor: auto;
+  @media (max-width: 1024px) {
+    width: 768px;
+    @media (max-width: 768px) {
+      width: 100%;
+      @media (max-width: 425px) {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+        @media (max-width: 425px) {
+          padding: 20px;
+        }
+      }
+    }
+  }
   .catalog__card__img {
     width: 308px;
     height: 236px;
     background: url("../images/rukav.png") 0 50% / contain no-repeat;
+    @media (max-width: 425px) {
+      height: 100px;
+    }
   }
   .catalog__card__content {
     max-width: 600px;
@@ -62,6 +156,10 @@ h1.title {
       text-align: left;
       max-width: 479px;
       margin: 0 0 10px 0;
+      @media (max-width: 425px) {
+        font-size: 15px;
+        line-height: 20px;
+      }
     }
     .catalog__card__desc {
       font-size: 13px;
@@ -71,6 +169,10 @@ h1.title {
       color: rgba(44, 46, 63, 0.697549);
       margin-bottom: 30px;
       width: 100%;
+      @media (max-width: 425px) {
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
     .catalog__btn {
       width: 146px;
