@@ -128,8 +128,9 @@ const Catalog = () => {
           cards.lengh <= lengh[1] &&
           cards.tMax <= temperature
         );
+      } else if (rangeFilterApplied === false) {
+        return cards;
       }
-      return cards;
     });
   }
   console.log(filteredCards);
@@ -167,22 +168,20 @@ const Catalog = () => {
             <Filters />
           </div>
           <div className="col">
-            <Fade bottom delay={900} cascade>
-              {cards !== undefined ? (
-                <Cards cards={currentCards} loading={loading} />
-              ) : null}
+            {cards !== undefined ? (
+              <Cards cards={currentCards} loading={loading} />
+            ) : null}
 
-              <div className="pagination">
-                {cards !== undefined && cards.length !== 0 ? (
-                  <Pagination
-                    cardsPerPage={cardsPerPage}
-                    totalCards={filteredCards.length}
-                    paginate={paginate}
-                    scroll={scrollToTop}
-                  />
-                ) : null}
-              </div>
-            </Fade>
+            <div className="pagination">
+              {cards !== undefined && cards.length !== 0 ? (
+                <Pagination
+                  cardsPerPage={cardsPerPage}
+                  totalCards={filteredCards.length}
+                  paginate={paginate}
+                  scroll={scrollToTop}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
