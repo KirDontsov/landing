@@ -143,7 +143,7 @@ h2 {
       line-height: 88px;
       color: #fff;
       position: absolute;
-      top: 60%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       @media (max-width: 1440px) {
@@ -193,4 +193,8 @@ h3.sub__title {
 .category__img {
   width: 50%;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
 }

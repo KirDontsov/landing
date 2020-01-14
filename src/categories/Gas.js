@@ -1,73 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
-import { Table } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
 import Categories from "./Categories";
-import Sizes from "./Sizes";
+import axios from "axios";
+import Cards from "../components/Cards";
+import Pagination from "../components/Pagination";
 
-const headline = Categories[3].headline;
+const Gas = () => {
+  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cardsPerPage, setCardsPerPage] = useState(10);
 
-const Gas = () => (
-  <Fade bottom delay={700}>
-    <Helmet>
-      <title>{Categories[3].headline}</title>
-      <meta name="description" content={Categories[3].headline} />
-    </Helmet>
-    <div className="container__margin">
-      <div className="heading">
-        <h1 className="title">{Categories[3].headline}</h1>
-      </div>
+  useEffect(() => {
+    const fetchCards = async () => {
+      setLoading(true);
+      const res = await axios.get("/sizes.json");
+      setCards(res.data);
+      setLoading(false);
+    };
 
-      <div className="container">
-        <div className="center">
-          {Categories.map(category => {
-            return (
-              category.index === 3 && (
-                <img
-                  key={category.index}
-                  className="category__img"
-                  src={category.src}
-                  alt={category.headline}
-                />
-              )
-            );
-          })}
+    fetchCards();
+  }, []);
+
+  let filteredCards = [];
+
+  if (cards !== undefined && cards.length !== 0) {
+    filteredCards = cards.Catalog.filter(cards => {
+      return cards.category === "Рукава для газа";
+    });
+  }
+
+  let currentCards = [];
+  if (cards !== undefined && cards.length !== 0) {
+    const indexOfLastCard = currentPage * cardsPerPage;
+    const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+    currentCards = filteredCards.slice(indexOfFirstCard, indexOfLastCard);
+  }
+
+  const paginate = pageNumber => {
+    setCurrentPage(pageNumber);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    let div = document.querySelector(".wrapper");
+    div.scrollTop = 0;
+  };
+
+  if (loading) {
+    return <h2>Загрузка...</h2>;
+  }
+
+  return (
+    <Fade bottom delay={700}>
+      <Helmet>
+        <title>Рукава для газа</title>
+        <meta name="description" content="Рукава для газа" />
+      </Helmet>
+      <div className="container__margin">
+        <div className="heading">
+          <h1 className="title">Рукава для газа</h1>
         </div>
-        <Table celled selectable>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>#</Table.HeaderCell>
-              <Table.HeaderCell>Стандарт</Table.HeaderCell>
-              <Table.HeaderCell>Категория</Table.HeaderCell>
-              <Table.HeaderCell>Наименование</Table.HeaderCell>
-              <Table.HeaderCell>Размеры</Table.HeaderCell>
-              <Table.HeaderCell>Цена</Table.HeaderCell>
-              <Table.HeaderCell>Описание</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
 
-          <Table.Body>
-            {Sizes.map((item, i) => {
-              return (
-                item.category === headline && (
-                  <Table.Row key={item.index}>
-                    <Table.Cell>{item.index}</Table.Cell>
-                    <Table.Cell>{item.standart}</Table.Cell>
-                    <Table.Cell>{item.category}</Table.Cell>
-                    <Table.Cell>{item.name}</Table.Cell>
-                    <Table.Cell>{item.size}</Table.Cell>
-                    <Table.Cell>{item.price}</Table.Cell>
-                    <Table.Cell>{item.desc}</Table.Cell>
-                  </Table.Row>
-                )
-              );
-            })}
-          </Table.Body>
-        </Table>
+        <div className="container">
+          {cards !== undefined ? (
+            <Cards cards={currentCards} loading={loading} />
+          ) : null}
+          <div className="pagination paginationCategory">
+            {cards !== undefined && cards.length !== 0 ? (
+              <Pagination
+                cardsPerPage={cardsPerPage}
+                totalCards={filteredCards.length}
+                paginate={paginate}
+                scroll={scrollToTop}
+              />
+            ) : null}
+          </div>
+        </div>
       </div>
-    </div>
-  </Fade>
-);
+    </Fade>
+  );
+};
 
 export default Gas;

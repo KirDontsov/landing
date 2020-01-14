@@ -16,43 +16,16 @@ class Filters extends Component {
   handleChangeProducer = e => {
     this.props.changeProducer(e.target.value);
     this.props.changeFilterProducer(true);
-    this.props.changeFilterStandart(false);
-    this.props.changeFilterCategory(false);
-    this.props.changeFilterPressureMpa(false);
-    this.props.changeFilterPressureAtm(false);
-    this.props.changeFilterRange(false);
-    this.props.changeStandart("");
-    this.props.changeCategory("");
-    this.props.changePressureMpa("");
-    this.props.changePressureAtm("");
   };
 
   handleChangeStandart = e => {
     this.props.changeStandart(e.target.value);
     this.props.changeFilterStandart(true);
-    this.props.changeFilterProducer(false);
-    this.props.changeFilterCategory(false);
-    this.props.changeFilterPressureMpa(false);
-    this.props.changeFilterPressureAtm(false);
-    this.props.changeFilterRange(false);
-    this.props.changeProducer("");
-    this.props.changeCategory("");
-    this.props.changePressureMpa("");
-    this.props.changePressureAtm("");
   };
 
   handleChangeCategory = e => {
     this.props.changeCategory(e.target.value);
     this.props.changeFilterCategory(true);
-    this.props.changeFilterStandart(false);
-    this.props.changeFilterProducer(false);
-    this.props.changeFilterPressureMpa(false);
-    this.props.changeFilterPressureAtm(false);
-    this.props.changeFilterRange(false);
-    this.props.changeProducer("");
-    this.props.changeStandart("");
-    this.props.changePressureMpa("");
-    this.props.changePressureAtm("");
   };
 
   handleChangeInner = (e, newValue) => {
@@ -68,29 +41,14 @@ class Filters extends Component {
   handleChangePressureMpa = e => {
     this.props.changePressureMpa(e.target.value);
     this.props.changeFilterPressureMpa(true);
-    this.props.changeFilterCategory(false);
-    this.props.changeFilterStandart(false);
-    this.props.changeFilterProducer(false);
     this.props.changeFilterPressureAtm(false);
-    this.props.changeFilterRange(false);
-    this.props.changeProducer("");
-    this.props.changeStandart("");
-    this.props.changeCategory("");
     this.props.changePressureAtm("");
   };
 
   handleChangePressureAtm = e => {
     this.props.changePressureAtm(e.target.value);
     this.props.changeFilterPressureAtm(true);
-
-    this.props.changeFilterCategory(false);
-    this.props.changeFilterStandart(false);
-    this.props.changeFilterProducer(false);
     this.props.changeFilterPressureMpa(false);
-    this.props.changeFilterRange(false);
-    this.props.changeProducer("");
-    this.props.changeStandart("");
-    this.props.changeCategory("");
     this.props.changePressureMpa("");
   };
 
@@ -192,11 +150,11 @@ class Filters extends Component {
             value={pressureMpa}
             onChange={this.handleChangePressureMpa}
           >
-            <MenuItem value={0.3}>0,3</MenuItem>
-            <MenuItem value={0.63}>0,63</MenuItem>
-            <MenuItem value={0.8}>0,8</MenuItem>
-            <MenuItem value={1}>1,00</MenuItem>
-            <MenuItem value={4}>4,00</MenuItem>
+            <MenuItem value={"0.3"}>0,3</MenuItem>
+            <MenuItem value={"0.63"}>0,63</MenuItem>
+            <MenuItem value={"0.8"}>0,8</MenuItem>
+            <MenuItem value={"1"}>1,00</MenuItem>
+            <MenuItem value={"4"}>4,00</MenuItem>
           </Select>
         </FormControl>
 
@@ -208,11 +166,11 @@ class Filters extends Component {
             value={pressureAtm}
             onChange={this.handleChangePressureAtm}
           >
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={6.3}>6,3</MenuItem>
-            <MenuItem value={8}>8</MenuItem>
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={40}>40</MenuItem>
+            <MenuItem value={"3"}>3</MenuItem>
+            <MenuItem value={"6.3"}>6,3</MenuItem>
+            <MenuItem value={"8"}>8</MenuItem>
+            <MenuItem value={"10"}>10</MenuItem>
+            <MenuItem value={"40"}>40</MenuItem>
           </Select>
         </FormControl>
 
@@ -269,6 +227,8 @@ class Filters extends Component {
             onChange={this.handleChangeTemperature}
             min={50}
             max={175}
+            marks
+            step={10}
             valueLabelDisplay="auto"
             valueLabelDisplay="on"
           />

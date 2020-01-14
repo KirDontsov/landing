@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import "../scss/Catalog.scss";
-// import Sizes from "../categories/sizes";
 import axios from "axios";
 import Cards from "../components/Cards";
 import Pagination from "../components/Pagination";
@@ -63,74 +62,24 @@ const Catalog = () => {
 
   if (cards !== undefined && cards.length !== 0) {
     filteredCards = cards.Catalog.filter(cards => {
-      if (producerFilterApplied === true) {
-        return (
-          cards.country == producer &&
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (standartFilterApplied === true) {
-        return (
-          cards.standart == standart &&
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (categoryFilterApplied === true) {
-        return (
-          cards.category == category &&
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (pressureMpaFilterApplied === true) {
-        return (
-          cards.presMpa == pressureMpa &&
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (pressureAtmFilterApplied === true) {
-        return (
-          cards.presAtm == pressureAtm &&
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (rangeFilterApplied === true) {
-        return (
-          cards.inner >= inner[0] &&
-          cards.inner <= inner[1] &&
-          cards.outer >= outer[0] &&
-          cards.outer <= outer[1] &&
-          cards.lengh >= lengh[0] &&
-          cards.lengh <= lengh[1] &&
-          cards.tMax <= temperature
-        );
-      } else if (rangeFilterApplied === false) {
-        return cards;
-      }
+      return (
+        (producerFilterApplied === true ? cards.country === producer : true) &&
+        (standartFilterApplied === true ? cards.standart === standart : true) &&
+        (categoryFilterApplied === true ? cards.category === category : true) &&
+        (pressureMpaFilterApplied === true
+          ? cards.presMpa === pressureMpa
+          : true) &&
+        (pressureAtmFilterApplied === true
+          ? cards.presAtm === pressureAtm
+          : true) &&
+        cards.inner >= inner[0] &&
+        cards.inner <= inner[1] &&
+        cards.outer >= outer[0] &&
+        cards.outer <= outer[1] &&
+        cards.lengh >= lengh[0] &&
+        cards.lengh <= lengh[1] &&
+        cards.tMax <= temperature
+      );
     });
   }
   console.log(filteredCards);
