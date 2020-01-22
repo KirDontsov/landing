@@ -54,8 +54,8 @@ body::-webkit-scrollbar {
 
 .container {
   max-width: 1700px;
-  margin: 0 auto;
-  padding: 50px 100px;
+  margin: 40px auto;
+  padding: 0 100px;
   @media (max-width: 768px) {
     padding: 0;
     margin: 50px auto 0;
@@ -111,7 +111,7 @@ h3 {
 
 h1 {
   font-size: 70px;
-  margin: 100px auto;
+  margin: 100px auto 0;
   color: var(--black);
 }
 
@@ -124,41 +124,101 @@ h2 {
   margin: 0;
   @media (max-width: 768px) {
     padding: 0;
-    margin: 0 auto 100px;
+    margin: 0 auto;
   }
   .hero__banner {
     width: 100%;
-    min-height: 60vh;
-    background: url("../images/hero_banner.jpg") 50% 50% / cover no-repeat;
+    min-height: 100vh;
+    background: url("../images/heroBanner.jpg") 50% 50% / cover no-repeat;
     position: relative;
-    @media (max-width: 768px) {
-      min-height: 50vh;
-    }
+    // @media (max-width: 768px) {
+    //   min-height: 50vh;
+    // }
 
-    .title {
-      text-align: center;
-      max-width: 1126px;
-      font-weight: bold;
-      font-size: 72px;
-      line-height: 88px;
-      color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @media (max-width: 1440px) {
-        width: 90%;
-        font-size: 60px;
-        line-height: 66px;
-        @media (max-width: 1024px) {
-          width: 70%;
-          font-size: 50px;
-          line-height: 55px;
-          @media (max-width: 768px) {
-            padding: 0;
-            margin: 0 auto 0;
-            font-size: 30px;
-            line-height: 36px;
+    .center {
+      max-width: 1700px;
+      padding-top: 120px;
+      padding-bottom: 60px;
+      .title {
+        text-align: left;
+        max-width: 715px;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 59px;
+        color: #fff;
+        margin: 0 20% 60px 10%;
+        @media (max-width: 1440px) {
+          max-width: 715px;
+          // font-size: 30px;
+          // line-height: 66px;
+          @media (max-width: 1024px) {
+            width: 70%;
+            font-size: 50px;
+            line-height: 55px;
+            @media (max-width: 768px) {
+              padding: 0;
+              margin: 0 auto 0;
+              font-size: 30px;
+              line-height: 36px;
+            }
+          }
+        }
+      }
+      .colWrapper {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        .colMain {
+          display: flex;
+          flex-direction: row;
+
+          // padding-top: 300px;
+          // position: absolute;
+          // top: 300px;
+          // left: 50%;
+          // transform: translateX(-50%);
+          &:nth-child(1) {
+            width: 60%;
+          }
+          &:nth-child(2) {
+            width: 40%;
+            padding-left: 75px;
+            .header__form.MuiInputBase-input.MuiInput-input {
+              color: #fff !important;
+            }
+            .MuiInputBase-root {
+              color: var(--white) !important;
+            }
+
+            .MuiFormLabel-root {
+              color: var(--white) !important;
+            }
+
+            .MuiInput-underline:after {
+              border-bottom: 1px solid var(--white) !important;
+            }
+
+            .MuiInput-underline:before {
+              border-bottom: 1px solid var(--white) !important;
+            }
+          }
+
+          .col {
+            display: flex;
+            flex-direction: column;
+            padding-right: 50px;
+
+            h2.white {
+              margin-bottom: 12px;
+              color: #fff !important;
+              text-align: left !important;
+            }
+            .text {
+              color: #fff;
+              min-height: 56px;
+              margin-bottom: 70px;
+            }
           }
         }
       }

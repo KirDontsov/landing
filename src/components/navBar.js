@@ -32,7 +32,7 @@ class NavigationBar extends Component {
               <a href="tel:84956401225" className="phone">
                 +7 (495) 640 12 25
               </a>
-              <p>rti-torg@gmail.com</p>
+              <p>rukav@rti-torg.ru</p>
             </div>
           </div>
         </div>

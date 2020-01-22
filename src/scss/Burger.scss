@@ -172,8 +172,14 @@ a.logo__mob {
 
   position: absolute;
   right: 42px;
-  top: 50px;
+  top: 45px;
   background: url("../images/logo.png") 50% 50% / contain no-repeat;
   color: transparent;
   z-index: 999999;
+  @media (max-width: 375px) {
+    width: 100px;
+    @media (max-width: 320px) {
+      width: 80px;
+    }
+  }
 }

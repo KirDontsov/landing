@@ -1,5 +1,5 @@
 .quiz__section {
-  background: var(--gray);
+  background: var(--black);
   padding: 100px;
   min-height: 100vh;
   color: var(--black);
@@ -19,7 +19,7 @@
     font-size: 36px;
     line-height: 60px;
     letter-spacing: -0.0516129px;
-    color: var(--black);
+    color: var(--white);
     @media (max-width: 768px) {
       margin: 0 auto;
       justify-content: center;
@@ -66,7 +66,8 @@ button:disabled,
 button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
-  border: 1px solid transparent !important;
+  border: 1px solid var(--gray) !important;
+  background: var(--gray);
 }
 
 input {
@@ -184,6 +185,11 @@ input[type="radio"] {
     color: var(--red) !important;
   }
 
+  // .MuiButton-contained.Mui-disabled,
+  // .MuiButton-contained.Mui-disabled .MuiButton-label {
+  //   color: var(--red) !important;
+  // }
+
   .icon__li {
     display: flex;
     flex-direction: row;
@@ -229,7 +235,7 @@ input[type="radio"] {
         font-size: 18px;
         line-height: 32px;
         text-align: center;
-        color: var(--black);
+        color: var(--white);
         @media (max-width: 768px) {
           max-width: 100%;
           width: 100%;
@@ -256,5 +262,5 @@ h2.title.success {
 }
 
 .white {
-  color: var(--black);
+  color: var(--white);
 }

@@ -16,7 +16,7 @@ class Footer extends Component {
     div.scrollTop = 0;
   }
   render() {
-    let footer = ["footer__form"];
+    let formClass = ["footer__form"];
     return (
       <Fragment>
         <div className="footer">
@@ -51,7 +51,8 @@ class Footer extends Component {
             </div>
             <div className="col">
               <h3 className="footer__title">Оставьте свои контакты</h3>
-              <Form className={footer} />
+              <Form className={formClass} />
+              <ScrollButton scrollStepInPx="50" delayInMs="16.66" />
             </div>
           </div>
           <div className="col__center second">
@@ -63,8 +64,6 @@ class Footer extends Component {
             </div>
             <div className="col"></div>
           </div>
-
-          <ScrollButton scrollStepInPx="50" delayInMs="16.66" />
         </div>
       </Fragment>
     );

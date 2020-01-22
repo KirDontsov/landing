@@ -87,6 +87,9 @@ class Burger extends Component {
                   }
                 />
               </Button>
+              <a href="tel:84956401225" className="phone">
+                +7 (495) 640 12 25
+              </a>
               <Link className="logo__mob" to="/">
                 РТИ-Торг
               </Link>

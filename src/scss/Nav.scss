@@ -102,6 +102,24 @@ nav a {
 .phone {
   color: #1b1b1b;
   font-weight: bold;
+  @media (max-width: 768px) {
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (max-width: 425px) {
+      top: 61.5px;
+      left: 35%;
+      font-size: 15px;
+      @media (max-width: 375px) {
+        top: 63px;
+        left: 40%;
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 a.nav-link.active {
