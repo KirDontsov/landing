@@ -7,6 +7,7 @@ import shutter from "./models/shutter";
 import filters from "./models/filters";
 import search from "./models/search";
 import callBack from "./models/callBack";
+import form from "./models/form";
 
 import App from "./App";
 
@@ -15,7 +16,8 @@ const store = init({
     shutter,
     filters,
     search,
-    callBack
+    callBack,
+    form
   }
 });
 

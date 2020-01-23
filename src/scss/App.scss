@@ -131,14 +131,18 @@ h2 {
     min-height: 100vh;
     background: url("../images/heroBanner.jpg") 50% 50% / cover no-repeat;
     position: relative;
-    // @media (max-width: 768px) {
-    //   min-height: 50vh;
-    // }
+    @media (max-width: 768px) {
+      min-height: 50vh;
+      margin: 0 auto 100px;
+    }
 
     .center {
       max-width: 1700px;
       padding-top: 120px;
       padding-bottom: 60px;
+      @media (max-width: 768px) {
+        padding: 60px 30px;
+      }
       .title {
         text-align: left;
         max-width: 715px;
@@ -156,10 +160,11 @@ h2 {
             font-size: 50px;
             line-height: 55px;
             @media (max-width: 768px) {
+              width: 100%;
               padding: 0;
-              margin: 0 auto 0;
               font-size: 30px;
               line-height: 36px;
+              margin: 0;
             }
           }
         }
@@ -169,21 +174,30 @@ h2 {
         display: flex;
         flex-direction: row;
         margin: 0 auto;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          width: 100%;
+        }
         .colMain {
           display: flex;
           flex-direction: row;
-
-          // padding-top: 300px;
-          // position: absolute;
-          // top: 300px;
-          // left: 50%;
-          // transform: translateX(-50%);
+          @media (max-width: 768px) {
+            flex-direction: column;
+            width: 100%;
+          }
           &:nth-child(1) {
             width: 60%;
+            @media (max-width: 768px) {
+              width: 100%;
+            }
           }
           &:nth-child(2) {
             width: 40%;
             padding-left: 75px;
+            @media (max-width: 768px) {
+              width: 100%;
+              padding-left: 0;
+            }
             .header__form.MuiInputBase-input.MuiInput-input {
               color: #fff !important;
             }
@@ -202,12 +216,24 @@ h2 {
             .MuiInput-underline:before {
               border-bottom: 1px solid var(--white) !important;
             }
+            .header__form .btn__container.footer .send {
+              opacity: 1 !important;
+            }
           }
 
           .col {
             display: flex;
             flex-direction: column;
             padding-right: 50px;
+            @media (max-width: 768px) {
+              width: 100%;
+              padding-right: 0;
+            }
+            &:nth-child(1) {
+              @media (max-width: 768px) {
+                margin-top: 100px;
+              }
+            }
 
             h2.white {
               margin-bottom: 12px;

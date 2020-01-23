@@ -6,7 +6,14 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "../scss/Filters.scss";
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(",")
+  }
+});
 
 function valuetext(value) {
   return `${value}°C`;
@@ -76,7 +83,7 @@ class Filters extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <ThemeProvider theme={theme}>
         <FormControl className="formControl">
           <InputLabel id="demo-simple-select-label">Производитель</InputLabel>
           <Select
@@ -233,7 +240,7 @@ class Filters extends Component {
             valueLabelDisplay="on"
           />
         </FormControl>
-      </Fragment>
+      </ThemeProvider>
     );
   }
 }

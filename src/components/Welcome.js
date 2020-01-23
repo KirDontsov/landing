@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faIndustry,
-  faTruck,
-  faWrench,
-  faWarehouse
-} from "@fortawesome/free-solid-svg-icons";
 import Button from "@material-ui/core/Button";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { red, purple } from "@material-ui/core/colors";
 import Fade from "react-reveal/Fade";
+// icons
+import Truck from "./icons/Truck";
+import Industry from "./icons/Industry";
+import Hand from "./icons/Hand";
+import WareHouse from "./icons/WareHouse";
 
 const theme = createMuiTheme({
-  palette: {
-    primary: red,
-    secondary: purple
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(",")
   }
 });
 
@@ -41,7 +37,7 @@ class Welcome extends Component {
               <div className="icon__li">
                 <Fade bottom delay={300}>
                   <div className="col">
-                    <FontAwesomeIcon icon={faTruck} className="icon" />
+                    <Truck />
                     <p className="welcome__text">
                       Отгрузка день в день, 24/7 и доставка до ТК бесплатно
                     </p>
@@ -49,7 +45,7 @@ class Welcome extends Component {
                 </Fade>
                 <Fade bottom delay={500}>
                   <div className="col">
-                    <FontAwesomeIcon icon={faIndustry} className="icon" />
+                    <Industry />
                     <p className="welcome__text">
                       Налаженные контакты более чем с 50 поставщиками
                     </p>
@@ -57,7 +53,7 @@ class Welcome extends Component {
                 </Fade>
                 <Fade bottom delay={700}>
                   <div className="col">
-                    <FontAwesomeIcon icon={faWrench} className="icon" />
+                    <Hand />
                     <p className="welcome__text">
                       Бесплатно соберем рукав в готовое изделие
                     </p>
@@ -65,7 +61,7 @@ class Welcome extends Component {
                 </Fade>
                 <Fade bottom delay={900}>
                   <div className="col">
-                    <FontAwesomeIcon icon={faWarehouse} className="icon" />
+                    <WareHouse />
                     <p className="welcome__text">
                       От 10 км всегда в наличии на складе
                     </p>

@@ -51,7 +51,7 @@ h1.title {
     &:nth-child(1) {
       min-width: 211px;
       width: 211px;
-      height: 800px;
+      height: 820px;
       padding: 25px 20px;
       content: "";
       margin-right: 30px;
@@ -110,6 +110,12 @@ h1.title {
             width: 100%;
           }
         }
+      }
+      .MuiInputBase-root {
+        font-family: "Montserrat" !important;
+      }
+      .MuiInputBase-input {
+        font-family: "Montserrat" !important;
       }
     }
   }
