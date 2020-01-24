@@ -4,11 +4,9 @@ import TextField from "@material-ui/core/TextField";
 // import classnames from "classnames";
 
 const MaskInput = props => {
-  const { mask, label, onChange, value, name } = props;
+  const { mask, formLabel, onChange, value, name, fullWidth } = props;
   return (
     <div className="form-group">
-      <label className="phone">{label}</label>
-
       <InputMask
         mask={mask}
         autoComplete="off"
@@ -17,11 +15,10 @@ const MaskInput = props => {
       >
         <TextField
           name={name}
-          label={label}
-          // onChange={onChange}
+          label={formLabel}
           value={value}
           margin="normal"
-          fullWidth={true}
+          fullWidth={fullWidth}
           required
           type="text"
         />

@@ -67,7 +67,7 @@ class Home extends Component {
                     </div>
                   </div>
                   <div className="colMain">
-                    <div className="col">
+                    <div className="col form">
                       <h2 className="white">Оставьте свои контакты</h2>
                       <Form className={formClass} />
                     </div>

@@ -194,9 +194,15 @@ h2 {
           &:nth-child(2) {
             width: 40%;
             padding-left: 75px;
+
             @media (max-width: 768px) {
               width: 100%;
               padding-left: 0;
+            }
+
+            .col {
+              padding-right: 0;
+              width: 100%;
             }
             .header__form.MuiInputBase-input.MuiInput-input {
               color: #fff !important;

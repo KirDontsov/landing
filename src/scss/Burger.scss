@@ -122,6 +122,9 @@
   &.active {
     left: 0;
   }
+  .container__form {
+    width: 500px;
+  }
   .container__mob {
     display: flex;
     flex-direction: column;

@@ -31,17 +31,21 @@ const About = () => (
           <h2 className="dark">СЕГОДНЯ РТИ-ТОРГ - ЭТО...</h2>
         </Fade>
         <div className="col__wrapper">
-          <Fade left delay={500} className="col">
-            <p className="text dark">
-              Квалифицированные менеджеры отдела продаж
-            </p>
-            <p className="text dark">Гарантия качественных поставок</p>
+          <Fade left delay={500}>
+            <div className="col">
+              <p className="text dark">
+                Квалифицированные менеджеры отдела продаж
+              </p>
+              <p className="text dark">Гарантия качественных поставок</p>
+            </div>
           </Fade>
-          <Fade right delay={500} className="col">
-            <p className="text dark">Широкий ассортимент товара</p>
-            <p className="text dark">
-              Выбор большинства крупнейших предприятий
-            </p>
+          <Fade right delay={500}>
+            <div className="col">
+              <p className="text dark">Широкий ассортимент товара</p>
+              <p className="text dark">
+                Выбор большинства крупнейших предприятий
+              </p>
+            </div>
           </Fade>
         </div>
       </div>

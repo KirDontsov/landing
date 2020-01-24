@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core/styles";
 import Fade from "react-reveal/Fade";
 // icons
 import Truck from "./icons/Truck";
 import Industry from "./icons/Industry";
 import Hand from "./icons/Hand";
 import WareHouse from "./icons/WareHouse";
-
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: ["Montserrat", "sans-serif"].join(",")
-  }
-});
 
 class Welcome extends Component {
   continue = e => {
@@ -22,7 +16,7 @@ class Welcome extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={this.props.theme}>
         <div className="quiz__section">
           <div className="quiz">
             <Fade bottom delay={300}>

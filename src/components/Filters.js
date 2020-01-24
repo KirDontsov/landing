@@ -85,43 +85,6 @@ class Filters extends Component {
     return (
       <ThemeProvider theme={theme}>
         <FormControl className="formControl">
-          <InputLabel id="demo-simple-select-label">Производитель</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={producer}
-            onChange={this.handleChangeProducer}
-          >
-            <MenuItem value={"Россия"}>Россия</MenuItem>
-            <MenuItem value={"Китай"}>Китай</MenuItem>
-            <MenuItem value={"Тайвань"}>Тайвань</MenuItem>
-          </Select>
-        </FormControl>
-
-        <FormControl className="formControl">
-          <InputLabel id="demo-simple-select-label">Стандарт</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={standart}
-            onChange={this.handleChangeStandart}
-          >
-            <MenuItem value={"ГОСТ 18698-78"}>ГОСТ 18698-78</MenuItem>
-            <MenuItem value={"ГОСТ 18698-79"}>ГОСТ 18698-79</MenuItem>
-            <MenuItem value={"ГОСТ 18698-80"}>ГОСТ 18698-80</MenuItem>
-            <MenuItem value={"ГОСТ 18698-81"}>ГОСТ 18698-81</MenuItem>
-            <MenuItem value={"ГОСТ 18698-82"}>ГОСТ 18698-82</MenuItem>
-            <MenuItem value={"ГОСТ 18698-83"}>ГОСТ 18698-83</MenuItem>
-            <MenuItem value={"ГОСТ 18698-84"}>ГОСТ 18698-84</MenuItem>
-            <MenuItem value={"ГОСТ 18698-85"}>ГОСТ 18698-85</MenuItem>
-            <MenuItem value={"ТУ 2553-189-05788889-2004"}>
-              ТУ 2553-189-05788889-2004
-            </MenuItem>
-            <MenuItem value={"ТУ 38 105981-"}>ТУ 38 105981-</MenuItem>
-          </Select>
-        </FormControl>
-
-        <FormControl className="formControl">
           <InputLabel id="demo-simple-select-label">Категория</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -178,6 +141,43 @@ class Filters extends Component {
             <MenuItem value={"8"}>8</MenuItem>
             <MenuItem value={"10"}>10</MenuItem>
             <MenuItem value={"40"}>40</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Стандарт</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={standart}
+            onChange={this.handleChangeStandart}
+          >
+            <MenuItem value={"ГОСТ 18698-78"}>ГОСТ 18698-78</MenuItem>
+            <MenuItem value={"ГОСТ 18698-79"}>ГОСТ 18698-79</MenuItem>
+            <MenuItem value={"ГОСТ 18698-80"}>ГОСТ 18698-80</MenuItem>
+            <MenuItem value={"ГОСТ 18698-81"}>ГОСТ 18698-81</MenuItem>
+            <MenuItem value={"ГОСТ 18698-82"}>ГОСТ 18698-82</MenuItem>
+            <MenuItem value={"ГОСТ 18698-83"}>ГОСТ 18698-83</MenuItem>
+            <MenuItem value={"ГОСТ 18698-84"}>ГОСТ 18698-84</MenuItem>
+            <MenuItem value={"ГОСТ 18698-85"}>ГОСТ 18698-85</MenuItem>
+            <MenuItem value={"ТУ 2553-189-05788889-2004"}>
+              ТУ 2553-189-05788889-2004
+            </MenuItem>
+            <MenuItem value={"ТУ 38 105981-"}>ТУ 38 105981-</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Производитель</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={producer}
+            onChange={this.handleChangeProducer}
+          >
+            <MenuItem value={"Россия"}>Россия</MenuItem>
+            <MenuItem value={"Китай"}>Китай</MenuItem>
+            <MenuItem value={"Тайвань"}>Тайвань</MenuItem>
           </Select>
         </FormControl>
 

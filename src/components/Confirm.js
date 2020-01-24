@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 export class Confirm extends Component {
   continue = e => {
@@ -44,54 +45,59 @@ export class Confirm extends Component {
     } = this.props;
 
     return (
-      <div className="quiz__section">
-        <div className="quiz">
-          <h2>Проверьте правильность заполнения данных</h2>
-          <div className="quiz__box">
-            <List>
-              <ListItem>
-                <ListItemText primary="Имя" secondary={firstName} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Фамилия" secondary={lastName} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Email" secondary={email} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Телефон" secondary={phone} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Город" secondary={city} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Наименование товара" secondary={item} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Выбрано" secondary={selectedOption} />
-              </ListItem>
-            </List>
-          </div>
-          <div className="btn__container inputs">
-            <Button
-              variant="contained"
-              onClick={this.back}
-              className="next btn"
-            >
-              Назад
-            </Button>
+      <ThemeProvider theme={this.props.theme}>
+        <div className="quiz__section">
+          <div className="quiz">
+            <h2>Проверьте правильность заполнения данных</h2>
+            <div className="quiz__box">
+              <List>
+                <ListItem>
+                  <ListItemText primary="Имя" secondary={firstName} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Фамилия" secondary={lastName} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Email" secondary={email} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Телефон" secondary={phone} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Город" secondary={city} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary="Наименование товара"
+                    secondary={item}
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Выбрано" secondary={selectedOption} />
+                </ListItem>
+              </List>
+            </div>
+            <div className="btn__container inputs">
+              <Button
+                variant="contained"
+                onClick={this.back}
+                className="next btn"
+              >
+                Назад
+              </Button>
 
-            <Button
-              type="submit"
-              variant="contained"
-              onClick={this.continue}
-              className="next btn"
-            >
-              Подтвердить и Отправить
-            </Button>
+              <Button
+                type="submit"
+                variant="contained"
+                onClick={this.continue}
+                className="next btn"
+              >
+                Подтвердить и Отправить
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }

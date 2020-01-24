@@ -5,8 +5,29 @@ import Welcome from "./Welcome";
 import Contacts from "./Contacts";
 import Confirm from "./Confirm";
 import Success from "./Success";
+import { createMuiTheme } from "@material-ui/core/styles";
 // import { quizData } from "../quizData";
 import "../scss/Quiz.scss";
+
+const theme = createMuiTheme({
+  pallette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#fff"
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: "#0066ff",
+      main: "#ff4400",
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: "#ffcc00"
+    }
+  },
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(",")
+  }
+});
 
 export class Quiz extends Component {
   constructor() {
@@ -106,6 +127,7 @@ export class Quiz extends Component {
             handleChange={this.handleChange}
             values={values}
             disabled={disabled}
+            theme={theme}
           />
         );
       case 1:
@@ -115,6 +137,7 @@ export class Quiz extends Component {
             handleChange={this.handleChange}
             values={values}
             disabled={disabled}
+            theme={theme}
           />
         );
       case 2:
@@ -125,6 +148,7 @@ export class Quiz extends Component {
             handleChange={this.handleChange}
             values={values}
             disabled={disabled}
+            theme={theme}
           />
         );
       case 3:
@@ -135,6 +159,7 @@ export class Quiz extends Component {
             handleChange={this.handleChange}
             values={values}
             disabled={disabled}
+            theme={theme}
           />
         );
       case 4:
@@ -144,6 +169,7 @@ export class Quiz extends Component {
             prevStep={this.prevStep}
             values={values}
             disabled={disabled}
+            theme={theme}
           />
         );
       case 5:

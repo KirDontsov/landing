@@ -21,40 +21,43 @@ class Footer extends Component {
       <Fragment>
         <div className="footer">
           <div className="col__center">
-            <div className="col">
-              <h3 className="footer__title">Быстрые ссылки</h3>
-              {this.props.routes.map(route =>
-                route.id <= 10 ? (
-                  <NavLink
-                    className={route.className}
-                    exact={route.isExact}
-                    activeClassName="active"
-                    key={route.path}
-                    to={route.path}
-                    onClick={e => this.handleClick(e)}
-                  >
-                    {route.name}
-                  </NavLink>
-                ) : null
-              )}
-            </div>
-            <div className="col">
-              <h3 className="footer__title">Контактная информация</h3>
-              <ul>
-                <li className="footer__contacts">Индекс: 620087 </li>
-                <li className="footer__contacts">
-                  г. Екатеринбург, ул. Межевая, 11
-                </li>
-                <li className="footer__contacts">info@rti-torg.ru</li>
-                <li className="footer__contacts">+7 (343) 385-58-57</li>
-              </ul>
-            </div>
-            <div className="col">
-              <h3 className="footer__title">Оставьте свои контакты</h3>
-              <Form className={formClass} />
-              <ScrollButton scrollStepInPx="50" delayInMs="16.66" />
+            <div className="colWrapper">
+              <div className="col">
+                <h3 className="footer__title">Быстрые ссылки</h3>
+                {this.props.routes.map(route =>
+                  route.id <= 10 ? (
+                    <NavLink
+                      className={route.className}
+                      exact={route.isExact}
+                      activeClassName="active"
+                      key={route.path}
+                      to={route.path}
+                      onClick={e => this.handleClick(e)}
+                    >
+                      {route.name}
+                    </NavLink>
+                  ) : null
+                )}
+              </div>
+              <div className="col">
+                <h3 className="footer__title">Контактная информация</h3>
+                <ul>
+                  <li className="footer__contacts">Индекс: 620087 </li>
+                  <li className="footer__contacts">
+                    г. Екатеринбург, ул. Межевая, 11
+                  </li>
+                  <li className="footer__contacts">info@rti-torg.ru</li>
+                  <li className="footer__contacts">+7 (343) 385-58-57</li>
+                </ul>
+              </div>
+              <div className="col">
+                <h3 className="footer__title">Оставьте свои контакты</h3>
+                <Form className={formClass} />
+                <ScrollButton scrollStepInPx="50" delayInMs="16.66" />
+              </div>
             </div>
           </div>
+
           <div className="col__center second">
             <div className="col">
               <div className="logo"></div>
