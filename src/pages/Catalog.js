@@ -22,6 +22,7 @@ const Catalog = () => {
   const producer = useSelector(state => state.filters.producer);
   const standart = useSelector(state => state.filters.standart);
   const category = useSelector(state => state.filters.category);
+  const type = useSelector(state => state.filters.type);
   const pressureMpa = useSelector(state => state.filters.pressureMpa);
   const pressureAtm = useSelector(state => state.filters.pressureAtm);
 
@@ -33,6 +34,9 @@ const Catalog = () => {
   );
   const categoryFilterApplied = useSelector(
     state => state.filters.categoryFilterApplied
+  );
+  const typeFilterApplied = useSelector(
+    state => state.filters.typeFilterApplied
   );
   const pressureMpaFilterApplied = useSelector(
     state => state.filters.pressureMpaFilterApplied
@@ -66,6 +70,7 @@ const Catalog = () => {
         (producerFilterApplied === true ? cards.country === producer : true) &&
         (standartFilterApplied === true ? cards.standart === standart : true) &&
         (categoryFilterApplied === true ? cards.category === category : true) &&
+        (typeFilterApplied === true ? cards.type === type : true) &&
         (pressureMpaFilterApplied === true
           ? cards.presMpa === pressureMpa
           : true) &&

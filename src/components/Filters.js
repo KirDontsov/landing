@@ -35,6 +35,11 @@ class Filters extends Component {
     this.props.changeFilterCategory(true);
   };
 
+  handleChangeType = e => {
+    this.props.changeType(e.target.value);
+    this.props.changeFilterType(true);
+  };
+
   handleChangeInner = (e, newValue) => {
     this.props.changeInner(newValue);
     this.props.changeFilterRange(true);
@@ -74,6 +79,7 @@ class Filters extends Component {
       producer,
       standart,
       category,
+      type,
       inner,
       outer,
       pressureMpa,
@@ -109,6 +115,19 @@ class Filters extends Component {
             <MenuItem value={"Рукава для абразива"}>
               Рукава для абразива
             </MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl className="formControl">
+          <InputLabel id="demo-simple-select-label">Тип</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={type}
+            onChange={this.handleChangeType}
+          >
+            <MenuItem value={"напорные"}>Напорный</MenuItem>
+            <MenuItem value={"всасывающие"}>Напорно-всасывающий</MenuItem>
           </Select>
         </FormControl>
 
@@ -183,7 +202,7 @@ class Filters extends Component {
 
         <FormControl className="formControl">
           <Typography className="rangeControl" id="range-slider" gutterBottom>
-            Внутренний диаметр, мм
+            Внутр. диаметр, мм
           </Typography>
           <Slider
             value={inner}
@@ -197,7 +216,7 @@ class Filters extends Component {
 
         <FormControl className="formControl">
           <Typography className="rangeControl" id="range-slider" gutterBottom>
-            Внешний диаметр, мм
+            Внеш. диаметр, мм
           </Typography>
           <Slider
             min={22}
@@ -250,6 +269,7 @@ const mapState = state => ({
   producer: state.filters.producer,
   standart: state.filters.standart,
   category: state.filters.category,
+  type: state.filters.type,
   inner: state.filters.inner,
   outer: state.filters.outer,
   pressureMpa: state.filters.pressureMpa,
@@ -259,6 +279,7 @@ const mapState = state => ({
   producerFilterApplied: state.filters.producerFilterApplied,
   standartFilterApplied: state.filters.standartFilterApplied,
   categorytFilterApplied: state.filters.categorytFilterApplied,
+  typeFilterApplied: state.filters.typeFilterApplied,
   pressureMpaFilterApplied: state.filters.pressureMpaFilterApplied,
   pressureAtmFilterApplied: state.filters.pressureAtmFilterApplied,
   temperatureFilterApplied: state.filters.temperatureFilterApplied,
@@ -271,6 +292,7 @@ const mapDispatch = ({
     changeProducer,
     changeStandart,
     changeCategory,
+    changeType,
     changeTemperature,
     changeInner,
     changeOuter,
@@ -280,6 +302,7 @@ const mapDispatch = ({
     changeFilterProducer,
     changeFilterStandart,
     changeFilterCategory,
+    changeFilterType,
     changeFilterPressureMpa,
     changeFilterPressureAtm,
     changeFilterTemperature,
@@ -290,6 +313,7 @@ const mapDispatch = ({
   changeProducer,
   changeStandart,
   changeCategory,
+  changeType,
   changeTemperature,
   changeInner,
   changeOuter,
@@ -299,6 +323,7 @@ const mapDispatch = ({
   changeFilterProducer,
   changeFilterStandart,
   changeFilterCategory,
+  changeFilterType,
   changeFilterPressureMpa,
   changeFilterPressureAtm,
   changeFilterTemperature,

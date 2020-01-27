@@ -3,6 +3,7 @@ const filters = {
     producer: "",
     standart: "",
     category: "",
+    type: "",
     temperature: 175,
     inner: [10, 150],
     outer: [22, 172],
@@ -12,6 +13,7 @@ const filters = {
     producerFilterApplied: false,
     standartFilterApplied: false,
     categoryFilterApplied: false,
+    typeFilterApplied: false,
     pressureMpaFilterApplied: false,
     pressureAtmFilterApplied: false,
     temperatureFilterApplied: false,
@@ -29,6 +31,10 @@ const filters = {
     changeCategory: (state, payload) => ({
       ...state,
       category: payload
+    }),
+    changeType: (state, payload) => ({
+      ...state,
+      type: payload
     }),
     changeTemperature: (state, payload) => ({
       ...state,
@@ -65,6 +71,10 @@ const filters = {
     changeFilterCategory: (state, payload) => ({
       ...state,
       categoryFilterApplied: payload
+    }),
+    changeFilterType: (state, payload) => ({
+      ...state,
+      typeFilterApplied: payload
     }),
     changeFilterPressureMpa: (state, payload) => ({
       ...state,

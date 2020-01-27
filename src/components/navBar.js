@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import Search from "./Search";
 import CallBack from "./CallBack";
 import "../scss/Nav.scss";
 import { routes } from "../routes";
@@ -29,8 +28,8 @@ class NavigationBar extends Component {
             </div>
 
             <div className="right__text">
-              <a href="tel:84956401225" className="phone">
-                +7 (495) 640 12 25
+              <a href="tel:83432885690" className="phone">
+                +7 (343) 288-56-90
               </a>
               <p>rukav@rti-torg.ru</p>
             </div>

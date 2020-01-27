@@ -41,6 +41,9 @@
       // align-items: center;
       text-align: left;
       position: relative;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
       .col {
         width: calc(60% / 2);
         // padding: 50px 10px 50px 50px;

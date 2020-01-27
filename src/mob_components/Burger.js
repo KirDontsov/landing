@@ -3,6 +3,8 @@ import { Motion, spring } from "react-motion";
 import { noop } from "lodash";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
+import CallBack from "./CallBack__mob";
+import { routes } from "../routes";
 
 import "../scss/Burger.scss";
 
@@ -73,6 +75,7 @@ class Burger extends Component {
                     ) : null
                   )}
                 </div>
+                <CallBack routes={routes.filter(route => route.isMobile)} />
               </div>
               <Button
                 className={buttonClass.join(" ")}
@@ -87,8 +90,8 @@ class Burger extends Component {
                   }
                 />
               </Button>
-              <a href="tel:84956401225" className="phone">
-                +7 (495) 640 12 25
+              <a href="tel:83432885690" className="phone">
+                +7 (343) 288-56-90
               </a>
               <Link className="logo__mob" to="/">
                 РТИ-Торг
