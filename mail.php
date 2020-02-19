@@ -16,7 +16,7 @@
     send_mail($message); 
      
     function send_mail($message){
-        $mail_to = "kir.dontsov@gmail.com";
+        $mail_to = "rukav@rti-torg.ru";
         $subject = "Заявка с сайта";
          
         $headers= "MIME-Version: 1.0\r\n";
