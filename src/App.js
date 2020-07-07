@@ -14,12 +14,9 @@ import "./scss/App.scss";
 const supportsHistory = "pushState" in window.history;
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			width: window.innerWidth
-		};
-	}
+	state = {
+		width: window.innerWidth
+	};
 
 	componentDidMount() {
 		window.addEventListener("resize", this.handleWindowSizeChange);

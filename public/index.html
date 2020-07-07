@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic"
-      rel="stylesheet"
-    />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic"
+    rel="stylesheet" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -23,10 +22,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  </head>
-  <body id="body">
-    <div id="root"></div>
-    <!--
+</head>
+
+<body id="body">
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -36,7 +36,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <!-- <script>
+  <!-- <script>
 			(function() {
 				const animateit = function(e) {
 					const span = this.querySelector("span");
@@ -60,72 +60,70 @@
 				window.addEventListener("mousemove", editCursor);
 			})();
 		</script> -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-    <script>
-      (function() {
-        delete Hammer.defaults.cssProps.userSelect;
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script>
+    (function () {
+      delete Hammer.defaults.cssProps.userSelect;
 
-        let windowWidth = screen.width;
-        if (windowWidth <= 900) {
-          return null;
-        } else {
-          var myElement = document.getElementById("body");
-          var mc = new Hammer(myElement);
-          mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-          var navigateMobUp = () => {
-            $(".nav-wrapper")
-              .addClass("invisibleNav")
-              .removeClass("visibleNav");
-          };
-          var navigateMobDown = () => {
+      let windowWidth = screen.width;
+      if (windowWidth <= 900) {
+        return null;
+      } else {
+        var myElement = document.getElementById("body");
+        var mc = new Hammer(myElement);
+        mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+        var navigateMobUp = () => {
+          $(".nav-wrapper")
+            .addClass("invisibleNav")
+            .removeClass("visibleNav");
+        };
+        var navigateMobDown = () => {
+          $(".nav-wrapper")
+            .addClass("visibleNav")
+            .removeClass("invisibleNav");
+        };
+        mc.on("panup", navigateMobUp);
+        mc.on("pandown", navigateMobDown);
+        $("#body").bind("mousewheel", "touchmove", function (event) {
+          if (event.originalEvent.wheelDelta >= 0) {
             $(".nav-wrapper")
               .addClass("visibleNav")
               .removeClass("invisibleNav");
-          };
-          mc.on("panup", navigateMobUp);
-          mc.on("pandown", navigateMobDown);
-          $("#body").bind("mousewheel", "touchmove", function(event) {
-            if (event.originalEvent.wheelDelta >= 0) {
-              $(".nav-wrapper")
-                .addClass("visibleNav")
-                .removeClass("invisibleNav");
-            } else {
-              $(".nav-wrapper")
-                .addClass("invisibleNav")
-                .removeClass("visibleNav");
-            }
-          });
-        }
-      })();
-    </script>
-    <!-- WhatsHelp.io widget -->
-    <script type="text/javascript">
-      (function() {
-        var options = {
-          whatsapp: "+79819861167", // WhatsApp number
-          call_to_action: "Мы на связи", // Call to action
-          position: "right" // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol,
-          host = "getbutton.io",
-          url = proto + "//static." + host;
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = url + "/widget-send-button/js/init.js";
-        s.onload = function() {
-          WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName("script")[0];
-        x.parentNode.insertBefore(s, x);
-      })();
-    </script>
-    <!-- /WhatsHelp.io widget -->
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-  </body>
+          } else {
+            $(".nav-wrapper")
+              .addClass("invisibleNav")
+              .removeClass("visibleNav");
+          }
+        });
+      }
+    })();
+  </script>
+  <!-- WhatsHelp.io widget -->
+  <script type="text/javascript">
+    (function () {
+      var options = {
+        whatsapp: "+79222206202", // WhatsApp number
+        call_to_action: "Мы на связи", // Call to action
+        position: "right" // Position may be 'right' or 'left'
+      };
+      var proto = document.location.protocol,
+        host = "getbutton.io",
+        url = proto + "//static." + host;
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = url + "/widget-send-button/js/init.js";
+      s.onload = function () {
+        WhWidgetSendButton.init(host, proto, options);
+      };
+      var x = document.getElementsByTagName("script")[0];
+      x.parentNode.insertBefore(s, x);
+    })();
+  </script>
+  <!-- /WhatsHelp.io widget -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+</body>
+
 </html>

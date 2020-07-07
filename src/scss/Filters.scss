@@ -1,41 +1,52 @@
 .filters {
-  .formControl {
-    width: 100%;
-    margin-bottom: 30px !important;
-    @media (max-width: 1024px) {
-      margin-bottom: 30px !important;
-    }
-  }
+	.formControl {
+		width: 100%;
+		margin-bottom: 20px !important;
+		@media (max-width: 1024px) {
+			margin-bottom: 30px !important;
+		}
+	}
 
-  .rangeControl {
-    margin-bottom: 20px !important;
-  }
+	.rangeControl {
+		margin-bottom: 20px !important;
+	}
 
-  .MuiSlider-root {
-    color: var(--red) !important;
-  }
+	.MuiSlider-root {
+		color: var(--red) !important;
+	}
 
-  .MuiButton-label {
-    color: #fff !important;
-    font-weight: 500 !important;
-    font-size: 12px !important;
-    line-height: 15px !important;
-    letter-spacing: 0.253846px !important;
-  }
+	.MuiButton-label {
+		color: #fff !important;
+		font-weight: 500 !important;
+		font-size: 12px !important;
+		line-height: 15px !important;
+		letter-spacing: 0.253846px !important;
+	}
 
-  .MuiInput-underline:after {
-    border-bottom: 1px solid var(--red) !important;
-  }
+	.MuiInput-underline:after {
+		border-bottom: 1px solid var(--red) !important;
+	}
 
-  .MuiInput-underline:before {
-    border-bottom: 1px solid var(--black) !important;
-  }
+	.MuiInput-underline:before {
+		border-bottom: 1px solid var(--black) !important;
+	}
 
-  .MuiFormLabel-root {
-    color: var(--black) !important;
-  }
+	.MuiFormLabel-root {
+		color: var(--black) !important;
+	}
 
-  .MuiTypography-colorTextSecondary {
-    color: var(--red) !important;
-  }
+	.MuiTypography-colorTextSecondary {
+		color: var(--red) !important;
+	}
+
+	.dropFilters {
+		background: var(--red);
+		cursor: pointer;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 50px;
+		width: 100%;
+	}
 }
