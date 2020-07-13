@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import "../scss/Catalog.scss";
@@ -13,6 +13,10 @@ const Catalog = () => {
 	const [loading, setLoading] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [cardsPerPage] = useState(10);
+	const [activeClass, setActiveClass] = useState(false);
+
+	const [width, setWidth] = useState(null);
+	const [isMobile, setIsMobile] = useState(false);
 
 	const inner = useSelector(state => state.filters.inner);
 	const outer = useSelector(state => state.filters.outer);
@@ -32,19 +36,32 @@ const Catalog = () => {
 	const typeFilterApplied = useSelector(state => state.filters.typeFilterApplied);
 	const pressureMpaFilterApplied = useSelector(state => state.filters.pressureMpaFilterApplied);
 	const pressureAtmFilterApplied = useSelector(state => state.filters.pressureAtmFilterApplied);
-	// const temperatureFilterApplied = useSelector(state => state.filters.temperatureFilterApplied);
-	// const rangeFilterApplied = useSelector(state => state.filters.rangeFilterApplied);
 
-	useEffect(() => {
-		const fetchCards = async () => {
-			setLoading(true);
-			const res = await axios.get("/sizes.json");
-			setCards(res.data);
-			setLoading(false);
-		};
+	useEffect(
+		() => {
+			if (window !== "undefined") {
+				setWidth(window.innerWidth);
+				if (width <= 768) {
+					setIsMobile(true);
+				}
+				if (width > 768) {
+					setIsMobile(false);
+				}
+			}
 
-		fetchCards();
-	}, []);
+			const fetchCards = async () => {
+				setLoading(true);
+				const res = await axios.get("/sizes.json");
+				setCards(res.data);
+				setLoading(false);
+			};
+
+			fetchCards();
+			window.addEventListener("resize", () => setWidth(window.innerWidth));
+			return () => window.removeEventListener("resize", () => setWidth(window.innerWidth));
+		},
+		[width]
+	);
 
 	let filteredCards = [];
 
@@ -85,6 +102,23 @@ const Catalog = () => {
 		div.scrollTop = 0;
 	};
 
+	const mobFiltersClick = useCallback(() => {
+		setActiveClass(prevState => !prevState);
+	}, []);
+
+	const mobFiltersClass = ["mobileFilters"];
+	const filtersClass = isMobile ? ["filters"] : ["desctopFilters"];
+
+	if (activeClass) {
+		mobFiltersClass.push("active");
+		filtersClass.push("active");
+	}
+
+	if (!activeClass) {
+		mobFiltersClass.filter(item => item !== "active");
+		filtersClass.filter(item => item !== "active");
+	}
+
 	return (
 		<Fragment>
 			<Helmet>
@@ -98,8 +132,12 @@ const Catalog = () => {
 
 				<div className="containerCol">
 					<div className="col filters">
-						<Filters />
-						<p className="mobileFilters">Фильтры</p>
+						{isMobile && (
+							<p className={mobFiltersClass.join(" ")} onClick={mobFiltersClick}>
+								Фильтры
+							</p>
+						)}
+						<Filters className={filtersClass.join(" ")} />
 					</div>
 					<div className="col">
 						{cards !== undefined &&
@@ -109,7 +147,7 @@ const Catalog = () => {
 								<Cards cards={currentCards} loading={loading} />
 							))}
 
-						<div className="pagination">
+						<div className="paginationWrap">
 							{cards !== undefined && cards.length !== 0 && (
 								<Pagination
 									cardsPerPage={cardsPerPage}

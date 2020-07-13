@@ -6,59 +6,58 @@ import { connect } from "react-redux";
 import "../scss/CallBack.scss";
 
 const Button = props => (
-  <button className={classNames(props.className)} onClick={props.onClick}>
-    {props.children}
-  </button>
+	<button className={classNames(props.className)} onClick={props.onClick}>
+		{props.children}
+	</button>
 );
 
 class CallBack extends Component {
-  openModal() {
-    this.props.changeClass(!this.props.addClass);
-    this.props.changeActive(!this.props.active);
-  }
+	openModal() {
+		this.props.changeClass(!this.props.addClass);
+		this.props.changeActive(!this.props.active);
+	}
 
-  render() {
-    let buttonClass = ["callBack"];
-    let navClass = ["nav__toggle"];
-    let header = ["header__form"];
+	render() {
+		let buttonClass = ["callBack"];
+		let navClass = ["nav__toggle"];
+		let header = ["header__form"];
 
-    if (this.props.addClass) {
-      buttonClass.push("active");
-      navClass.push("active");
-    }
-    return (
-      <Fragment>
-        <div className={navClass.join(" ")}>
-          <div className="container__form">
-            <Form className={header} />
-          </div>
-        </div>
-        <Button
-          className={buttonClass.join(" ")}
-          onClick={() => {
-            this.openModal();
-          }}
-        >
-          <span
-            className={
-              this.props.active ? "icon__burger nav active" : "icon__burger nav"
-            }
-          />
-          Заказать звонок
-        </Button>
-      </Fragment>
-    );
-  }
+		if (this.props.addClass) {
+			buttonClass.push("active");
+			navClass.push("active");
+		}
+		return (
+			<Fragment>
+				<div className={navClass.join(" ")}>
+					<div className="container__form">
+						<Form className={header} />
+					</div>
+				</div>
+				<Button
+					className={buttonClass.join(" ")}
+					onClick={() => {
+						this.openModal();
+					}}
+				>
+					<span className={this.props.active ? "icon__burger nav active" : "icon__burger nav"} />
+					Заказать звонок
+				</Button>
+			</Fragment>
+		);
+	}
 }
 
 const mapState = state => ({
-  addClass: state.callBack.addClass,
-  active: state.callBack.active
+	addClass: state.callBack.addClass,
+	active: state.callBack.active
 });
 
 const mapDispatch = ({ callBack: { changeClass, changeActive } }) => ({
-  changeClass,
-  changeActive
+	changeClass,
+	changeActive
 });
 
-export default connect(mapState, mapDispatch)(CallBack);
+export default connect(
+	mapState,
+	mapDispatch
+)(CallBack);

@@ -18,24 +18,26 @@ const Pagination = ({ cardsPerPage, totalCards, paginate }) => {
 	);
 
 	return (
-		<ul className="pagination">
-			{pageNumbers.map((number, i) => (
-				<li key={i} className="page-item">
-					<Link
-						to="#"
-						className="page-link"
-						onClick={() => {
-							changeCurrentPageNumber(number);
-						}}
-					>
-						{number}
-					</Link>
-				</li>
-			))}
+		<>
+			<ul className="pagination">
+				{pageNumbers.map((number, i) => (
+					<li key={i} className="page-item">
+						<Link
+							to="#"
+							className="page-link"
+							onClick={() => {
+								changeCurrentPageNumber(number);
+							}}
+						>
+							{number}
+						</Link>
+					</li>
+				))}
+			</ul>
 			<p className="currentPage">
 				стр. {currentPageNumber} / {pageNumbers.length}
 			</p>
-		</ul>
+		</>
 	);
 };
 

@@ -1,4 +1,67 @@
-.filters {
+.col.filters {
+	.filters {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	.mobileFilters {
+		width: 100%;
+		display: none;
+		position: relative;
+		@media (max-width: 768px) {
+			display: flex;
+		}
+		&.active:before {
+			display: block;
+			width: 15px;
+			height: 2px;
+			background: var(--red);
+			content: "";
+
+			position: absolute;
+			top: 0;
+			right: 5px;
+			transform: translateY(-50%) rotate(-45deg) translateX(-48%);
+		}
+		&.active:after {
+			display: block;
+			width: 15px;
+			height: 2px;
+			background: var(--red);
+			content: "";
+
+			position: absolute;
+			top: 0;
+			right: 5px;
+			transform: translateY(-50%) rotate(45deg) translateX(48%);
+		}
+
+		&:before {
+			display: block;
+			width: 15px;
+			height: 2px;
+			background: var(--red);
+			content: "";
+
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			transform: translateY(-50%) rotate(-45deg) translateX(48%);
+		}
+		&:after {
+			display: block;
+			width: 15px;
+			height: 2px;
+			background: var(--red);
+			content: "";
+
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			transform: translateY(-50%) rotate(45deg) translateX(-48%);
+		}
+	}
 	.formControl {
 		width: 100%;
 		margin-bottom: 20px !important;
