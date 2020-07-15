@@ -1,43 +1,52 @@
 .about {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 25px;
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 16px;
+	line-height: 28px;
+
+	letter-spacing: -0.379167px;
+	color: rgba(44, 46, 63, 0.697549);
 }
 #Fed_Districts path {
-  fill: #ff9469;
-  transition: 0.3s;
+	fill: #ff9469;
+	transition: 0.3s;
 }
 #Fed_Districts path:hover {
-  fill: #e54000;
+	fill: #e54000;
 }
 
 .russia {
-  margin: 100px auto;
+	margin: 100px auto;
 }
 
 .col__wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  max-width: 70%;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    max-width: 90%;
-    margin: 0;
-  }
-  .col {
-    width: 50%;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    @media (max-width: 768px) {
-      width: 100%;
-      padding: 0;
-      margin: 0 auto;
-    }
-  }
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	max-width: 70%;
+	margin: 0 auto;
+	@media (max-width: 768px) {
+		flex-direction: column;
+		max-width: 90%;
+		margin: 0;
+	}
+	.col {
+		width: 50%;
+		padding: 0 30px;
+		display: flex;
+		flex-direction: column;
+		font-size: 16px;
+		line-height: 28px;
+
+		letter-spacing: -0.379167px;
+		color: rgba(44, 46, 63, 0.697549);
+		@media (max-width: 768px) {
+			width: 100%;
+			padding: 0;
+			margin: 0 auto;
+		}
+	}
 }

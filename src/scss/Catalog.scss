@@ -125,20 +125,29 @@ h2.alert {
 				font-family: "Montserrat" !important;
 			}
 		}
+		&:nth-child(2) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 }
 
 .catalog__card {
-	width: 960px;
-	height: 298px;
+	width: calc(960px / 3 - 20px);
+	height: auto;
+	min-height: 298px;
 	box-shadow: 0px 0px 15px rgba(2, 38, 91, 0.12);
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	// align-items: center;
-	padding: 31px 31px 31px 0;
-	margin: 0 auto 40px;
+	padding: 0 21px 31px 0;
+	margin: 0 0 30px 0;
 	cursor: auto;
 	text-decoration: none;
+	position: relative;
 	@media (max-width: 1024px) {
 		width: 768px;
 		height: auto;
@@ -155,14 +164,17 @@ h2.alert {
 	}
 	.catalog__card__img {
 		width: 308px;
-		height: 236px;
+		height: 200px;
 		background: url("../images/rukav.png") 0 50% / contain no-repeat;
+		margin-left: 21px;
+
 		@media (max-width: 425px) {
 			height: 100px;
 		}
 	}
 	.catalog__card__content {
 		max-width: 600px;
+		padding: 0 0 0 21px;
 		h2.catalog__card__header {
 			font-size: 18px;
 			line-height: 32px;
@@ -190,7 +202,7 @@ h2.alert {
 			}
 		}
 		.catalog__btn {
-			width: 146px;
+			width: 100%;
 			height: 40px;
 			background: var(--red);
 			display: flex;

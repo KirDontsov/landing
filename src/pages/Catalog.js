@@ -12,7 +12,7 @@ const Catalog = () => {
 	const [cards, setCards] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [cardsPerPage] = useState(10);
+	const [cardsPerPage] = useState(15);
 	const [activeClass, setActiveClass] = useState(false);
 
 	const [width, setWidth] = useState(null);
@@ -74,13 +74,13 @@ const Catalog = () => {
 				(typeFilterApplied === true ? cards.type === type : true) &&
 				(pressureMpaFilterApplied === true ? cards.presMpa === pressureMpa : true) &&
 				(pressureAtmFilterApplied === true ? cards.presAtm === pressureAtm : true) &&
-				cards.inner >= inner[0] &&
-				cards.inner <= inner[1] &&
-				cards.outer >= outer[0] &&
-				cards.outer <= outer[1] &&
-				cards.lengh >= lengh[0] &&
-				cards.lengh <= lengh[1] &&
-				cards.tMax <= temperature
+				+cards.inner >= inner[0] &&
+				+cards.inner <= inner[1] &&
+				+cards.outer >= outer[0] &&
+				+cards.outer <= outer[1] &&
+				+cards.lengh >= lengh[0] &&
+				+cards.lengh <= lengh[1] &&
+				+cards.tMax <= temperature
 			);
 		});
 	}

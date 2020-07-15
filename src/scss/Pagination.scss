@@ -14,20 +14,28 @@
 		@media (max-width: 375px) {
 			width: 100%;
 		}
-		.page-link {
-			padding: 5px 10px;
+		.page-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 25px;
+			height: 29px;
 			background: var(--red);
 			margin-left: 2px;
-			color: #fff;
+			&:hover {
+				background: #fff;
+			}
 		}
-		.page-link:hover {
-			background: #fff;
-			color: var(--red);
+		.page-link {
+			color: #fff;
+			&:hover {
+				color: var(--red);
+			}
 		}
 	}
 	.currentPage {
 		padding-top: 10px;
-		width: 70px;
+		width: 80px;
 		@media (max-width: 375px) {
 			width: 100%;
 			text-align: center;

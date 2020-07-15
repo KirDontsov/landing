@@ -27,27 +27,29 @@ const Cards = props => {
 
 	return (
 		<Fragment>
-			{cards.map((card, i) => (
-				<Link to="#" key={i} className="catalog__card">
-					<div className="catalog__card__img" />
-					<div className="catalog__card__content">
-						<h2 className="catalog__card__header">
-							{card.name + ", " + card.size + ", "}
-							{"Ø" + card.inner + "x" + card.outer + "мм, " + card.standart + ", " + card.country}
-						</h2>
-						<div className="catalog__card__desc">{card.desc}</div>
-						<div
-							className="catalog__btn"
-							onClick={() => {
-								openModal();
-								props.setChosenItem(card.name + ", " + card.size);
-							}}
-						>
-							Оставить заявку
+			{cards.map((card, i) => {
+				return (
+					<Link to="#" key={i} className="catalog__card">
+						<div className="catalog__card__img" />
+						<div className="catalog__card__content">
+							<h2 className="catalog__card__header">
+								{card.name + ", " + card.size + ", "}
+								{"Ø" + card.inner + "x" + card.outer + "мм, " + card.standart + ", " + card.country}
+							</h2>
+							<div className="catalog__card__desc">{card.desc}</div>
+							<div
+								className="catalog__btn"
+								onClick={() => {
+									openModal();
+									props.setChosenItem(card.name + ", " + card.size);
+								}}
+							>
+								Уточнить цену
+							</div>
 						</div>
-					</div>
-				</Link>
-			))}
+					</Link>
+				);
+			})}
 		</Fragment>
 	);
 };

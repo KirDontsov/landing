@@ -21,17 +21,16 @@ const Pagination = ({ cardsPerPage, totalCards, paginate }) => {
 		<>
 			<ul className="pagination">
 				{pageNumbers.map((number, i) => (
-					<li key={i} className="page-item">
-						<Link
-							to="#"
-							className="page-link"
-							onClick={() => {
-								changeCurrentPageNumber(number);
-							}}
-						>
-							{number}
-						</Link>
-					</li>
+					<Link
+						key={i}
+						to="#"
+						className="page-link"
+						onClick={() => {
+							changeCurrentPageNumber(number);
+						}}
+					>
+						<li className="page-item">{number}</li>
+					</Link>
 				))}
 			</ul>
 			<p className="currentPage">

@@ -116,12 +116,12 @@ const Filters = props => {
 			props.changeFilterType(false);
 			props.changeInner([10, 150]);
 			props.changeFilterRange(false);
-			props.changeOuter([22, 172]);
+			props.changeOuter([14, 172]);
 			props.changePressureMpa("");
 			props.changePressureAtm("");
 			props.changeFilterPressureMpa(false);
 			props.changeFilterPressureAtm(false);
-			props.changeLengh([2.5, 20]);
+			props.changeLengh([2.5, 100]);
 			props.changeFilterRange(false);
 			props.changeTemperature(175);
 			props.changeFilterRange(false);
@@ -144,14 +144,16 @@ const Filters = props => {
 						<MenuItem value={"Рукава для пара"}>Рукава для пара</MenuItem>
 						<MenuItem value={"Рукава для пищевых продуктов"}>Рукава для пищевых продуктов</MenuItem>
 						<MenuItem value={"Рукава для абразива"}>Рукава для абразива</MenuItem>
+						<MenuItem value={"Рукава для химических веществ"}>Рукава для химических веществ</MenuItem>
 					</Select>
 				</FormControl>
 
 				<FormControl className="formControl">
 					<InputLabel id="demo-simple-select-label">Тип</InputLabel>
 					<Select labelId="demo-simple-select-label" id="demo-simple-select" value={type} onChange={handleChangeType}>
-						<MenuItem value={"напорные"}>Напорный</MenuItem>
-						<MenuItem value={"всасывающие"}>Напорно-всасывающий</MenuItem>
+						<MenuItem value={"напорные"}>Напорные</MenuItem>
+						<MenuItem value={"всасывающие"}>Всасывающие</MenuItem>
+						<MenuItem value={"напорно-всасывающие"}>Напорно-всасывающие</MenuItem>
 					</Select>
 				</FormControl>
 
@@ -163,11 +165,18 @@ const Filters = props => {
 						value={pressureMpa}
 						onChange={handleChangePressureMpa}
 					>
-						<MenuItem value={"0.3"}>0,3</MenuItem>
+						<MenuItem value={"0.30"}>0,30</MenuItem>
+						<MenuItem value={"0.49"}>0,49</MenuItem>
+						<MenuItem value={"0.50"}>0,50</MenuItem>
 						<MenuItem value={"0.63"}>0,63</MenuItem>
-						<MenuItem value={"0.8"}>0,8</MenuItem>
-						<MenuItem value={"1"}>1,00</MenuItem>
-						<MenuItem value={"4"}>4,00</MenuItem>
+						<MenuItem value={"0.70"}>0,70</MenuItem>
+						<MenuItem value={"0.80"}>0,80</MenuItem>
+						<MenuItem value={"0.98"}>0,98</MenuItem>
+						<MenuItem value={"1.00"}>1,00</MenuItem>
+						<MenuItem value={"1.30"}>1,30</MenuItem>
+						<MenuItem value={"1.47"}>1,47</MenuItem>
+						<MenuItem value={"1.60"}>1,60</MenuItem>
+						<MenuItem value={"4.00"}>4,00</MenuItem>
 					</Select>
 				</FormControl>
 
@@ -179,11 +188,18 @@ const Filters = props => {
 						value={pressureAtm}
 						onChange={handleChangePressureAtm}
 					>
-						<MenuItem value={"3"}>3</MenuItem>
-						<MenuItem value={"6.3"}>6,3</MenuItem>
-						<MenuItem value={"8"}>8</MenuItem>
-						<MenuItem value={"10"}>10</MenuItem>
-						<MenuItem value={"40"}>40</MenuItem>
+						<MenuItem value={"3.00"}>3,00</MenuItem>
+						<MenuItem value={"4.90"}>4,90</MenuItem>
+						<MenuItem value={"5.00"}>5,00</MenuItem>
+						<MenuItem value={"6.30"}>6,30</MenuItem>
+						<MenuItem value={"7.00"}>7,00</MenuItem>
+						<MenuItem value={"8.00"}>8,00</MenuItem>
+						<MenuItem value={"9.80"}>9,80</MenuItem>
+						<MenuItem value={"10.00"}>10,00</MenuItem>
+						<MenuItem value={"13.00"}>1,30</MenuItem>
+						<MenuItem value={"14.70"}>14,70</MenuItem>
+						<MenuItem value={"16.00"}>16,00</MenuItem>
+						<MenuItem value={"40.00"}>40,00</MenuItem>
 					</Select>
 				</FormControl>
 
@@ -198,8 +214,13 @@ const Filters = props => {
 						<MenuItem value={"ГОСТ 18698-83"}>ГОСТ 18698-83</MenuItem>
 						<MenuItem value={"ГОСТ 18698-84"}>ГОСТ 18698-84</MenuItem>
 						<MenuItem value={"ГОСТ 18698-85"}>ГОСТ 18698-85</MenuItem>
+						<MenuItem value={"ГОСТ 5398-76"}>ГОСТ 5398-76</MenuItem>
+						<MenuItem value={"ГОСТ 5398-77"}>ГОСТ 5398-77</MenuItem>
+						<MenuItem value={"ГОСТ 10362-76"}>ГОСТ 10362-76</MenuItem>
+
 						<MenuItem value={"ТУ 2553-189-05788889-2004"}>ТУ 2553-189-05788889-2004</MenuItem>
 						<MenuItem value={"ТУ 38 105981-"}>ТУ 38 105981-</MenuItem>
+						<MenuItem value={"ТУ 0056016-87"}>ТУ 0056016-87</MenuItem>
 					</Select>
 				</FormControl>
 
@@ -231,7 +252,7 @@ const Filters = props => {
 						Внеш. диаметр, мм
 					</Typography>
 					<Slider
-						min={22}
+						min={14}
 						max={172}
 						value={outer}
 						onChange={handleChangeOuter}
@@ -247,7 +268,7 @@ const Filters = props => {
 					<Slider
 						value={lengh}
 						min={2.5}
-						max={20}
+						max={100}
 						onChange={handleChangeLengh}
 						valueLabelDisplay="auto"
 						aria-labelledby="range-slider"
@@ -263,7 +284,7 @@ const Filters = props => {
 						getAriaValueText={valuetext}
 						aria-labelledby="discrete-slider-small-steps"
 						onChange={handleChangeTemperature}
-						min={50}
+						min={-55}
 						max={175}
 						marks
 						step={10}
