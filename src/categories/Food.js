@@ -65,7 +65,7 @@ const Food = () => {
 
 				<div className="container">
 					{cards !== undefined ? <Cards cards={currentCards} loading={loading} /> : null}
-					<div className="pagination paginationCategory">
+					<div className="paginationWrap paginationCategory">
 						{cards !== undefined && cards.length !== 0 ? (
 							<Pagination
 								cardsPerPage={cardsPerPage}

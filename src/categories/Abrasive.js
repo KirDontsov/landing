@@ -23,8 +23,6 @@ const Abrasive = () => {
 		fetchCards();
 	}, []);
 
-	console.log(cards);
-
 	let filteredCards = [];
 
 	if (cards !== undefined && cards.length !== 0) {
@@ -32,7 +30,6 @@ const Abrasive = () => {
 			return cards.category === "Рукава для абразива";
 		});
 	}
-	console.log(filteredCards);
 
 	let currentCards = [];
 	if (cards !== undefined && cards.length !== 0) {
@@ -68,7 +65,7 @@ const Abrasive = () => {
 
 				<div className="container">
 					{cards !== undefined ? <Cards cards={currentCards} loading={loading} /> : null}
-					<div className="pagination paginationCategory">
+					<div className="paginationWrap paginationCategory">
 						{cards !== undefined && cards.length !== 0 ? (
 							<Pagination
 								cardsPerPage={cardsPerPage}
